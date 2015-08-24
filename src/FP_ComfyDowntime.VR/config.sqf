@@ -6,9 +6,6 @@ FP_VD = 2000;
 // object view distance
 FP_OVD = 1800;
 
-// Use clean up script. See base\scripts\clean_up
-FP_use_cleanUp = true;
-
 //Units that should have longer view distance when flying. Unit names in strings
 FP_pilotNames = ["p1", "p2"];
 

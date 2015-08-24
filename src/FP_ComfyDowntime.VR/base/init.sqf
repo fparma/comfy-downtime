@@ -53,13 +53,6 @@ if (hasInterface) then {
 	};
 };
 
-if (isServer && FP_use_cleanUp) then {
-	// clean up script
-	// will not delete units dead on mission start
-	// will not delete units where "this setVariable ["fp_noDelete", true]"
-	[] execVM "base\scripts\clean_up.sqf";
-};
-
 if (!isNil "FP_JRM_fnc_init") then {
 	[] call FP_JRM_fnc_init;
 };
