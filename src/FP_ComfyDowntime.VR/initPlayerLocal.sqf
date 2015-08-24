@@ -24,11 +24,6 @@ if (!isNil "FP_pilotNames" && {str player in FP_pilotNames}) then {
 	[] execVM "base\scripts\pilot_viewdistance.sqf";
 };
 
-// Debug script for development. Create a unit named "debugger" and use him as player.
-if (str player in ["debugger"]) then {
-	[] call compile preProcessFileLineNumbers "base\scripts\debug_man.sqf";
-};
-
 // Weapons cold and unit lock on mission start. Edit in config.sqf
 if (!isNil "FP_lockStarters" && {count FP_lockStarters > 0}) then {
 	[] call FP_fnc_coldStart;
