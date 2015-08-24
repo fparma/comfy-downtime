@@ -11,9 +11,12 @@ disabledAI = 1;
 
 //////////////////////////////////////////// Respawn settings ////////////////////////////////////////////
 
-respawndelay = 4;
+respawndelay = 15;
 respawnDialog = 0;
-respawn = "BASE";
+respawn = 2;
+respawnOnStart = 1;
+
+respawnTemplates[] = {"MenuPosition","MenuInventory"};
 
 //////////////////////////////////////////// Mission name etc settings ////////////////////////////////////////////
 // Mission name (short)
@@ -25,7 +28,7 @@ onLoadMission="description.ext to change!";
 // custom load screen
 loadScreen = "fp_misc\img\fp_logo.paa";
 
-author="Cuel | 2015";
+author="Kaukassus | 2015";
 
 //////////////////////////////////////////// Debriefing settings ////////////////////////////////////////////
 
