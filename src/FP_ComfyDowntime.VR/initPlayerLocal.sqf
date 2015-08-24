@@ -19,11 +19,6 @@ if (_isJip) then {
 // Get briefing
 [] call compile preProcessFileLineNumbers "briefing.sqf";
 
-// Longer view distance for pilots. Edit in config.sqf
-if (!isNil "FP_pilotNames" && {str player in FP_pilotNames}) then {
-	[] execVM "base\scripts\pilot_viewdistance.sqf";
-};
-
 // Weapons cold and unit lock on mission start. Edit in config.sqf
 if (!isNil "FP_lockStarters" && {count FP_lockStarters > 0}) then {
 	[] call FP_fnc_coldStart;
