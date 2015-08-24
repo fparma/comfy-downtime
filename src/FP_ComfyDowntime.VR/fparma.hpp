@@ -1,7 +1,3 @@
-
-// Dialogs. Remove if not using \xtra
-#include "xtra\dialogs\dialogs.hpp"
-
 // Functions
 class CfgFunctions {
 	version = 2.0.0;
@@ -18,16 +14,6 @@ class CfgFunctions {
 	// Gear funcs
 	class FP_Gear {
 		#include "gear\functions\funcs.hpp"
-	};
-
-	// Spawning functions
-	class FP_Spawn {
-		#include "xtra\spawn\funcs.hpp"
-	};
-
-	// JIP and respawn manager
-	class FP_JRM {
-		#include "xtra\jrm\funcs.hpp"
 	};
 
 	// Spectate funcs
