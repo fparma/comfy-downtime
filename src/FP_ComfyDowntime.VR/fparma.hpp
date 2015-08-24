@@ -15,11 +15,4 @@ class CfgFunctions {
 	class FP_Gear {
 		#include "gear\functions\funcs.hpp"
 	};
-
-	// Spectate funcs
-	class F {
-		#include "xtra\spect\funcs.hpp"
-	};
-
-
 }; // << do not delete me
