@@ -16,9 +16,6 @@ if (_isJip) then {
 	[player, "FP_fnc_addCuratorObject", false] call BIS_fnc_MP;
 };
 
-// Get briefing
-[] call compile preProcessFileLineNumbers "briefing.sqf";
-
 // Weapons cold and unit lock on mission start. Edit in config.sqf
 if (!isNil "FP_lockStarters" && {count FP_lockStarters > 0}) then {
 	[] call FP_fnc_coldStart;
