@@ -9,18 +9,6 @@ FP_OVD = 1800;
 // Use clean up script. See base\scripts\clean_up
 FP_use_cleanUp = true;
 
-// The targets for teleport flag object. In format [displayName, objectName]. Must be string entries
-FP_flag_targets = [
-    ["Actual", "actual"],
-    ["Alpha Actual","a0"],
-    ["Bravo Actual","b0"],
-    ["Charlie Actual","c0"],
-    ["Delta Actual","d0"]
-];
-
-// Seconds when unit respawns before the TP flag can be used, if there is a flag
-FP_respawnTeleportDelay = 180;
-
 //Units that should have longer view distance when flying. Unit names in strings
 FP_pilotNames = ["p1", "p2"];
 

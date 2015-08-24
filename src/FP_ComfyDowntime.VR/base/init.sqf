@@ -37,10 +37,6 @@ if (hasInterface) then {
 		FP_kit_type = player getVariable ["FP_kit_type", []];
 
 		player addEventHandler ["Respawn", {
-			// Time before the teleport flag (if available) can be used again, to prevent people from just teleporting after dying.
-			// The flag is for JiPs not deaths. 3 min default. Edit in config.sqf
-			FP_tp_timeout = time + FP_respawnTeleportDelay;
-
 			// Add new unit to zeus
 			[_this select 0, "FP_fnc_addCuratorObject", false] call BIS_fnc_MP;
 		}];
