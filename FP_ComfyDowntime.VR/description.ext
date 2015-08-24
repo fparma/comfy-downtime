@@ -30,30 +30,6 @@ loadScreen = "fp_misc\img\fp_logo.paa";
 
 author="Kaukassus | 2015";
 
-//////////////////////////////////////////// Debriefing settings ////////////////////////////////////////////
-
-class CfgDebriefing
-{
-	class End1
-	{
-		title = "Mission Success";
-		description = "You have completed the mission.";
-		subtitle = "";
-		//pictureBackground = "";
-		picture = "flag_nato";
-		//pictureColor[] = {};
-	};
-	class End2
-	{
-		title = "Mission Failure";
-		description = "You have failed the mission, better luck next time";
-		subtitle = "";
-		//pictureBackground = "";
-		picture = "loc_Church";
-		//pictureColor[] = {};
-	};
-};
-
 //////////////////////////////////////////// DO NOT EDIT ////////////////////////////////////////////
 
 showCompass   = 1;
