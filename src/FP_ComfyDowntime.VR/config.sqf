@@ -6,13 +6,6 @@ FP_VD = 2000;
 // object view distance
 FP_OVD = 1800;
 
-// Gear: A script file inside gear\loadouts that will be the "default" script for all units calling
-// This is useful so unit inits does not have to be changed in every mission
-FP_GEAR_DEFAULT = "vanilla_nato";
-
-// Gear: If gear errors should be reported (Boolean). Shows stuff like failed to add etc.
-FP_GEAR_REPORT_ERRORS = !isMultiplayer;
-
 // Use clean up script. See base\scripts\clean_up
 FP_use_cleanUp = true;
 

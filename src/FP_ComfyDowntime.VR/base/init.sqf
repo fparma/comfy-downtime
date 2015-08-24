@@ -43,11 +43,6 @@ if (hasInterface) then {
 
 			// Add new unit to zeus
 			[_this select 0, "FP_fnc_addCuratorObject", false] call BIS_fnc_MP;
-
-			// Respawn with gear if using template gear
-			if (count FP_kit_type > 0) then {
-					[_this select 0, FP_kit_type select 0, FP_kit_type select 1] call FP_fnc_getKit;
-			};
 		}];
 
 		// Fix so player cant join ENEMY side, where all sides fires on him
