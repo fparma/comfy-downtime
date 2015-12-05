@@ -48,7 +48,7 @@ wreckRemovalMaxTime = 240;
 
 //////////////////////////////////////////// Respawn settings ////////////////////////////////////////////
 
-respawndelay = 15;
+respawndelay = 3;
 respawnDialog = 0;
 respawn = 2;
 respawnOnStart = 1;
