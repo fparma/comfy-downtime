@@ -1,11 +1,6 @@
 // Only allow people with map tools to draw on briefing
 ACE_maptools_EveryoneCanDrawOnBriefing = false;
 
-// View distance
-FP_VD = 2000;
-// object view distance
-FP_OVD = 1800;
-
 // Players that are given the option to start the mission, comma separated strings representing object name
 // Empty array ([])  = disabled. Weapons are hot from the go, and no players will locked to a 20m circle until mission has started.
 FP_lockStarters = ["gm", "actual"];

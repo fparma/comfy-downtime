@@ -8,8 +8,8 @@
 enableSaving [false,false];
 setGroupIconsVisible [true,false]; //Show only 2D
 enableCamShake true;
-setViewDistance FP_VD;
-setObjectViewDistance FP_OVD;
+setViewDistance 2000;
+setObjectViewDistance 1800;
 setTerrainGrid 25;
 
 if (hasInterface) then {
