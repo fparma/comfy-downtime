@@ -57,10 +57,10 @@ respawnTemplates[] = {"MenuPosition","MenuInventory"};
 
 //////////////////////////////////////////// Mission name etc settings ////////////////////////////////////////////
 // Mission name (short)
-OnLoadName = "FP TEMPLATE 2.0.2";
+OnLoadName = "FP Comfy Downtime 1.0";
 
 // Longer description
-onLoadMission="description.ext to change!";
+onLoadMission="It's time to get comfy.";
 
 // custom load screen
 loadScreen = "fp_misc\img\fp_logo.paa";

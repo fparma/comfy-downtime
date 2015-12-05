@@ -17,11 +17,14 @@ if (_isJip) then {
 };
 
 // Weapons cold and unit lock on mission start. Edit in config.sqf
+/*
 if (!isNil "FP_lockStarters" && {count FP_lockStarters > 0}) then {
 	[] call FP_fnc_coldStart;
 };
+*/
 
 // Delete grenades thrown in spawn
+/*
 player addEventHandler ["Fired", {
 	if (_this select 2 == "HandGrenadeMuzzle") then {
 		if ((_this select 0) distance (markerPos (["respawn_west","respawn_east","respawn_guerrila","respawn_civilian"] select ([WEST,EAST,independent,civilian] find side player))) < 80) then
@@ -32,3 +35,4 @@ player addEventHandler ["Fired", {
 		};
 	};
 }];
+*/
