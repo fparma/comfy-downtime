@@ -1,8 +1,70 @@
 version=12;
 class Mission
 {
-	addOns[]={};
-	addOnsAuto[]={};
+	addOns[]=
+	{
+		"ace_medical",
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Modules_F_Multiplayer",
+		"3DEN",
+		"a3_modules_f_curator_curator",
+		"ace_map_gestures",
+		"ace_winddeflection",
+		"ace_map",
+		"ace_captives",
+		"ace_explosives",
+		"ace_respawn",
+		"ace_microdagr",
+		"ace_mk6mortar",
+		"ace_nightvision",
+		"ace_finger",
+		"ace_sitting",
+		"acre_api",
+		"ace_zeus",
+		"ace_advanced_ballistics",
+		"ace_rearm",
+		"ace_cargo",
+		"A3_Modules_F",
+		"ace_refuel",
+		"ace_repair",
+		"ace_medical_menu",
+		"A3_Data_F_Curator_Virtual",
+		"A3_Supplies_F_Heli_CargoNets",
+		"map_vr"
+	};
+	addOnsAuto[]=
+	{
+		"ace_medical",
+		"A3_Characters_F_BLUFOR",
+		"a3_characters_f",
+		"A3_Modules_F_Multiplayer",
+		"3DEN",
+		"a3_modules_f_curator_curator",
+		"ace_map_gestures",
+		"ace_winddeflection",
+		"ace_map",
+		"ace_captives",
+		"ace_explosives",
+		"ace_respawn",
+		"ace_microdagr",
+		"ace_mk6mortar",
+		"ace_nightvision",
+		"ace_finger",
+		"ace_sitting",
+		"acre_api",
+		"ace_zeus",
+		"ace_advanced_ballistics",
+		"ace_rearm",
+		"ace_cargo",
+		"A3_Modules_F",
+		"ace_refuel",
+		"ace_repair",
+		"ace_medical_menu",
+		"A3_Data_F_Curator_Virtual",
+		"A3_Supplies_F_Heli_CargoNets",
+		"map_vr"
+	};
 	randomSeed=11895797;
 	class Intel
 	{
@@ -24,7 +86,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=41;
+		items=42;
 		class Item0
 		{
 			side="LOGIC";
@@ -2009,6 +2071,52 @@ class Mission
 				};
 			};
 		};
+		class Item41
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={6.2777176,5,3.2734375};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="76561197990522336";
+							parentCls="ModuleCurator_F";
+							typeName="Owner";
+						};
+						class Item1
+						{
+							value="";
+							parentCls="ModuleCurator_F";
+							typeName="Name";
+						};
+						class Item2
+						{
+							value="3";
+							parentCls="ModuleCurator_F";
+							typeName="Addons";
+						};
+						class Item3
+						{
+							value="0";
+							parentCls="ModuleCurator_F";
+							typeName="Forced";
+						};
+					};
+					id=73;
+					side="LOGIC";
+					vehicle="ModuleCurator_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+				};
+			};
+		};
 	};
 	class Vehicles
 	{
@@ -2016,7 +2124,7 @@ class Mission
 		class Item0
 		{
 			position[]={-1.7606883,5,5.6254883};
-			id=73;
+			id=74;
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
@@ -2025,7 +2133,7 @@ class Mission
 		class Item1
 		{
 			position[]={-1.7484813,5,7.6708984};
-			id=74;
+			id=75;
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
@@ -2034,7 +2142,7 @@ class Mission
 		class Item2
 		{
 			position[]={-3.8816218,5,5.6040039};
-			id=75;
+			id=76;
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
@@ -2043,7 +2151,7 @@ class Mission
 		class Item3
 		{
 			position[]={-3.8694148,5,7.6494141};
-			id=76;
+			id=77;
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
@@ -2052,7 +2160,7 @@ class Mission
 		class Item4
 		{
 			position[]={-1.7715526,5,1.5888672};
-			id=77;
+			id=78;
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
@@ -2061,7 +2169,7 @@ class Mission
 		class Item5
 		{
 			position[]={-1.7593455,5,3.6342773};
-			id=78;
+			id=79;
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
@@ -2070,7 +2178,7 @@ class Mission
 		class Item6
 		{
 			position[]={-3.8924861,5,1.5673828};
-			id=79;
+			id=80;
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
@@ -2079,7 +2187,7 @@ class Mission
 		class Item7
 		{
 			position[]={-3.8802791,5,3.612793};
-			id=80;
+			id=81;
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
@@ -2089,8 +2197,14 @@ class Mission
 };
 class Intro
 {
-	addOns[]={};
-	addOnsAuto[]={};
+	addOns[]=
+	{
+		"map_vr"
+	};
+	addOnsAuto[]=
+	{
+		"map_vr"
+	};
 	randomSeed=8961784;
 	class Intel
 	{
@@ -2110,8 +2224,14 @@ class Intro
 };
 class OutroWin
 {
-	addOns[]={};
-	addOnsAuto[]={};
+	addOns[]=
+	{
+		"map_vr"
+	};
+	addOnsAuto[]=
+	{
+		"map_vr"
+	};
 	randomSeed=11319044;
 	class Intel
 	{
@@ -2131,8 +2251,14 @@ class OutroWin
 };
 class OutroLoose
 {
-	addOns[]={};
-	addOnsAuto[]={};
+	addOns[]=
+	{
+		"map_vr"
+	};
+	addOnsAuto[]=
+	{
+		"map_vr"
+	};
 	randomSeed=13537339;
 	class Intel
 	{
