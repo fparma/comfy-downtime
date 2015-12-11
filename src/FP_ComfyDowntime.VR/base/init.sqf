@@ -10,11 +10,11 @@ if (hasInterface) then {
     waitUntil {!isNull player};
 
     // Add new unit to zeus
-    player addEventHandler ["Respawn", {[_this select 0, "FP_fnc_addToCurators", false] call BIS_fnc_MP;}];
+    player addEventHandler ["Respawn", {[_this select 0] remoteExecCall ["FP_fnc_addToCurators", 2];}];
 
     // Fix so player cant join ENEMY side, where all sides fires on him
-    player addEventHandler ["HandleRating", {_rating = _this select 1;(abs _rating)}];
-
+    player addEventHandler ["HandleRating", {abs (_this select 1);}];
+    
     // Set Custom Fatigue Settings
     player setCustomAimCoef 0.6;
     player setAnimSpeedCoef 1;
@@ -24,7 +24,9 @@ if (hasInterface) then {
     setStaminaScheme "Normal";
 
     // Lower weapon after mission start
-    sleep  0.3;
-    player switchMove "amovpercmstpslowwrfldnon";
+    if (primaryWeapon player != "") then {
+      [{player switchMove "amovpercmstpslowwrfldnon";}, []] call ACE_common_fnc_execNextFrame;
+    };
+    
   };
 };
