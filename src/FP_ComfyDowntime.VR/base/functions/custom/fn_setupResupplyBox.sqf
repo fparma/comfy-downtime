@@ -1,3 +1,27 @@
+/*
+  Function: FPC_fnc_setupResupplyBox
+
+  API:
+    Single (server or client)
+
+  Description:
+    Adds all Resupply Related Actions to the box.
+
+  Parameters:
+     _object = Box or Flag
+
+  Example:
+  (begin example)
+        [_object] call FPC_fnc_setupResupplyBox;
+  (end)
+
+  Returns:
+     BOOL
+
+  Author:
+     Kaukassus 2015-12-11
+*/
+
 params ["_object"];
 if (!local _object) exitWith {false};
 
