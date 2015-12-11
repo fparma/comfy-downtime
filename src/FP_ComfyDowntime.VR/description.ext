@@ -13,7 +13,6 @@ class CfgFunctions {
 		class baseAPI {
 			file = "base\functions";
 			class intelHQ;
-			class switchMove;
 			class removeAction;
 			class hint;
 			class getCurrentScript;
