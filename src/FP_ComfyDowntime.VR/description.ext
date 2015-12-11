@@ -14,12 +14,10 @@ class CfgFunctions {
 			file = "base\functions";
 			class intelHQ;
 			class switchMove;
-			class addAction;
 			class removeAction;
 			class hint;
 			class getCurrentScript;
 			class addToCurators;
-			class coldStart;
 			class getPlayer;
 			class setVehicleName;
 			class clearVehicle;
