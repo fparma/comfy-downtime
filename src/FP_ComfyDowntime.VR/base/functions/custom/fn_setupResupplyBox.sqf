@@ -1,7 +1,7 @@
 params ["_object"];
 if (!local _object) exitWith {false};
 
-_object call FP_fnc_clearVehicle;
+_object spawn FP_fnc_clearVehicle;
 _object allowDamage false;
 
 // Add ACE Actions to the Box.
