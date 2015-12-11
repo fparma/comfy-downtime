@@ -1,7 +1,6 @@
 params ["_unit"];
 hintC "Select Altitude and Designate LZ for HALO Jump on the map";
 
-
 // Get Loadout the player currently has
 _backpack_type = backpack player;
 _backpack_items = getItemCargo (unitBackpack player);
