@@ -6,37 +6,39 @@ class Header {
 disabledAI = 1;
 
 class CfgFunctions {
-  version = 2.0.0;
   createShortcuts = 1;
-  class FP_Base {
+  class FP {
     tag="FP";
-    class baseAPI {
+    class functions {
       file = "base\functions";
       class addToCurators;
       class getPlayer;
       class setVehicleName;
       class clearVehicle;
       class disableWeapons;
-      class baseInit {
-        file ="base\init.sqf";
-        preInit = 1;
-      };
     };
+  };
+};
+
+class Extended_PreInit_EventHandlers {
+  class FPARMA {
+    init = "[] call compile preProcessFileLineNumbers 'base\init.sqf'";
   };
 };
 
 //////////////////////////////////////////// Cleanup settings ////////////////////////////////////////////
 
 
+// Clean up settings
 corpseManagerMode = 1;
-corpseLimit = 10;
+corpseLimit = 20;
 corpseRemovalMinTime = 120;
-corpseRemovalMaxTime = 240;
+corpseRemovalMaxTime = 300;
 
 wreckManagerMode = 1;
-wreckLimit = 5;
-wreckRemovalMinTime = 120;
-wreckRemovalMaxTime = 240;
+wreckLimit = 10;
+wreckRemovalMinTime = 300;
+wreckRemovalMaxTime = 800;
 
 //////////////////////////////////////////// Respawn settings ////////////////////////////////////////////
 
@@ -48,26 +50,19 @@ respawnOnStart = 1;
 respawnTemplates[] = {"MenuPosition","MenuInventory"};
 
 //////////////////////////////////////////// Mission name etc settings ////////////////////////////////////////////
-// Mission name (short)
 OnLoadName = "FP Comfy Downtime 1.0";
-
-// Longer description
 onLoadMission="It's time to get comfy.";
-
-// custom load screen
 loadScreen = "fp_misc\img\fp_logo.paa";
-
 author="Kaukassus | 2015";
-
 //////////////////////////////////////////// DO NOT EDIT ////////////////////////////////////////////
 
-showCompass   = 1;
-showGPS       = 1;
-showMap       = 1;
-showWatch     = 1;
-enableItemsDropping = 0;
-onLoadIntroTime=false;
-onLoadMissionTime=false;
-enableDebugConsole = 1;
-allowFunctionsLog = 0;
+showGPS = 1;
+showMap = 1;
+showWatch = 1;
+showCompass = 1;
 joinUnassigned = 1;
+allowFunctionsLog = 0;
+enableDebugConsole = 1;
+onLoadIntroTime = false;
+enableItemsDropping = 0;
+onLoadMissionTime = false;
