@@ -10,7 +10,7 @@ if (hasInterface) then {
 		waitUntil {!isNull player};
 
 		// Add new unit to zeus
-		player addEventHandler ["Respawn", {[_this select 0, "FP_fnc_addCuratorObject", false] call BIS_fnc_MP;}];
+		player addEventHandler ["Respawn", {[_this select 0, "FP_fnc_addToCurators", false] call BIS_fnc_MP;}];
 
 		// Fix so player cant join ENEMY side, where all sides fires on him
 		player addEventHandler ["HandleRating", {_rating = _this select 1;(abs _rating)}];

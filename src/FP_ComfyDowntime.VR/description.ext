@@ -18,7 +18,7 @@ class CfgFunctions {
 			class removeAction;
 			class hint;
 			class getCurrentScript;
-			class addCuratorObject;
+			class addToCurators;
 			class coldStart;
 			class getPlayer;
 			class setVehicleName;

@@ -12,7 +12,7 @@ if (!hasInterface) exitWith {};
 _isJip = _this select 1;
 
 // Add JIP players to zeus
-if (_isJip) then {[player, "FP_fnc_addCuratorObject", false] call BIS_fnc_MP;};
+if (_isJip) then {[player, "FP_fnc_addToCurators", false] call BIS_fnc_MP;};
 
 //Init the Player for the Dynamic Group System
 ["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups; 
