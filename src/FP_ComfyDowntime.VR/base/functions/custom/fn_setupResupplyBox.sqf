@@ -8,7 +8,7 @@
     Adds all Resupply Related Actions to the box.
 
   Parameters:
-     _object = Box or Flag
+     _object - Box or Flag
 
   Example:
   (begin example)
