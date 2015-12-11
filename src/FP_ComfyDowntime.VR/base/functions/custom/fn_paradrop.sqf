@@ -17,7 +17,7 @@ player addHeadgear "H_CrewHelmetHeli_B";
 // Open the map and let the Person click where he wants to land
 openMap true;
 onMapSingleClick {
-  player setPos [_pos select 0, _pos select 1, (_pos select 2) + 500];
+  player setPos [_pos select 0, _pos select 1, (_pos select 2) + 600];
   openMap [false, false];
   onMapSingleClick {};
 };
