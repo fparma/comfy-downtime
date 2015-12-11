@@ -8,11 +8,12 @@
     1- Did player JiP
 */
 
-if (!hasInterface) exitWith {};
-_isJip = _this select 1;
+params ["_player", "_isJip"];
+
+[] call compile preProcessFileLineNumbers "base\initPlayer.sqf";
 
 // Add JIP players to zeus
-if (_isJip) then {[player, "FP_fnc_addToCurators", false] call BIS_fnc_MP;};
+if (_isJip) then {[_player] remoteExecCall ["FP_fnc_addToCurators", 2]};
 
 //Init the Player for the Dynamic Group System
 ["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups; 
