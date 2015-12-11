@@ -136,13 +136,10 @@ class Mission
 					position[]={4.2221508,5,4.3110962};
 					id=1;
 					side="WEST";
-					vehicle="B_officer_F";
+					vehicle="b_soldier_unarmed_f";
 					player="PLAYER COMMANDER";
 					leader=1;
-					rank="COLONEL";
-					skill=0.2;
-					text="gm";
-					init="this setGroupID [""COMMANDER""]; [this,""PLT""] call FP_fnc_getKit";
+					skill=0.60000002;
 					description="High Command (Game master)";
 				};
 			};
