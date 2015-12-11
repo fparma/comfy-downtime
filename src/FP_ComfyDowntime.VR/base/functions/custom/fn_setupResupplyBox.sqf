@@ -23,9 +23,8 @@
 */
 
 params ["_object"];
-if (!local _object) exitWith {false};
+if (local _object) then {_object spawn FP_fnc_clearVehicle;};
 
-_object spawn FP_fnc_clearVehicle;
 _object allowDamage false;
 
 // Add ACE Actions to the Box.
@@ -44,4 +43,5 @@ _action_bandage = ["fpc_bandage", "Fix yourself up", "", {
 [_object, 0, ["ACE_MainActions"], _action_arsenal] spawn ace_interact_menu_fnc_addActionToObject;
 [_object, 0, ["ACE_MainActions"], _action_bandage] spawn ace_interact_menu_fnc_addActionToObject;
 [_object, 0, ["ACE_MainActions"], _action_paradrop] spawn ace_interact_menu_fnc_addActionToObject;
+
 true
