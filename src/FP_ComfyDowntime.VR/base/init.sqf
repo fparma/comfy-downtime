@@ -1,10 +1,3 @@
-/*
-	General FP init. Not for editing unless you know what you doing
-*/
-
-// Run config
-[] call compile preprocessFileLineNumbers "config.sqf";
-
 enableSaving [false,false];
 setGroupIconsVisible [true,false]; //Show only 2D
 enableCamShake true;
