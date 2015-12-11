@@ -20,5 +20,3 @@ if (hasInterface) then {
     player switchMove "amovpercmstpslowwrfldnon";
   };
 };
-
-if (!isNil "FP_JRM_fnc_init") then {[] call FP_JRM_fnc_init;};
