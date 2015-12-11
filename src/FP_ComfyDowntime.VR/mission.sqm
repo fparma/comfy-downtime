@@ -24,7 +24,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=48;
+		items=33;
 		class Item0
 		{
 			side="LOGIC";
@@ -1366,7 +1366,7 @@ class Mission
 			side="WEST";
 			class Vehicles
 			{
-				items=1;
+				items=16;
 				class Item0
 				{
 					position[]={7.0234175,5,2.1357422};
@@ -1377,274 +1377,139 @@ class Mission
 					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item33
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item1
 				{
-					position[]={7.6830006,5,2.1279297};
+					position[]={7.0234165,5,1.4008789};
 					id=33;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item34
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item2
 				{
-					position[]={7.0234165,5,1.4008789};
+					position[]={7.6829996,5,1.3930664};
 					id=34;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item35
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item3
 				{
-					position[]={7.6829996,5,1.3930664};
+					position[]={8.4301252,5,1.3803711};
 					id=35;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item36
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item4
 				{
-					position[]={8.4301262,5,2.1152344};
+					position[]={7.6830006,5,2.1279297};
 					id=36;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item37
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item5
 				{
-					position[]={9.0897093,5,2.1074219};
+					position[]={8.4301262,5,2.1152344};
 					id=37;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item38
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item6
 				{
-					position[]={8.4301252,5,1.3803711};
+					position[]={9.0897093,5,2.1074219};
 					id=38;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item39
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item7
 				{
-					position[]={9.0897083,5,1.3725586};
+					position[]={9.7333994,5,2.1459961};
 					id=39;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item40
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item8
 				{
-					position[]={9.7333994,5,2.1459961};
+					position[]={10.392982,5,2.1381836};
 					id=40;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item41
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item9
 				{
-					position[]={10.392982,5,2.1381836};
+					position[]={11.140108,5,2.1254883};
 					id=41;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item42
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item10
 				{
-					position[]={9.7333984,5,1.4111328};
+					position[]={11.799691,5,2.1176758};
 					id=42;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item43
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item11
 				{
-					position[]={10.392982,5,1.4033203};
+					position[]={9.0897083,5,1.3725586};
 					id=43;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item44
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item12
 				{
-					position[]={11.140108,5,2.1254883};
+					position[]={9.7333984,5,1.4111328};
 					id=44;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item45
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item13
 				{
-					position[]={11.799691,5,2.1176758};
+					position[]={10.392982,5,1.4033203};
 					id=45;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item46
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item14
 				{
 					position[]={11.140107,5,1.390625};
 					id=46;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
-			};
-		};
-		class Item47
-		{
-			side="WEST";
-			class Vehicles
-			{
-				items=1;
-				class Item0
+				class Item15
 				{
 					position[]={11.79969,5,1.3828125};
 					id=47;
 					side="WEST";
 					vehicle="b_soldier_unarmed_f";
 					player="PLAY CDG";
-					leader=1;
 					skill=0.60000002;
 				};
 			};
