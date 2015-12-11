@@ -57,8 +57,8 @@ respawnOnStart = 1;
 respawnTemplates[] = {"MenuPosition","MenuInventory"};
 
 //////////////////////////////////////////// Mission name etc settings ////////////////////////////////////////////
-OnLoadName = "FP Comfy Downtime 1.0";
-onLoadMission="It's time to get comfy.";
+OnLoadName = "FP Comfy Downtime 2.0";
+onLoadMission="Version 2.0, More comfy than ever!";
 loadScreen = "fp_misc\img\fp_logo.paa";
 author="Kaukassus | 2015";
 //////////////////////////////////////////// DO NOT EDIT ////////////////////////////////////////////
