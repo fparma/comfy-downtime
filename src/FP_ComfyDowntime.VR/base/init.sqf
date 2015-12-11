@@ -6,10 +6,6 @@ setObjectViewDistance 1800;
 setTerrainGrid 25;
 
 if (hasInterface) then {
-	// Log ace markers. yes, overwrite ace functions
-	ACE_markers_fnc_placeMarker = compile preProcessFileLineNumbers "base\scripts\log_ace_markers.sqf";
-	ACE_maptools_fnc_handleMouseButton = compile preProcessFileLineNumbers "base\scripts\log_ace_line_markers.sqf";
-
 	[] spawn {
 		waitUntil {!isNull player};
 
