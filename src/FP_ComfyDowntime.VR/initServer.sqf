@@ -5,17 +5,21 @@
 */
 
 // Create AI centers
-_allUnits = allUnits;
-if (({if ((side _x) isEqualTo east) exitWith {1}} count _allUnits) isEqualTo 0) then {createCenter east};
-if (({if ((side _x) isEqualTo west) exitWith {1}} count _allUnits) isEqualTo 0) then {createCenter west};
-if (({if ((side _x) isEqualTo resistance) exitWith {1}} count _allUnits) isEqualTo 0) then {createCenter resistance};
-if (({if ((side _x) isEqualTo civilian) exitWith {1}} count _allUnits) isEqualTo 0) then {createCenter civilian};
+private _allUnits = allUnits;
+private _sideHasNoUnits = {
+  params ["_side"];
+  (({if ((side _x) isEqualTo _side) exitWith {1}} count _allUnits) isEqualTo 0)
+};
+if ([east] call _sideHasNoUnits) then {createCenter east};
+if ([west] call _sideHasNoUnits) then {createCenter west};
+if ([resistance] call _sideHasNoUnits) then {createCenter resistance};
+if ([civilian] call _sideHasNoUnits) then {createCenter civilian};
 
 // Add all objects to the curator on mission begin
 {
-  _curator = _x;
+  private _curator = _x;
   _curator addCuratorEditableObjects [vehicles,true];
-  _curator addCuratorEditableObjects [(allMissionObjects "Man"),false];
+  _curator addCuratorEditableObjects [(allMissionObjects "CAManBase"),false];
   _curator addCuratorEditableObjects [(allMissionObjects "Air"),true];
   _curator addCuratorEditableObjects [(allMissionObjects "Ammo"),false];
   _curator setCuratorWaypointCost 0;
