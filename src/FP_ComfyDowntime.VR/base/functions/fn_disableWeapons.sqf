@@ -1,19 +1,19 @@
 /*
-	Function: FP_fnc_disableWeapons
+  Function: FP_fnc_disableWeapons
 
-	API:
-		Local unit
+  API:
+    Local unit
 
-	Description:
+  Description:
         Disables unit bullets, grenades, detonating explosives etc.
 
-	Parameters:
+  Parameters:
         _unit - Unit to disable weapons on
         _disable - True to disable weapons, false for vice versa
 
-	Returns: BOOL
-	Author:
-		Cuel 2015-10-29
+  Returns: BOOL
+  Author:
+    Cuel 2015-10-29
 */
 
 params ["_unit", "_disable"];

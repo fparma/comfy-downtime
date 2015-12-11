@@ -1,28 +1,28 @@
 class Header {
-	gameType = Coop;
-	minPlayers = 1;
-	maxPlayers = 64;
+  gameType = Coop;
+  minPlayers = 1;
+  maxPlayers = 64;
 };
 disabledAI = 1;
 
 class CfgFunctions {
-	version = 2.0.0;
-	createShortcuts = 1;
-	class FP_Base {
-		tag="FP";
-		class baseAPI {
-			file = "base\functions";
-			class addToCurators;
-			class getPlayer;
-			class setVehicleName;
-			class clearVehicle;
-			class disableWeapons;
-			class baseInit {
-				file ="base\init.sqf";
-				preInit = 1;
-			};
-		};
-	};
+  version = 2.0.0;
+  createShortcuts = 1;
+  class FP_Base {
+    tag="FP";
+    class baseAPI {
+      file = "base\functions";
+      class addToCurators;
+      class getPlayer;
+      class setVehicleName;
+      class clearVehicle;
+      class disableWeapons;
+      class baseInit {
+        file ="base\init.sqf";
+        preInit = 1;
+      };
+    };
+  };
 };
 
 //////////////////////////////////////////// Cleanup settings ////////////////////////////////////////////

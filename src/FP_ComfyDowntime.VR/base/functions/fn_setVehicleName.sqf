@@ -1,26 +1,26 @@
 /*
-	Function: FP_fnc_setVehicleName
+  Function: FP_fnc_setVehicleName
 
-	API:
-		Client
+  API:
+    Client
 
-	Description:
-		Adds action to vehicle to display its name
+  Description:
+    Adds action to vehicle to display its name
 
-	Parameters:
-		_veh - Vehicle
-		_name - String, vehicle name
+  Parameters:
+    _veh - Vehicle
+    _name - String, vehicle name
 
-	Examples:
-	(begin example)
+  Examples:
+  (begin example)
         [car1, "Car One"] call FP_fnc_setVehicleName;
-	(end)
+  (end)
 
-	Returns:
-	   BOOL
+  Returns:
+     BOOL
 
-	Author:
-	   Cuel 2015-04-23
+  Author:
+     Cuel 2015-04-23
 */
 
 if (!hasInterface) exitWith {};

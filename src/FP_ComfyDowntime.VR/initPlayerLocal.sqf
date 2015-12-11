@@ -1,11 +1,11 @@
 /*
-	Executed locally when player joins mission (includes both mission start and JIP).
-	See: https://community.bistudio.com/wiki/Functions_Library_(Arma_3)#Initialization_Order
-		for details about when the script is exactly executed.
+  Executed locally when player joins mission (includes both mission start and JIP).
+  See: https://community.bistudio.com/wiki/Functions_Library_(Arma_3)#Initialization_Order
+    for details about when the script is exactly executed.
 
-	Parameters:
-		0 - Player object
-		1- Did player JiP
+  Parameters:
+    0 - Player object
+    1- Did player JiP
 */
 
 if (!hasInterface) exitWith {};

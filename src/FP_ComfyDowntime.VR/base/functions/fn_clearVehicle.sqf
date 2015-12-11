@@ -1,25 +1,25 @@
 /*
-	Function: FP_fnc_clearVehicle
+  Function: FP_fnc_clearVehicle
 
-	API:
-		Single (server or client)
+  API:
+    Single (server or client)
 
-	Description:
-		Clears a vehicle cargo etc
+  Description:
+    Clears a vehicle cargo etc
 
-	Parameters:
-	   _veh - Vehicle
+  Parameters:
+     _veh - Vehicle
 
-	Example:
-	(begin example)
+  Example:
+  (begin example)
         [car1] call FP_fnc_clearVehicle;
-	(end)
+  (end)
 
-	Returns:
-	   BOOL
+  Returns:
+     BOOL
 
-	Author:
-	   Cuel 2015-04-23
+  Author:
+     Cuel 2015-04-23
 */
 
 if (!params [
