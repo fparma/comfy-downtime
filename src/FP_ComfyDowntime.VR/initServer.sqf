@@ -11,6 +11,7 @@ if (({if ((side _x) isEqualTo west) exitWith {1}} count _allUnits) isEqualTo 0) 
 if (({if ((side _x) isEqualTo resistance) exitWith {1}} count _allUnits) isEqualTo 0) then {createCenter resistance};
 if (({if ((side _x) isEqualTo civilian) exitWith {1}} count _allUnits) isEqualTo 0) then {createCenter civilian};
 
+// Add all objects to the curator on mission begin
 {
 	_curator = _x;
 	_curator addCuratorEditableObjects [vehicles,true];
@@ -19,4 +20,7 @@ if (({if ((side _x) isEqualTo civilian) exitWith {1}} count _allUnits) isEqualTo
 	_curator addCuratorEditableObjects [(allMissionObjects "Ammo"),false];
 	_curator setCuratorWaypointCost 0;
 	{_curator setCuratorCoef [_x, 0]} forEach ["place","edit","delete","destroy","group","synchronize"];
-}forEach allCurators;
+} forEach allCurators;
+
+// Init Dynamic Group Manager
+["Initialize", [true]] call BIS_fnc_dynamicGroups;

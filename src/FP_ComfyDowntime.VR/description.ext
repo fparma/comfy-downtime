@@ -1,5 +1,4 @@
-class Header
-{
+class Header {
 	gameType = Coop;
 	minPlayers = 1;
 	maxPlayers = 64;
@@ -50,7 +49,7 @@ wreckRemovalMaxTime = 240;
 
 respawndelay = 3;
 respawnDialog = 0;
-respawn = 2;
+respawn = 3;
 respawnOnStart = 1;
 
 respawnTemplates[] = {"MenuPosition","MenuInventory"};
