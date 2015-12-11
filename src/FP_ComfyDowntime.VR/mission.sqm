@@ -140,6 +140,7 @@ class Mission
 					player="PLAYER COMMANDER";
 					leader=1;
 					skill=0.60000002;
+          text="gm";
 					description="High Command (Game master)";
 				};
 			};
