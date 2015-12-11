@@ -1525,7 +1525,7 @@ class Mission
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
-			init="0 = [""AmmoboxInit"",[this,true]] spawn BIS_fnc_arsenal; this allowDamage false;";
+			init="this spawn FPC_fnc_setupResupplyBox;";
 		};
 		class Item1
 		{
@@ -1534,7 +1534,7 @@ class Mission
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
-			init="0 = [""AmmoboxInit"",[this,true]] spawn BIS_fnc_arsenal; this allowDamage false;";
+			init="this spawn FPC_fnc_setupResupplyBox;";
 		};
 		class Item2
 		{
@@ -1543,7 +1543,7 @@ class Mission
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
-			init="0 = [""AmmoboxInit"",[this,true]] spawn BIS_fnc_arsenal; this allowDamage false;";
+			init="this spawn FPC_fnc_setupResupplyBox;";
 		};
 		class Item3
 		{
@@ -1552,7 +1552,7 @@ class Mission
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
-			init="0 = [""AmmoboxInit"",[this,true]] spawn BIS_fnc_arsenal; this allowDamage false;";
+			init="this spawn FPC_fnc_setupResupplyBox;";
 		};
 		class Item4
 		{
@@ -1561,7 +1561,7 @@ class Mission
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
-			init="0 = [""AmmoboxInit"",[this,true]] spawn BIS_fnc_arsenal; this allowDamage false;";
+			init="this spawn FPC_fnc_setupResupplyBox;";
 		};
 		class Item5
 		{
@@ -1570,7 +1570,7 @@ class Mission
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
-			init="0 = [""AmmoboxInit"",[this,true]] spawn BIS_fnc_arsenal; this allowDamage false;";
+			init="this spawn FPC_fnc_setupResupplyBox;";
 		};
 		class Item6
 		{
@@ -1579,7 +1579,7 @@ class Mission
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
-			init="0 = [""AmmoboxInit"",[this,true]] spawn BIS_fnc_arsenal; this allowDamage false;";
+			init="this spawn FPC_fnc_setupResupplyBox;";
 		};
 		class Item7
 		{
@@ -1588,7 +1588,7 @@ class Mission
 			side="EMPTY";
 			vehicle="I_CargoNet_01_ammo_F";
 			skill=0.60000002;
-			init="0 = [""AmmoboxInit"",[this,true]] spawn BIS_fnc_arsenal; this allowDamage false;";
+			init="this spawn FPC_fnc_setupResupplyBox;";
 		};
 	};
 };

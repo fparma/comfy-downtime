@@ -18,6 +18,13 @@ class CfgFunctions {
       class disableWeapons;
     };
   };
+  class FP_CUSTOM {
+    tag="FPC";
+    class functions {
+      file = "base\functions\custom";
+      class setupResupplyBox;
+    }
+  }
 };
 
 class Extended_PreInit_EventHandlers {
