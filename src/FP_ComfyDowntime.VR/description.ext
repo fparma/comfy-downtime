@@ -16,6 +16,7 @@ class CfgFunctions {
 			class getPlayer;
 			class setVehicleName;
 			class clearVehicle;
+			class disableWeapons;
 			class baseInit {
 				file ="base\init.sqf";
 				preInit = 1;
