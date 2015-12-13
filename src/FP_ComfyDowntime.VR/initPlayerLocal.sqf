@@ -27,8 +27,9 @@ player addEventHandler ["Respawn", {
   player setCustomAimCoef 0.6;
   
   [] spawn {
+    player allowDamage false;
     while {alive player} do {
-      if ((player distance2D SPAWNBOARD) < 20) then {player allowDamage false;} else {player allowDamage true;};
+      if ((player distance2D SPAWNBOARD) < 100) then {player allowDamage false;} else {player allowDamage true;};
       sleep 5;
     };
   };

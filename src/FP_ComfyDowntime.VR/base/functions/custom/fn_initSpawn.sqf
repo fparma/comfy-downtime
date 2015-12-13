@@ -29,6 +29,7 @@ switch (_mapname) do {
 
 //Spawn Whiteboard that Gives access to Arsenal and Everything
 SPAWNBOARD = "MapBoard_altis_F" createVehicle [_coords select 0, (_coords select 1) + 3, 0];
+SPAWNBOARD enableSimulationGlobal false;
 [SPAWNBOARD] remoteExec ["FPC_fnc_setupResupplyBox", 0, true];
 
 // Attach the Initial Respawn to the Whiteboard
