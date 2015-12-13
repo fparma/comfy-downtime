@@ -36,3 +36,20 @@ SPAWNBOARD enableSimulationGlobal false;
 SPAWN_WEST setPos [_coords select 0, _coords select 1, 0];
 SPAWN_WEST attachTo [SPAWNBOARD];
 
+//Spawn the Markers for the Respawn Zone
+SPAWN_MARKER_ZONE = createMarker ["SPAWN_MARKER_ZONE", getPos SPAWNBOARD];
+SPAWN_MARKER_ZONE setMarkerShape "ELLIPSE";
+SPAWN_MARKER_ZONE setMarkerSize [100,100];
+SPAWN_MARKER_ZONE setMarkerColor "ColorBLUFOR";
+SPAWN_MARKER_ZONE setMarkerBrush "SolidBorder";
+
+// Ensure that the Marker is always over the Spawn
+[] spawn {
+  while {alive SPAWNBOARD} do {
+    SPAWN_MARKER_ZONE setMarkerPos (getPos SPAWNBOARD);
+    sleep 15;
+  };
+};
+
+// Make the Box Visible for the Curator
+[SPAWNBOARD] remoteExecCall ["FP_fnc_addToCurators", 2];
