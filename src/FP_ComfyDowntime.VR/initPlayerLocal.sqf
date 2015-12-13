@@ -33,7 +33,7 @@ FP_oldAce_detonate = ACE_explosives_fnc_detonateExplosive;
 // Init the Spawn Protection
 player addEventHandler ["Respawn", {
   [_this select 0] remoteExecCall ["FP_fnc_addToCurators", 2];
-  waitUntil {alive player}; 
+  waitUntil {alive player};
   if (primaryWeapon player != "") then {[{player switchMove "amovpercmstpslowwrfldnon";}, []] call ACE_common_fnc_execNextFrame;};
   [] spawn {
     LASTSTATUS = false;
