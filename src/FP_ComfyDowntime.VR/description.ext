@@ -15,7 +15,6 @@ class CfgFunctions {
       class getPlayer;
       class setVehicleName;
       class clearVehicle;
-      class disableWeapons;
     };
   };
   class FP_CUSTOM {

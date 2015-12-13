@@ -1,14 +1,5 @@
-// Start the Map lookup table. Too lazy to create a random spawn system.
-
-/* Get Info 
-_name = toLower(worldName);
-_pos = getPos player;
-_info = [
-  _name,
-  [_pos select 0, _pos select 1]
-];
-copyToClipboard str _info;
-*/
+// Get Info 
+// _name = toLower(worldName);_pos = getPos player;_info = [_name,[_pos select 0, _pos select 1]];copyToClipboard str _info;
 
 _coords = [0,0];
 _mapname = toLower(worldName);
