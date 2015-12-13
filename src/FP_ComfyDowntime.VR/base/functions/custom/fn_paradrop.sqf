@@ -1,27 +1,3 @@
-/*
-  Function: FPC_fnc_paradrop
-
-  API:
-    Single (server or client)
-
-  Description:
-    Opens the Menu for a player to drop via parachute in a zone
-
-  Parameters:
-     None
-
-  Example:
-  (begin example)
-        [] call FPC_fnc_paradrop;
-  (end)
-
-  Returns:
-     BOOL
-
-  Author:
-     Kaukassus 2015-12-11
-*/
-
 params ["_unit"];
 hintC "Select Altitude and Designate LZ for HALO Jump on the map";
 
