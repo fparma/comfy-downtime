@@ -44,4 +44,7 @@ _action_bandage = ["fpc_bandage", "Fix yourself up", "", {
 [_object, 0, ["ACE_MainActions"], _action_bandage] spawn ace_interact_menu_fnc_addActionToObject;
 [_object, 0, ["ACE_MainActions"], _action_paradrop] spawn ace_interact_menu_fnc_addActionToObject;
 
+// Arsenal as Addaction
+["AmmoboxInit",[_object,true]] spawn BIS_fnc_arsenal;
+
 true

@@ -28,3 +28,6 @@ if ([civilian] call _sideHasNoUnits) then {createCenter civilian};
 
 // Init Dynamic Group Manager
 ["Initialize", [true]] call BIS_fnc_dynamicGroups;
+
+//Init the Spawn
+[] spawn FPC_fnc_initSpawn;

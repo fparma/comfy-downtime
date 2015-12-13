@@ -24,6 +24,7 @@ class CfgFunctions {
       file = "base\functions\custom";
       class setupResupplyBox;
       class paradrop;
+      class initSpawn;
     }
   }
 };
@@ -50,7 +51,7 @@ wreckRemovalMaxTime = 800;
 
 //////////////////////////////////////////// Respawn settings ////////////////////////////////////////////
 
-respawndelay = 3;
+respawndelay = 5;
 respawnDialog = 0;
 respawn = 3;
 respawnOnStart = 1;
