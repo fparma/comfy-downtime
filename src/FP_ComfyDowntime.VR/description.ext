@@ -1,9 +1,13 @@
+OnLoadName = "FP Comfy Downtime 2.0";
+onLoadMission="Version 2.0, More comfy than ever!";
+loadScreen = "fp_misc\img\fp_logo.paa";
+author="Kaukassus | 2015";
+
 class Header {
   gameType = Coop;
   minPlayers = 1;
   maxPlayers = 64;
 };
-disabledAI = 1;
 
 class CfgFunctions {
   createShortcuts = 1;
@@ -12,8 +16,6 @@ class CfgFunctions {
     class functions {
       file = "base\functions";
       class addToCurators;
-      class getPlayer;
-      class setVehicleName;
       class clearVehicle;
     };
   };
@@ -34,10 +36,6 @@ class Extended_PreInit_EventHandlers {
   };
 };
 
-//////////////////////////////////////////// Cleanup settings ////////////////////////////////////////////
-
-
-// Clean up settings
 corpseManagerMode = 1;
 corpseLimit = 20;
 corpseRemovalMinTime = 120;
@@ -48,8 +46,6 @@ wreckLimit = 10;
 wreckRemovalMinTime = 300;
 wreckRemovalMaxTime = 800;
 
-//////////////////////////////////////////// Respawn settings ////////////////////////////////////////////
-
 respawndelay = 5;
 respawnDialog = 0;
 respawn = 3;
@@ -57,18 +53,12 @@ respawnOnStart = 1;
 
 respawnTemplates[] = {"MenuPosition","MenuInventory"};
 
-//////////////////////////////////////////// Mission name etc settings ////////////////////////////////////////////
-OnLoadName = "FP Comfy Downtime 2.0";
-onLoadMission="Version 2.0, More comfy than ever!";
-loadScreen = "fp_misc\img\fp_logo.paa";
-author="Kaukassus | 2015";
-//////////////////////////////////////////// DO NOT EDIT ////////////////////////////////////////////
-
 showGPS = 1;
 showMap = 1;
 showWatch = 1;
 showCompass = 1;
 joinUnassigned = 1;
+disabledAI = 1;
 allowFunctionsLog = 0;
 enableDebugConsole = 1;
 onLoadIntroTime = false;
