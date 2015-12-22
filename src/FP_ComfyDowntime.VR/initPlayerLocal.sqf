@@ -16,7 +16,10 @@ player addEventHandler ["Respawn", {
   // Set Custom Fatigue Settings
   player setCustomAimCoef 0.6;
   
-  [] spawn {
-    while {alive player} do {if ((player distance2D SPAWNBOARD) < 100) then {player allowDamage false;} else {player allowDamage true;};sleep 5;};
+  _spawnProtection = "SpawnProtection" call BIS_fnc_getParamValue;
+  if (_spawnProtection == 0) then {
+    [] spawn {
+      while {alive player} do {if ((player distance2D SPAWNBOARD) < 100) then {player allowDamage false;} else {player allowDamage true;};sleep 5;};
+    };
   };
 }];

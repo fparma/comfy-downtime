@@ -25,7 +25,6 @@ SPAWNBOARD enableSimulationGlobal false;
 
 // Attach the Initial Respawn to the Whiteboard
 SPAWN_WEST setPos [_coords select 0, _coords select 1, 0];
-SPAWN_WEST attachTo [SPAWNBOARD];
 
 //Spawn the Markers for the Respawn Zone
 SPAWN_MARKER_ZONE = createMarker ["SPAWN_MARKER_ZONE", getPos SPAWNBOARD];
@@ -37,7 +36,8 @@ SPAWN_MARKER_ZONE setMarkerBrush "SolidBorder";
 // Ensure that the Marker is always over the Spawn
 [] spawn {
   while {alive SPAWNBOARD} do {
-    SPAWN_MARKER_ZONE setMarkerPos (getPos SPAWNBOARD);
+    SPAWN_MARKER_ZONE setMarkerPos ;
+    SPAWN_WEST setPos (getPos SPAWNBOARD);
     sleep 15;
   };
 };

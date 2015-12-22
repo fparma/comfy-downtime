@@ -36,6 +36,15 @@ class Extended_PreInit_EventHandlers {
   };
 };
 
+class Params {
+  class SpawnProtection {
+    title = "Enable Spawn Protection";
+    values[] = {0,1};
+    texts[] = {"No","Yes"};
+    default = 0;
+  };
+};
+
 corpseManagerMode = 1;
 corpseLimit = 20;
 corpseRemovalMinTime = 120;
