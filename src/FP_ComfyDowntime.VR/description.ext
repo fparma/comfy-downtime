@@ -59,12 +59,6 @@ class CfgFunctions {
   }
 };
 
-class Extended_PreInit_EventHandlers {
-  class FPARMA {
-    init = "[] call compile preProcessFileLineNumbers 'base\init.sqf'";
-  };
-};
-
 class Params {
   class SpawnProtection {
     title = "Enable Spawn Protection";
