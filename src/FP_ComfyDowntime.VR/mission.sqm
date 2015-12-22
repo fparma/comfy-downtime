@@ -1,73 +1,13 @@
 version=12;
 class Mission
 {
-	addOns[]=
-	{
-		"ace_medical",
-		"A3_Data_F_Curator_Characters",
-		"a3_characters_f",
-		"3DEN",
-		"a3_modules_f_curator_curator",
-		"ace_map_gestures",
-		"ace_winddeflection",
-		"ace_map",
-		"ace_captives",
-		"ace_explosives",
-		"ace_respawn",
-		"ace_microdagr",
-		"ace_mk6mortar",
-		"ace_nightvision",
-		"ace_finger",
-		"ace_sitting",
-		"acre_api",
-		"ace_zeus",
-		"ace_advanced_ballistics",
-		"ace_rearm",
-		"ace_cargo",
-		"A3_Modules_F",
-		"ace_refuel",
-		"ace_repair",
-		"ace_medical_menu",
-		"A3_Modules_F_Multiplayer",
-		"ace_weather",
-		"map_vr"
-	};
-	addOnsAuto[]=
-	{
-		"ace_medical",
-		"A3_Data_F_Curator_Characters",
-		"a3_characters_f",
-		"3DEN",
-		"a3_modules_f_curator_curator",
-		"ace_map_gestures",
-		"ace_winddeflection",
-		"ace_map",
-		"ace_captives",
-		"ace_explosives",
-		"ace_respawn",
-		"ace_microdagr",
-		"ace_mk6mortar",
-		"ace_nightvision",
-		"ace_finger",
-		"ace_sitting",
-		"acre_api",
-		"ace_zeus",
-		"ace_advanced_ballistics",
-		"ace_rearm",
-		"ace_cargo",
-		"A3_Modules_F",
-		"ace_refuel",
-		"ace_repair",
-		"ace_medical_menu",
-		"A3_Modules_F_Multiplayer",
-		"ace_weather",
-		"map_vr"
-	};
+	addOns[]={};
+	addOnsAuto[]={};
 	randomSeed=11895797;
 	class Intel
 	{
-		briefingName="FP Comfy Downtime 2.0";
-		overviewText="Version 2.0, More comfy than ever!";
+		briefingName="FP Comfy Downtime 2.5";
+		overviewText="Version 2.5, Arma has never been so comfy.";
 		resistanceWest=0;
 		startWeather=0;
 		startWind=0;
@@ -1478,14 +1418,8 @@ class Mission
 };
 class Intro
 {
-	addOns[]=
-	{
-		"map_vr"
-	};
-	addOnsAuto[]=
-	{
-		"map_vr"
-	};
+	addOns[]={};
+	addOnsAuto[]={};
 	randomSeed=8961784;
 	class Intel
 	{
@@ -1505,14 +1439,8 @@ class Intro
 };
 class OutroWin
 {
-	addOns[]=
-	{
-		"map_vr"
-	};
-	addOnsAuto[]=
-	{
-		"map_vr"
-	};
+	addOns[]={};
+	addOnsAuto[]={};
 	randomSeed=11319044;
 	class Intel
 	{
@@ -1532,14 +1460,8 @@ class OutroWin
 };
 class OutroLoose
 {
-	addOns[]=
-	{
-		"map_vr"
-	};
-	addOnsAuto[]=
-	{
-		"map_vr"
-	};
+	addOns[]={};
+	addOnsAuto[]={};
 	randomSeed=13537339;
 	class Intel
 	{
