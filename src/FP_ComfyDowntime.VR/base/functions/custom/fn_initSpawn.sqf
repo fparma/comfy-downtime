@@ -36,7 +36,7 @@ SPAWN_MARKER_ZONE setMarkerBrush "SolidBorder";
 // Ensure that the Marker is always over the Spawn
 [] spawn {
   while {alive SPAWNBOARD} do {
-    SPAWN_MARKER_ZONE setMarkerPos ;
+    SPAWN_MARKER_ZONE setMarkerPos (getPos SPAWNBOARD);
     SPAWN_WEST setPos (getPos SPAWNBOARD);
     sleep 15;
   };
