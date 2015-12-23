@@ -1,4 +1,4 @@
-OnLoadName = "FP Comfy Downtime 2.5";
+OnLoadName = "FP Comfy Downtime 2.6";
 onLoadMission="Version 2.5, Arma has never been so comfy.";
 loadScreen = "fp_misc\img\fp_logo.paa";
 author="Kaukassus | 2016";

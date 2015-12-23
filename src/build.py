@@ -24,7 +24,7 @@ pbofile = folder + missionname + ending + ".pbo"
 
 for w in worlds:
     if (ending != "." + w):
-        newpbo = folder + missionname + "2_51." + w + ".pbo"
+        newpbo = folder + missionname + "2_6." + w + ".pbo"
         shutil.copy(pbofile, newpbo)
 
 
