@@ -1,0 +1,69 @@
+OnLoadName = "FP Comfy Downtime 2.6";
+onLoadMission="Version 2.5, Arma has never been so comfy.";
+loadScreen = "fp_misc\img\fp_logo.paa";
+author="Kaukassus | 2016";
+
+corpseManagerMode = 1;
+corpseLimit = 20;
+corpseRemovalMinTime = 120;
+corpseRemovalMaxTime = 300;
+
+wreckManagerMode = 1;
+wreckLimit = 10;
+wreckRemovalMinTime = 300;
+wreckRemovalMaxTime = 800;
+
+respawndelay = 5;
+respawnDialog = 0;
+respawn = 3;
+respawnOnStart = 1;
+
+respawnTemplates[] = {"MenuPosition"};
+
+showGPS = 1;
+showMap = 1;
+showWatch = 1;
+showCompass = 1;
+joinUnassigned = 1;
+disabledAI = 1;
+allowFunctionsLog = 0;
+enableDebugConsole = 1;
+onLoadIntroTime = false;
+enableItemsDropping = 0;
+onLoadMissionTime = false;
+
+class Header {
+  gameType = Coop;
+  minPlayers = 1;
+  maxPlayers = 64;
+};
+
+class CfgFunctions {
+  createShortcuts = 1;
+  class FP {
+    tag="FP";
+    class functions {
+      file = "base\functions";
+      class addToCurators;
+      class clearVehicle;
+    };
+  };
+  class FP_CUSTOM {
+    tag="FPC";
+    class functions {
+      file = "base\functions\custom";
+      class setupResupplyBox;
+      class paradrop;
+      class initSpawn;
+    }
+  }
+};
+
+class Params {
+  class SpawnProtection {
+    title = "Enable Spawn Protection";
+    values[] = {0,1};
+    texts[] = {"No","Yes"};
+    default = 0;
+  };
+};
