@@ -42,7 +42,7 @@ fn main() {
 
   let cwd: String = format!("{}\\", get_cwd());
 
-  prepate_comfyDowntime(cwd.as_ref());
+  prepare_comfyDowntime(cwd.as_ref());
 
   // Mission Generation for all Maps
   for map in worlds {
@@ -52,7 +52,14 @@ fn main() {
   }
 }
 
-fn prepate_comfyDowntime(path: &str) {
+/*
+  This function prepares the ComfyDowntime mission to be packed.
+  It copies the main ComfyDowntime folder into 3 seperate ones. 1 for each major faction in the Armaverse.
+  BLUFOR, OPFOR and INDFOR.
+  
+  Along with this, it edits the mission.sqm and description.ext files and Replaces the units, sides and mission name to fit the currently used faction.
+*/
+fn prepare_comfyDowntime(path: &str) {
   let mission_downtime = "FP_ComfyDowntime";
   let dirpath: String = format!("{}{}.VR", path, mission_downtime);
   let mission_str: &str = "COMFY_USE_B = false; COMFY_USE_O = false; COMFY_USE_I = false;";
@@ -107,6 +114,12 @@ fn prepate_comfyDowntime(path: &str) {
   fs::write(format!("{}_Indfor.\\description.ext", mission_downtime).as_ref(), description_indfor.as_ref());
 }
 
+/*
+  This function Executes the PBOConsole Command and builds the Actual PBO Files for the
+  ComfyDowntime Mission.
+  
+  It creates 3 PBO Files. One for Each Major Faction in Arma. BLUFOR; OPFOR and INFDOR/GUER
+*/
 fn compile_comfyDowntime(path: &str, map: &str) {
   let dirpath_blufor: String = format!("{}FP_ComfyDowntime_Blufor", path);
   let newpath_blufor: String = format!("{}FP_ComfyDowntime_Blufor.{}.pbo", path, map);
@@ -122,6 +135,9 @@ fn compile_comfyDowntime(path: &str, map: &str) {
   command::run("PBOConsole", &["-pack", dirpath_indfor.as_ref(), newpath_indfor.as_ref()]);
 }
 
+/*
+  This function Executes the PBOConsole Command and builds the Actual BPO Files for the ComfyCompetition Mission.
+*/
 fn compile_comfyCompetition(path: &str, map: &str) {
   let dirpath: String = format!("{}FP_ComfyCompetition.VR", path);
   let newpath: String = format!("{}FP_ComfyCompetition.{}.pbo", path, map);
@@ -129,7 +145,14 @@ fn compile_comfyCompetition(path: &str, map: &str) {
 }
 
 
-// 
+/*
+  This function returns the Current working directory as a String.
+  If combined with another path, an \\ or / might have to be added to
+  the End of this String.
+  
+  for this, use the following format:
+  format!("{}\\", get_cwd())
+*/
 fn get_cwd() -> String {
   let pathbuf = env::current_dir().unwrap();
   let path: &str = pathbuf.to_str().unwrap();
