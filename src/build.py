@@ -12,6 +12,14 @@ import shutil
 # };
 # copyToClipboard str _cfgVehicles_categories;
 
+
+def createComfyDowntime():
+
+
+
+
+
+
 worlds = ["VR","utes","Sara","SaraLite","Sara_dbe1","Chernarus","Chernarus_Summer","Porto","Intro","IsolaDiCapraia","Mountains_ACR","Takistan","Zargabad","Woodland_ACR","Bootcamp_ACR","Desert_E","ProvingGrounds_PMC","Shapur_BAF","fata","Stratis","anim_helvantis_v2","Altis","pja310"]
 
 missionname = "FP_ComfyDowntime"
@@ -23,9 +31,9 @@ subprocess.call("PBOConsole -pack " + folder + missionname + ending + " " + fold
 pbofile = folder + missionname + ending + ".pbo"
 
 for w in worlds:
-    if (ending != "." + w):
-        newpbo = folder + missionname + "2_6." + w + ".pbo"
-        shutil.copy(pbofile, newpbo)
+  if (ending != "." + w):
+    newpbo = folder + missionname + "2_6." + w + ".pbo"
+    shutil.copy(pbofile, newpbo)
 
 
 # The Following SQF Code copies the world Array into your clipboard
@@ -33,3 +41,6 @@ for w in worlds:
 #_configs = "diag_log configName _x; true" configClasses (configfile >> "CfgWorldList");
 #copyToClipboard str _configs;
 #
+
+
+  
