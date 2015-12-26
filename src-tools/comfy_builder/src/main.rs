@@ -40,8 +40,6 @@ fn main() {
     "pja310"
   ];
 
-  let mission_competition = "FP_ComfyCompetition";
-  let ending = ".VR";
   let cwd: String = format!("{}\\", get_cwd());
 
   prepate_comfyDowntime(cwd.as_ref());
@@ -50,6 +48,7 @@ fn main() {
   for map in worlds {
     println!("Generating missions for Map: {}", map);
     compile_comfyDowntime(cwd.as_ref(), map);
+    compile_comfyCompetition(cwd.as_ref(), map);
   }
 }
 
@@ -83,7 +82,6 @@ fn prepate_comfyDowntime(path: &str) {
 }
 
 fn compile_comfyDowntime(path: &str, map: &str) {
-  let mission_downtime = "FP_ComfyDowntime";
   let dirpath_blufor: String = format!("{}FP_ComfyDowntime_Blufor", path);
   let newpath_blufor: String = format!("{}FP_ComfyDowntime_Blufor.{}.pbo", path, map);
   
@@ -98,6 +96,13 @@ fn compile_comfyDowntime(path: &str, map: &str) {
   command::run("PBOConsole", &["-pack", dirpath_opfor.as_ref(), newpath_opfor.as_ref()]);
   command::run("PBOConsole", &["-pack", dirpath_indfor.as_ref(), newpath_indfor.as_ref()]);
 }
+
+fn compile_comfyCompetition(path: &str, map: &str) {
+  let dirpath: String = format!("{}FP_ComfyCompetition.VR", path);
+  let newpath: String = format!("{}FP_ComfyCompetition.{}.pbo", path, map);
+  command::run("PBOConsole", &["-pack", dirpath.as_ref(), newpath.as_ref()]);
+}
+
 
 // 
 fn get_cwd() -> String {
