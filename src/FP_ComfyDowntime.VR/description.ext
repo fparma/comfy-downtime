@@ -18,7 +18,7 @@ respawnDialog = 0;
 respawn = 3;
 respawnOnStart = 1;
 
-respawnTemplates[] = {"MenuPosition"};
+respawnTemplates[] = {"MenuPosition", "MenuInventory"};
 
 showGPS = 1;
 showMap = 1;
