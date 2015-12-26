@@ -1,6 +1,6 @@
 // Get Info 
 // _name = toLower(worldName);_pos = getPos player;_info = [_name,[_pos select 0, _pos select 1]];copyToClipboard str _info;
-// _name = toLower(worldName);_pos = getPos player;_info = [_pos select 0, _pos select 1];copyToClipboard str _info;
+// _pos = getPos player;_info = [_pos select 0, _pos select 1];copyToClipboard str _info;
 
 _b_coords = [0,0];
 _o_coords = [0,0];
@@ -22,57 +22,52 @@ switch (_mapname) do {
   default {_b_coords = [0,0];_o_coords = [0,0];_i_coords = [0,0];};
 };
 
-//Spawn Whiteboard that Gives access to Arsenal and Everything
-SPAWNBOARD_B = "MapBoard_altis_F" createVehicle [_b_coords select 0, (_b_coords select 1) + 3, 0];
-SPAWNBOARD_O = "MapBoard_altis_F" createVehicle [_o_coords select 0, (_o_coords select 1) + 3, 0];
-SPAWNBOARD_I = "MapBoard_altis_F" createVehicle [_i_coords select 0, (_i_coords select 1) + 3, 0];
-SPAWNBOARD_B enableSimulationGlobal false;
-SPAWNBOARD_O enableSimulationGlobal false;
-SPAWNBOARD_I enableSimulationGlobal false;
-[SPAWNBOARD_B] remoteExec ["FPC_fnc_setupResupplyBox", 0, true];
-[SPAWNBOARD_O] remoteExec ["FPC_fnc_setupResupplyBox", 0, true];
-[SPAWNBOARD_I] remoteExec ["FPC_fnc_setupResupplyBox", 0, true];
+if (COMFY_USE_B) then {
+  SPAWNBOARD_B = "MapBoard_altis_F" createVehicle [_b_coords select 0, (_b_coords select 1) + 3, 0];
+  SPAWNBOARD_B enableSimulationGlobal false;
+  [SPAWNBOARD_B] remoteExec ["FPC_fnc_setupResupplyBox", 0, true];
+  SPAWN_WEST setPos [_b_coords select 0, _b_coords select 1, 0];
+  SPAWN_MARKER_ZONE_B = createMarker ["SPAWN_MARKER_ZONE_B", getPos SPAWNBOARD_B];
+  SPAWN_MARKER_ZONE_B setMarkerShape "ELLIPSE";
+  SPAWN_MARKER_ZONE_B setMarkerSize [100,100];
+  SPAWN_MARKER_ZONE_B setMarkerColor "ColorBLUFOR";
+  SPAWN_MARKER_ZONE_B setMarkerBrush "SolidBorder";
+  [SPAWNBOARD_B] remoteExecCall ["FP_fnc_addToCurators", 2];
+};
 
-// Attach the Initial Respawn to the Whiteboard
-SPAWN_WEST setPos [_b_coords select 0, _b_coords select 1, 0];
-SPAWN_EAST setPos [_o_coords select 0, _o_coords select 1, 0];
-SPAWN_INDEP setPos [_i_coords select 0, _i_coords select 1, 0];
+if (COMFY_USE_O) then {
+  SPAWNBOARD_O = "MapBoard_altis_F" createVehicle [_o_coords select 0, (_o_coords select 1) + 3, 0];
+  SPAWNBOARD_O enableSimulationGlobal false;
+  [SPAWNBOARD_O] remoteExec ["FPC_fnc_setupResupplyBox", 0, true];
+  SPAWN_EAST setPos [_o_coords select 0, _o_coords select 1, 0];
+  SPAWN_MARKER_ZONE_O = createMarker ["SPAWN_MARKER_ZONE_O", getPos SPAWNBOARD_O];
+  SPAWN_MARKER_ZONE_O setMarkerShape "ELLIPSE";
+  SPAWN_MARKER_ZONE_O setMarkerSize [100,100];
+  SPAWN_MARKER_ZONE_O setMarkerColor "ColorOPFOR";
+  SPAWN_MARKER_ZONE_O setMarkerBrush "SolidBorder";
+  [SPAWNBOARD_O] remoteExecCall ["FP_fnc_addToCurators", 2];
+};
 
-//Spawn the Markers for the Respawn Zone
-SPAWN_MARKER_ZONE_B = createMarker ["SPAWN_MARKER_ZONE_B", getPos SPAWNBOARD_B];
-SPAWN_MARKER_ZONE_B setMarkerShape "ELLIPSE";
-SPAWN_MARKER_ZONE_B setMarkerSize [100,100];
-SPAWN_MARKER_ZONE_B setMarkerColor "ColorBLUFOR";
-SPAWN_MARKER_ZONE_B setMarkerBrush "SolidBorder";
+if (COMFY_USE_I) then {
+  SPAWNBOARD_I = "MapBoard_altis_F" createVehicle [_i_coords select 0, (_i_coords select 1) + 3, 0];
+  SPAWNBOARD_I enableSimulationGlobal false;
+  [SPAWNBOARD_I] remoteExec ["FPC_fnc_setupResupplyBox", 0, true];
+  SPAWN_INDEP setPos [_i_coords select 0, _i_coords select 1, 0];
+  SPAWN_MARKER_ZONE_I = createMarker ["SPAWN_MARKER_ZONE_I", getPos SPAWNBOARD_I];
+  SPAWN_MARKER_ZONE_I setMarkerShape "ELLIPSE";
+  SPAWN_MARKER_ZONE_I setMarkerSize [100,100];
+  SPAWN_MARKER_ZONE_I setMarkerColor "ColorIndependent";
+  SPAWN_MARKER_ZONE_I setMarkerBrush "SolidBorder";
+  [SPAWNBOARD_I] remoteExecCall ["FP_fnc_addToCurators", 2];
+};
 
-SPAWN_MARKER_ZONE_O = createMarker ["SPAWN_MARKER_ZONE_O", getPos SPAWNBOARD_O];
-SPAWN_MARKER_ZONE_O setMarkerShape "ELLIPSE";
-SPAWN_MARKER_ZONE_O setMarkerSize [100,100];
-SPAWN_MARKER_ZONE_O setMarkerColor "ColorOPFOR";
-SPAWN_MARKER_ZONE_O setMarkerBrush "SolidBorder";
-
-SPAWN_MARKER_ZONE_I = createMarker ["SPAWN_MARKER_ZONE_I", getPos SPAWNBOARD_I];
-SPAWN_MARKER_ZONE_I setMarkerShape "ELLIPSE";
-SPAWN_MARKER_ZONE_I setMarkerSize [100,100];
-SPAWN_MARKER_ZONE_I setMarkerColor "ColorIndependent";
-SPAWN_MARKER_ZONE_I setMarkerBrush "SolidBorder";
 
 // Ensure that the Marker is always over the Spawn
 [] spawn {
   while {alive SPAWN_WEST} do {
-    SPAWN_MARKER_ZONE_B setMarkerPos (getPos SPAWNBOARD_B);
-    SPAWN_WEST setPos (getPos SPAWNBOARD_B);
-    
-    SPAWN_MARKER_ZONE_O setMarkerPos (getPos SPAWNBOARD_O);
-    SPAWN_EAST setPos (getPos SPAWNBOARD_O);
-    
-    SPAWN_MARKER_ZONE_I setMarkerPos (getPos SPAWNBOARD_I);
-    SPAWN_INDEP setPos (getPos SPAWNBOARD_I);
+    if (COMFY_USE_B) then {SPAWN_MARKER_ZONE_B setMarkerPos (getPos SPAWNBOARD_B);SPAWN_WEST setPos (getPos SPAWNBOARD_B);};
+    if (COMFY_USE_O) then {SPAWN_MARKER_ZONE_O setMarkerPos (getPos SPAWNBOARD_O);SPAWN_EAST setPos (getPos SPAWNBOARD_O);};
+    if (COMFY_USE_I) then {SPAWN_MARKER_ZONE_I setMarkerPos (getPos SPAWNBOARD_I);SPAWN_INDEP setPos (getPos SPAWNBOARD_I);};
     sleep 15;
   };
 };
-
-// Make the Box Visible for the Curator
-[SPAWNBOARD_B] remoteExecCall ["FP_fnc_addToCurators", 2];
-[SPAWNBOARD_O] remoteExecCall ["FP_fnc_addToCurators", 2];
-[SPAWNBOARD_I] remoteExecCall ["FP_fnc_addToCurators", 2];
