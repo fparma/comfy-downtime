@@ -24,7 +24,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=30;
+		items=32;
 		class Item0
 		{
 			side="LOGIC";
@@ -1021,6 +1021,7 @@ class Mission
 					leader=1;
 					skill=0.2;
 					text="server";
+					init="COMFY_USE_B = true; COMFY_USE_O = true; COMFY_USE_I = true;";
 				};
 			};
 		};
@@ -1317,53 +1318,6 @@ class Mission
 				items=1;
 				class Item0
 				{
-					position[]={5.7287793,0,4.6984863};
-					class args
-					{
-						items=4;
-						class Item0
-						{
-							value="Initial Spawn";
-							parentCls="ModuleRespawnPosition_F";
-							typeName="Name";
-						};
-						class Item1
-						{
-							value="0";
-							parentCls="ModuleRespawnPosition_F";
-							typeName="Type";
-						};
-						class Item2
-						{
-							value="1";
-							parentCls="ModuleRespawnPosition_F";
-							typeName="Side";
-						};
-						class Item3
-						{
-							value="2";
-							parentCls="ModuleRespawnPosition_F";
-							typeName="Marker";
-						};
-					};
-					id=43;
-					side="LOGIC";
-					vehicle="ModuleRespawnPosition_F";
-					leader=1;
-					lock="UNLOCKED";
-					skill=0.60000002;
-					text="SPAWN_WEST";
-				};
-			};
-		};
-		class Item29
-		{
-			side="LOGIC";
-			class Vehicles
-			{
-				items=1;
-				class Item0
-				{
 					position[]={0.76470542,5,5.8725586};
 					class args
 					{
@@ -1405,7 +1359,7 @@ class Mission
 							typeName="serverUpdateInterval";
 						};
 					};
-					id=44;
+					id=43;
 					side="LOGIC";
 					vehicle="ace_weather_ModuleSettings";
 					leader=1;
@@ -1414,12 +1368,159 @@ class Mission
 				};
 			};
 		};
+		class Item29
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2.3632245,5,2.3039551};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="Initial Spawn";
+							parentCls="ModuleRespawnPosition_F";
+							typeName="Name";
+						};
+						class Item1
+						{
+							value="0";
+							parentCls="ModuleRespawnPosition_F";
+							typeName="Type";
+						};
+						class Item2
+						{
+							value="1";
+							parentCls="ModuleRespawnPosition_F";
+							typeName="Side";
+						};
+						class Item3
+						{
+							value="2";
+							parentCls="ModuleRespawnPosition_F";
+							typeName="Marker";
+						};
+					};
+					id=44;
+					side="LOGIC";
+					vehicle="ModuleRespawnPosition_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="SPAWN_WEST";
+				};
+			};
+		};
+		class Item30
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3.4752662,5,2.3249512};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="Initial Spawn";
+							parentCls="ModuleRespawnPosition_F";
+							typeName="Name";
+						};
+						class Item1
+						{
+							value="0";
+							parentCls="ModuleRespawnPosition_F";
+							typeName="Type";
+						};
+						class Item2
+						{
+							value="0";
+							parentCls="ModuleRespawnPosition_F";
+							typeName="Side";
+						};
+						class Item3
+						{
+							value="2";
+							parentCls="ModuleRespawnPosition_F";
+							typeName="Marker";
+						};
+					};
+					id=45;
+					side="LOGIC";
+					vehicle="ModuleRespawnPosition_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="SPAWN_EAST";
+				};
+			};
+		};
+		class Item31
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={4.5977998,5,2.3356934};
+					class args
+					{
+						items=4;
+						class Item0
+						{
+							value="Initial Spawn";
+							parentCls="ModuleRespawnPosition_F";
+							typeName="Name";
+						};
+						class Item1
+						{
+							value="0";
+							parentCls="ModuleRespawnPosition_F";
+							typeName="Type";
+						};
+						class Item2
+						{
+							value="2";
+							parentCls="ModuleRespawnPosition_F";
+							typeName="Side";
+						};
+						class Item3
+						{
+							value="2";
+							parentCls="ModuleRespawnPosition_F";
+							typeName="Marker";
+						};
+					};
+					id=46;
+					side="LOGIC";
+					vehicle="ModuleRespawnPosition_F";
+					leader=1;
+					lock="UNLOCKED";
+					skill=0.60000002;
+					text="SPAWN_INDEP";
+				};
+			};
+		};
 	};
 };
 class Intro
 {
-	addOns[]={};
-	addOnsAuto[]={};
+	addOns[]=
+	{
+		"map_vr"
+	};
+	addOnsAuto[]=
+	{
+		"map_vr"
+	};
 	randomSeed=8961784;
 	class Intel
 	{
@@ -1439,8 +1540,14 @@ class Intro
 };
 class OutroWin
 {
-	addOns[]={};
-	addOnsAuto[]={};
+	addOns[]=
+	{
+		"map_vr"
+	};
+	addOnsAuto[]=
+	{
+		"map_vr"
+	};
 	randomSeed=11319044;
 	class Intel
 	{
@@ -1460,8 +1567,14 @@ class OutroWin
 };
 class OutroLoose
 {
-	addOns[]={};
-	addOnsAuto[]={};
+	addOns[]=
+	{
+		"map_vr"
+	};
+	addOnsAuto[]=
+	{
+		"map_vr"
+	};
 	randomSeed=13537339;
 	class Intel
 	{

@@ -1001,6 +1001,7 @@ class Mission
 					leader=1;
 					skill=0.2;
 					text="server";
+					init="COMFY_USE_B = true; COMFY_USE_O = true; COMFY_USE_I = true;";
 				};
 			};
 		};
