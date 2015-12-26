@@ -82,9 +82,9 @@ fn prepate_comfyDowntime(path: &str) {
   mission_opfor = mission_opfor.replace("side=\"WEST\";", "side=\"EAST\";");
   mission_indfor = mission_indfor.replace("side=\"WEST\";", "side=\"GUER\";");
   
-  mission_blufor = mission_blufor.replace("FP Comfy Downtime 3.0", "FP Comfy Downtime 3.0 (BLUFOR)");
-  mission_opfor = mission_opfor.replace("FP Comfy Downtime 3.0", "FP Comfy Downtime 3.0 (OPFOR)");
-  mission_indfor = mission_indfor.replace("FP Comfy Downtime 3.0", "FP Comfy Downtime 3.0 (INDFOR)");
+  mission_blufor = mission_blufor.replace("<!mission_name!>", "FP Comfy Downtime 3.0 (BLUFOR)");
+  mission_opfor = mission_opfor.replace("<!mission_name!>", "FP Comfy Downtime 3.0 (OPFOR)");
+  mission_indfor = mission_indfor.replace("<!mission_name!>", "FP Comfy Downtime 3.0 (INDFOR)");
   
   fs::write(format!("{}_Blufor.\\mission.sqm", mission_downtime).as_ref(), mission_blufor.as_ref());
   fs::write(format!("{}_Opfor.\\mission.sqm", mission_downtime).as_ref(), mission_opfor.as_ref());
@@ -98,9 +98,9 @@ fn prepate_comfyDowntime(path: &str) {
   let description_path_struct = Path::new(description_path_slice);
   let description_file: String = fs::read(&description_path_struct);
   
-  let description_blufor: String = description_file.replace("FP Comfy Downtime 3.0", "FP Comfy Downtime 3.0 (BLUFOR)");
-  let description_opfor: String = description_file.replace("FP Comfy Downtime 3.0", "FP Comfy Downtime 3.0 (OPFOR)");
-  let description_indfor: String = description_file.replace("FP Comfy Downtime 3.0", "FP Comfy Downtime 3.0 (INDFOR)");
+  let description_blufor: String = description_file.replace("<!mission_name!>", "FP Comfy Downtime 3.0 (BLUFOR)");
+  let description_opfor: String = description_file.replace("<!mission_name!>", "FP Comfy Downtime 3.0 (OPFOR)");
+  let description_indfor: String = description_file.replace("<!mission_name!>", "FP Comfy Downtime 3.0 (INDFOR)");
   
   fs::write(format!("{}_Blufor.\\description.ext", mission_downtime).as_ref(), description_blufor.as_ref());
   fs::write(format!("{}_Opfor.\\description.ext", mission_downtime).as_ref(), description_opfor.as_ref());
