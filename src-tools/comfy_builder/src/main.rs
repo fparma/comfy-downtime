@@ -23,7 +23,6 @@ fn main() {
     "Chernarus",
     "Chernarus_Summer",
     "Porto",
-    "Intro",
     "IsolaDiCapraia",
     "Mountains_ACR",
     "Takistan",
