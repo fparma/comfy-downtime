@@ -61,11 +61,12 @@ if (COMFY_USE_I) then {
   [SPAWNBOARD_I] remoteExecCall ["FP_fnc_addToCurators", 2];
 };
 
-
 // Ensure that the Marker is always over the Spawn
 [] spawn {
   while {alive SPAWN_WEST} do {
-    if (COMFY_USE_B) then {SPAWN_MARKER_ZONE_B setMarkerPos (getPos SPAWNBOARD_B);SPAWN_WEST setPos (getPos SPAWNBOARD_B);};
+    _b_pos = (getPos SPAWNBOARD_B);
+    if (COMFY_USE_B) then {SPAWN_MARKER_ZONE_B setMarkerPos _b_pos;SPAWN_WEST setPos _b_pos;};
+    if (COMFY_USE_C) then {SPAWN_MARKER_ZONE_B setMarkerPos _b_pos;SPAWN_CIV setPos _b_pos;};
     if (COMFY_USE_O) then {SPAWN_MARKER_ZONE_O setMarkerPos (getPos SPAWNBOARD_O);SPAWN_EAST setPos (getPos SPAWNBOARD_O);};
     if (COMFY_USE_I) then {SPAWN_MARKER_ZONE_I setMarkerPos (getPos SPAWNBOARD_I);SPAWN_INDEP setPos (getPos SPAWNBOARD_I);};
     sleep 15;
