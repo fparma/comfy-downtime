@@ -1,5 +1,5 @@
-OnLoadName = "ComfyDowntime: Origins";
-onLoadMission="Version 3.0, Arma has never been so comfy.";
+OnLoadName = "ComfyDowntime 4.5";
+onLoadMission="Version 4.5, Arma has never been so comfy.";
 loadScreen = "fp_misc\img\fp_logo.paa";
 author="Kaukassus | 2016";
 
@@ -55,11 +55,18 @@ class CfgFunctions {
       class setupResupplyBox;
       class paradrop;
       class initSpawn;
+      class initLHD;
     }
   }
 };
 
 class Params {
+  class LHDEnable {
+    title = "[LHD] Enable Landing Helicopter Deck";
+    values[] = {0,1};
+    texts[] = {"No","Yes"};
+    default = 0;
+  };
   class ParadropEnable {
     title = "[Supply Box] Enable Paradrop";
     values[] = {0,1};
