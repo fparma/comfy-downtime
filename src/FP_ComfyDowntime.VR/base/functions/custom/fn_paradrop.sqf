@@ -1,4 +1,3 @@
-params ["_unit"];
 hintC "Select Altitude and Designate LZ for HALO Jump on the map";
 
 // Get Loadout the player currently has
