@@ -22,53 +22,50 @@ switch (_mapname) do {
   default {_b_coords = [0,0];_o_coords = [0,0];_i_coords = [0,0];};
 };
 
-if (COMFY_USE_B) then {
-  SPAWNBOARD_B = "MapBoard_altis_F" createVehicle [_b_coords select 0, (_b_coords select 1) + 3, 0];
-  SPAWNBOARD_B enableSimulationGlobal false;
-  [SPAWNBOARD_B] remoteExec ["FPC_fnc_setupResupplyBox", 0, true];
-  SPAWN_WEST setPos [_b_coords select 0, _b_coords select 1, 0];
-  SPAWN_MARKER_ZONE_B = createMarker ["SPAWN_MARKER_ZONE_B", getPos SPAWNBOARD_B];
-  SPAWN_MARKER_ZONE_B setMarkerShape "ELLIPSE";
-  SPAWN_MARKER_ZONE_B setMarkerSize [100,100];
-  SPAWN_MARKER_ZONE_B setMarkerColor "ColorBLUFOR";
-  SPAWN_MARKER_ZONE_B setMarkerBrush "SolidBorder";
-  [SPAWNBOARD_B] remoteExecCall ["FP_fnc_addToCurators", 2];
-};
+// Blufor Spawn Setup (Also harbors Civ Faction)
+SPAWNBOARD_B = "MapBoard_altis_F" createVehicle [_b_coords select 0, (_b_coords select 1) + 3, 0];
+SPAWNBOARD_B enableSimulationGlobal false;
+[SPAWNBOARD_B] remoteExec ["FPC_fnc_setupResupplyBox", 0, true];
+SPAWN_WEST setPos [_b_coords select 0, _b_coords select 1, 0];
+SPAWN_MARKER_ZONE_B = createMarker ["SPAWN_MARKER_ZONE_B", getPos SPAWNBOARD_B];
+SPAWN_MARKER_ZONE_B setMarkerShape "ELLIPSE";
+SPAWN_MARKER_ZONE_B setMarkerSize [100,100];
+SPAWN_MARKER_ZONE_B setMarkerColor "ColorBLUFOR";
+SPAWN_MARKER_ZONE_B setMarkerBrush "SolidBorder";
+[SPAWNBOARD_B] remoteExecCall ["FP_fnc_addToCurators", 2];
 
-if (COMFY_USE_O) then {
-  SPAWNBOARD_O = "MapBoard_altis_F" createVehicle [_o_coords select 0, (_o_coords select 1) + 3, 0];
-  SPAWNBOARD_O enableSimulationGlobal false;
-  [SPAWNBOARD_O] remoteExec ["FPC_fnc_setupResupplyBox", 0, true];
-  SPAWN_EAST setPos [_o_coords select 0, _o_coords select 1, 0];
-  SPAWN_MARKER_ZONE_O = createMarker ["SPAWN_MARKER_ZONE_O", getPos SPAWNBOARD_O];
-  SPAWN_MARKER_ZONE_O setMarkerShape "ELLIPSE";
-  SPAWN_MARKER_ZONE_O setMarkerSize [100,100];
-  SPAWN_MARKER_ZONE_O setMarkerColor "ColorOPFOR";
-  SPAWN_MARKER_ZONE_O setMarkerBrush "SolidBorder";
-  [SPAWNBOARD_O] remoteExecCall ["FP_fnc_addToCurators", 2];
-};
+// Opfor Spawn Setup
+SPAWNBOARD_O = "MapBoard_altis_F" createVehicle [_o_coords select 0, (_o_coords select 1) + 3, 0];
+SPAWNBOARD_O enableSimulationGlobal false;
+[SPAWNBOARD_O] remoteExec ["FPC_fnc_setupResupplyBox", 0, true];
+SPAWN_EAST setPos [_o_coords select 0, _o_coords select 1, 0];
+SPAWN_MARKER_ZONE_O = createMarker ["SPAWN_MARKER_ZONE_O", getPos SPAWNBOARD_O];
+SPAWN_MARKER_ZONE_O setMarkerShape "ELLIPSE";
+SPAWN_MARKER_ZONE_O setMarkerSize [100,100];
+SPAWN_MARKER_ZONE_O setMarkerColor "ColorOPFOR";
+SPAWN_MARKER_ZONE_O setMarkerBrush "SolidBorder";
+[SPAWNBOARD_O] remoteExecCall ["FP_fnc_addToCurators", 2];
 
-if (COMFY_USE_I) then {
-  SPAWNBOARD_I = "MapBoard_altis_F" createVehicle [_i_coords select 0, (_i_coords select 1) + 3, 0];
-  SPAWNBOARD_I enableSimulationGlobal false;
-  [SPAWNBOARD_I] remoteExec ["FPC_fnc_setupResupplyBox", 0, true];
-  SPAWN_INDEP setPos [_i_coords select 0, _i_coords select 1, 0];
-  SPAWN_MARKER_ZONE_I = createMarker ["SPAWN_MARKER_ZONE_I", getPos SPAWNBOARD_I];
-  SPAWN_MARKER_ZONE_I setMarkerShape "ELLIPSE";
-  SPAWN_MARKER_ZONE_I setMarkerSize [100,100];
-  SPAWN_MARKER_ZONE_I setMarkerColor "ColorIndependent";
-  SPAWN_MARKER_ZONE_I setMarkerBrush "SolidBorder";
-  [SPAWNBOARD_I] remoteExecCall ["FP_fnc_addToCurators", 2];
-};
+// Independent spawn setup
+SPAWNBOARD_I = "MapBoard_altis_F" createVehicle [_i_coords select 0, (_i_coords select 1) + 3, 0];
+SPAWNBOARD_I enableSimulationGlobal false;
+[SPAWNBOARD_I] remoteExec ["FPC_fnc_setupResupplyBox", 0, true];
+SPAWN_INDEP setPos [_i_coords select 0, _i_coords select 1, 0];
+SPAWN_MARKER_ZONE_I = createMarker ["SPAWN_MARKER_ZONE_I", getPos SPAWNBOARD_I];
+SPAWN_MARKER_ZONE_I setMarkerShape "ELLIPSE";
+SPAWN_MARKER_ZONE_I setMarkerSize [100,100];
+SPAWN_MARKER_ZONE_I setMarkerColor "ColorIndependent";
+SPAWN_MARKER_ZONE_I setMarkerBrush "SolidBorder";
+[SPAWNBOARD_I] remoteExecCall ["FP_fnc_addToCurators", 2];
 
 // Ensure that the Marker is always over the Spawn
 [] spawn {
   while {alive SPAWN_WEST} do {
     _b_pos = (getPos SPAWNBOARD_B);
-    if (COMFY_USE_B) then {SPAWN_MARKER_ZONE_B setMarkerPos _b_pos;SPAWN_WEST setPos _b_pos;};
-    if (COMFY_USE_C) then {SPAWN_MARKER_ZONE_B setMarkerPos _b_pos;SPAWN_CIV setPos _b_pos;};
-    if (COMFY_USE_O) then {SPAWN_MARKER_ZONE_O setMarkerPos (getPos SPAWNBOARD_O);SPAWN_EAST setPos (getPos SPAWNBOARD_O);};
-    if (COMFY_USE_I) then {SPAWN_MARKER_ZONE_I setMarkerPos (getPos SPAWNBOARD_I);SPAWN_INDEP setPos (getPos SPAWNBOARD_I);};
+    SPAWN_MARKER_ZONE_B setMarkerPos _b_pos;SPAWN_WEST setPos _b_pos;
+    SPAWN_MARKER_ZONE_B setMarkerPos _b_pos;SPAWN_CIV setPos _b_pos;
+    SPAWN_MARKER_ZONE_O setMarkerPos (getPos SPAWNBOARD_O);SPAWN_EAST setPos (getPos SPAWNBOARD_O);
+    SPAWN_MARKER_ZONE_I setMarkerPos (getPos SPAWNBOARD_I);SPAWN_INDEP setPos (getPos SPAWNBOARD_I);
     sleep 15;
   };
 };
