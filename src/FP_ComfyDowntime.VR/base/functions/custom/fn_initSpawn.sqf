@@ -74,7 +74,22 @@ if (_param_lhd == 0) then {
   };
 } else {
   // LHD is Active
-  [[100,100]] call FPC_fnc_initLHD;
+  
+  _lhd_coords = [2000,2000];
+  _mapname = toLower(worldName);
+  switch (_mapname) do {
+    case "sara": {_lhd_coords = [6555.88,12225.4];};
+    case "stratis": {_lhd_coords = [6558.99,1443.22];};
+    case "chernarus": {_lhd_coords = [12550.1,948.518];};
+    case "utes": {_lhd_coords = [1370.68,2667.96];};
+    case "pja310": {_lhd_coords = [4995.57,1236.3];};
+    case "isoladicapraia": {_lhd_coords = [8509.83,1710.5];};
+    case "altis": {_lhd_coords = [18760.1,21303.9];};
+    case "anim_helvantis_v2": {_lhd_coords = [5939.74,10240.4];};
+    default {_lhd_coords = [2000,2000];};
+  };
+  
+  [_lhd_coords] call FPC_fnc_initLHD;
   
   //Spawn the Respawn Point and Arsenal Box
   SPAWNBOARD_B = "MapBoard_altis_F" createVehicle [0,0,100];
@@ -85,6 +100,10 @@ if (_param_lhd == 0) then {
   _height = (getPosASL COMFY_LHD) select 2;
   _pos_oject = (COMFY_LHD modelToWorld _position);
   SPAWNBOARD_B setPosASL [_pos_oject select 0, (_pos_oject select 1) + 3, (_height + (_position select 2))];
+  
+  // Set Spawn points. CIV and WEST go onto the Ship, while EAST and INDEP spawn in the Ocean (non-compatible with the LHD).
   SPAWN_WEST setVehiclePosition [SPAWNBOARD_B, [], 0, "CAN_COLLIDE"];
   SPAWN_CIV setVehiclePosition [SPAWNBOARD_B, [], 0, "CAN_COLLIDE"];
+  SPAWN_EAST setPos [0,0,0];
+  SPAWN_INDEP setPos [0,0,0];
 };
