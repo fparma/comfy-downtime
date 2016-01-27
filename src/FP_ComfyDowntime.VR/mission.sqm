@@ -86,7 +86,7 @@ class Mission
 	};
 	class Groups
 	{
-		items=36;
+		items=38;
 		class Item0
 		{
 			side="LOGIC";
@@ -2217,6 +2217,44 @@ class Mission
 					vehicle="C_man_1";
 					player="PLAY CDG";
 					skill=0.60000002;
+				};
+			};
+		};
+		class Item36
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={2.7722895,5,4.6010742};
+					id=112;
+					side="LOGIC";
+					vehicle="HeadlessClient_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="HC_1";
+				};
+			};
+		};
+		class Item37
+		{
+			side="LOGIC";
+			class Vehicles
+			{
+				items=1;
+				class Item0
+				{
+					position[]={3.3073287,5,4.6010742};
+					id=113;
+					side="LOGIC";
+					vehicle="HeadlessClient_F";
+					player="PLAY CDG";
+					leader=1;
+					skill=0.60000002;
+					text="HC_2";
 				};
 			};
 		};
