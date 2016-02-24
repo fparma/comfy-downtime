@@ -15,6 +15,3 @@ if ([civilian] call _sideHasNoUnits) then {createCenter civilian};
 
 //Init the Spawn
 [] spawn FPC_fnc_initSpawn;
-
-// Init Headless Client Tracker
-[] call FPC_fnc_initHC;
