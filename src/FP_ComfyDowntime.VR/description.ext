@@ -56,7 +56,6 @@ class CfgFunctions {
       class paradrop;
       class initSpawn;
       class initLHD;
-      class initHC;
     }
   }
 };
