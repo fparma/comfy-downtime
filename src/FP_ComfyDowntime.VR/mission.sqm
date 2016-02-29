@@ -183,7 +183,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="ComfyDowntime 5.0";
+		briefingName="ComfyDowntime 7.0";
 		overviewText="Skipped to lucky seven, because that shit better work";
 		resistanceWest=0;
 		startWeather=0;
