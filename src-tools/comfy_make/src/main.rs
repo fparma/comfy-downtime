@@ -46,6 +46,6 @@ fn get_cwd() -> String {
 
 fn compile(path: &str,version: u8, map: &str) {
   let dirpath: String = format!("{}FP_ComfyDowntime.VR", path);
-  let newpath: String = format!("{}FP_ComfyCompetition_{}.{}.pbo", path, version, map);
+  let newpath: String = format!("{}FP_ComfyDowntime_{}.{}.pbo", path, version, map);
   native::run("PBOConsole", &["-pack", dirpath.as_ref(), newpath.as_ref()]);
 }
