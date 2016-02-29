@@ -4,7 +4,7 @@ use util_kauk_rs::cmd::native;
 use std::env;
 
 fn main() {
-  let version: u8 = 5;  // Version that gets printed into the PBO filename
+  let version: u8 = 7;  // Version that gets printed into the PBO filename
 
   let worlds = vec![
     "VR",

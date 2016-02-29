@@ -4178,6 +4178,7 @@ class Mission
 					class Attributes
 					{
 						skill=0.60000002;
+						name="gm";
 						description="High Command (Game master)";
 						isPlayer=1;
 						isPlayable=1;
