@@ -4,6 +4,8 @@ use util_kauk_rs::cmd::native;
 use std::env;
 
 fn main() {
+  let version: u8 = 5;  // Version that gets printed into the PBO filename
+
   let worlds = vec![
     "VR",
     "utes",
@@ -32,7 +34,7 @@ fn main() {
   let cwd: String = get_cwd();
 
   for map in worlds {
-    compile(cwd.as_ref(), 5, map);
+    compile(cwd.as_ref(), version, map);
   }
 }
 

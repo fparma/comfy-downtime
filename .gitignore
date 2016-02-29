@@ -4,6 +4,7 @@ build
 
 ##
 # Rust
+src-tools/comfy_make/target
 src-tools/comfy_make/Cargo.lock
 src-tools/comfy_builder/target
 src-tools/comfy_builder/Cargo.lock
