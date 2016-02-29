@@ -1,3 +1,8 @@
+extern crate util_kauk_rs;
+
+use util_kauk_rs::cmd::native;
+use std::env;
+
 fn main() {
   let worlds = vec![
     "VR",
@@ -23,13 +28,11 @@ fn main() {
     "Altis",
     "pja310"
   ];
-  
+
   let cwd: String = get_cwd();
+
   for map in worlds {
-    println!("Generating missions for Map: {}", map);
-    println!("{}", cwd);
-    // compile_comfyDowntime(cwd.as_ref(), map);
-    // compile_comfyCompetition(cwd.as_ref(), map);
+    compile(cwd.as_ref(), 5, map);
   }
 }
 
@@ -37,4 +40,10 @@ fn get_cwd() -> String {
   let pathbuf = env::current_dir().unwrap();
   let path: &str = pathbuf.to_str().unwrap();
   format!("{}\\", path.to_string())
+}
+
+fn compile(path: &str,version: u8, map: &str) {
+  let dirpath: String = format!("{}FP_ComfyDowntime.VR", path);
+  let newpath: String = format!("{}FP_ComfyCompetition_{}.{}.pbo", path, version, map);
+  native::run("PBOConsole", &["-pack", dirpath.as_ref(), newpath.as_ref()]);
 }
