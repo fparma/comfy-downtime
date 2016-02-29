@@ -38,6 +38,8 @@ class Header {
   maxPlayers = 64;
 };
 
+#include "taw_vd\GUI.h"
+
 class CfgFunctions {
   createShortcuts = 1;
   class FP {
@@ -56,8 +58,9 @@ class CfgFunctions {
       class paradrop;
       class initSpawn;
       class initLHD;
-    }
-  }
+    };
+  };
+  #include "taw_vd\CfgFunctions.hpp"
 };
 
 class Params {
