@@ -8,14 +8,14 @@ class EditorData
 	toggles=5;
 	class ItemIDProvider
 	{
-		nextID=119;
+		nextID=122;
 	};
 	class Camera
 	{
-		pos[]={-23.542385,26.117075,-17.059877};
-		dir[]={0.5162946,-0.50550455,0.69145286};
-		up[]={0.30259347,0.86268282,0.40525243};
-		aside[]={0.8013407,-4.558824e-007,-0.59834445};
+		pos[]={-18.932068,9.148057,12.231375};
+		dir[]={0.47897169,-0.6924547,-0.53973186};
+		up[]={0.45974573,0.72128826,-0.51806742};
+		aside[]={-0.74801314,-7.2584953e-007,-0.66380876};
 	};
 };
 binarizationWanted=0;
@@ -52,8 +52,10 @@ addons[]=
 randomSeed=12468758;
 class ScenarioData
 {
-  OnLoadName = "ComfyDowntime 5.1";
-  onLoadMission="Version 5.1, Probably Works";
+  OnLoadName = "ComfyDowntime 7.0";
+  onLoadMission="Skipped to lucky seven, because that shit better work";
+  overviewText="Skipped to lucky seven, because that shit better work";
+  overViewPicture="fp_misc\img\fp_logo.paa";
   loadScreen = "fp_misc\img\fp_logo.paa";
   author="Kaukassus | 2016";
 
@@ -131,36 +133,8 @@ class CustomAttributes
 					};
 					class value
 					{
-						items=3;
+						items=1;
 						class Item0
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="MenuInventory";
-							};
-						};
-						class Item1
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="MenuPosition";
-							};
-						};
-						class Item2
 						{
 							class data
 							{
@@ -210,7 +184,7 @@ class Mission
 	class Intel
 	{
 		briefingName="ComfyDowntime 5.0";
-		overviewText="Version 5, Arma has never been so comfy.";
+		overviewText="Skipped to lucky seven, because that shit better work";
 		resistanceWest=0;
 		startWeather=0;
 		startWind=0;
@@ -3556,39 +3530,6 @@ class Mission
 		};
 		class Item31
 		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={-16,5.0014391,10.05};
-					};
-					side="Civilian";
-					flags=2;
-					class Attributes
-					{
-						skill=0.60000002;
-						name="gm";
-						description="High Command (Game master)";
-						isPlayer=1;
-						isPlayable=1;
-					};
-					id=92;
-					type="C_man_1";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=91;
-		};
-		class Item32
-		{
 			dataType="Logic";
 			class PositionInfo
 			{
@@ -3678,7 +3619,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item33
+		class Item32
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -3769,7 +3710,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item34
+		class Item33
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -3860,7 +3801,7 @@ class Mission
 				nAttributes=4;
 			};
 		};
-		class Item35
+		class Item34
 		{
 			dataType="Group";
 			side="Civilian";
@@ -4194,7 +4135,7 @@ class Mission
 			};
 			id=96;
 		};
-		class Item36
+		class Item35
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -4206,7 +4147,7 @@ class Mission
 			id=117;
 			type="HeadlessClient_F";
 		};
-		class Item37
+		class Item36
 		{
 			dataType="Logic";
 			class PositionInfo
@@ -4217,6 +4158,38 @@ class Mission
 			isPlayable=1;
 			id=118;
 			type="HeadlessClient_F";
+		};
+		class Item37
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={-16,5.0014391,10.05};
+					};
+					side="West";
+					flags=2;
+					class Attributes
+					{
+						skill=0.60000002;
+						description="High Command (Game master)";
+						isPlayer=1;
+						isPlayable=1;
+					};
+					id=121;
+					type="b_soldier_unarmed_f";
+				};
+			};
+			class Attributes
+			{
+			};
+			id=120;
 		};
 	};
 };
