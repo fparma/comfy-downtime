@@ -11,3 +11,4 @@ src-tools/comfy_builder/Cargo.lock
 Cargo.lock
 
 *.exe
+*.pbo
