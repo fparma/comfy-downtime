@@ -38,12 +38,11 @@ fn main() {
 
   let cwd: String = get_cwd();
   prepare_adv_medcial(cwd.as_ref());
-  /*
+  
   for map in worlds {
     compile(cwd.as_ref(), version, map);
     compile_adv_medical(cwd.as_ref(), version, map);
   }
-  */
 }
 
 fn get_cwd() -> String {
