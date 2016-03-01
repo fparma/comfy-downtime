@@ -1,6 +1,6 @@
 ##
 # Project Ignores
-build
+src/FP_ComfyDowntime.VR
 
 ##
 # Rust
