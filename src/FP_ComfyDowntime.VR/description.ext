@@ -1,3 +1,10 @@
+respawnButton = 1;
+respawndelay = 5;
+respawnDialog = 0;
+respawn = 3;
+respawnOnStart = 1;
+respawnTemplates[] = {"MenuPosition", "MenuInventory"};
+
 #include "scripts\taw_vd\GUI.h"
 
 class CfgFunctions {
