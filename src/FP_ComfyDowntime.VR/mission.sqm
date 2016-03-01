@@ -52,156 +52,48 @@ addons[]=
 randomSeed=12468758;
 class ScenarioData
 {
-	overviewText="Skipped to lucky seven, because that shit better work";
-	overViewPicture="fp_misc\img\fp_logo.paa";
-	onLoadMission="Skipped to lucky seven, because that shit better work";
-	loadScreen="fp_misc\img\fp_logo.paa";
-	respawnDialog=0;
-	disabledAI=1;
-	respawn=3;
-	respawnDelay=5;
-	class Header
-	{
-		gameType="Coop";
-		minPlayers=1;
-		maxPlayers=128;
-	};
-	wreckLimit=10;
-	wreckRemovalMinTime=300;
-	wreckRemovalMaxTime=800;
-	corpseLimit=20;
-	corpseRemovalMinTime=120;
-	corpseRemovalMaxTime=300;
+  OnLoadName = "ComfyDowntime 7.0";
+  onLoadMission="Skipped to lucky seven, because that shit better work";
+  overviewText="Skipped to lucky seven, because that shit better work";
+  overViewPicture="fp_misc\img\fp_logo.paa";
+  loadScreen = "fp_misc\img\fp_logo.paa";
+  author="Kaukassus | 2016";
+
+  corpseManagerMode = 1;
+  corpseLimit = 20;
+  corpseRemovalMinTime = 120;
+  corpseRemovalMaxTime = 300;
+
+  wreckManagerMode = 1;
+  wreckLimit = 10;
+  wreckRemovalMinTime = 300;
+  wreckRemovalMaxTime = 800;
+
+  respawnButton = 1;
+  respawndelay = 5;
+  respawnDialog = 0;
+  respawn = 3;
+  respawnOnStart = 1;
+  respawnTemplates[] = {"MenuPosition", "MenuInventory"};
+
+  showGPS = 1;
+  showMap = 1;
+  showWatch = 1;
+  showCompass = 1;
+  joinUnassigned = 1;
+  disabledAI = 1;
+  allowFunctionsLog = 0;
+  enableDebugConsole = 1;
+  onLoadIntroTime = false;
+  enableItemsDropping = 0;
+  onLoadMissionTime = false;
+  class Header {
+    gameType = Coop;
+    minPlayers = 1;
+    maxPlayers = 128;
+  };
 };
-class CustomAttributes
-{
-	class Category0
-	{
-		name="Multiplayer";
-		class Attribute0
-		{
-			property="RespawnTemplates";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"ARRAY"
-						};
-					};
-					class value
-					{
-						items=4;
-						class Item0
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="Confirm";
-							};
-						};
-						class Item1
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="MenuInventory";
-							};
-						};
-						class Item2
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="MenuPosition";
-							};
-						};
-						class Item3
-						{
-							class data
-							{
-								class type
-								{
-									type[]=
-									{
-										"STRING"
-									};
-								};
-								value="Counter";
-							};
-						};
-					};
-				};
-			};
-		};
-		class Attribute1
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=1;
-				};
-			};
-		};
-		nAttributes=2;
-	};
-	class Category1
-	{
-		name="Scenario";
-		class Attribute0
-		{
-			property="EnableDebugConsole";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=1;
-				};
-			};
-		};
-		nAttributes=1;
-	};
-};
+class CustomAttributes{};
 class Mission
 {
 	class Intel

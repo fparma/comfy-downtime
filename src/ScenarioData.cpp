@@ -20,6 +20,7 @@ wreckLimit = 10;
 wreckRemovalMinTime = 300;
 wreckRemovalMaxTime = 800;
 
+respawnButton = 1;
 respawndelay = 5;
 respawnDialog = 0;
 respawn = 3;
