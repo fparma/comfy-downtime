@@ -1,0 +1,51 @@
+#include "scripts\taw_vd\GUI.h"
+
+class CfgFunctions {
+  createShortcuts = 1;
+  class FP {
+    tag="FP";
+    class functions {
+      file = "base\functions";
+      class addToCurators;
+      class clearVehicle;
+    };
+  };
+  class FP_CUSTOM {
+    tag="FPC";
+    class functions {
+      file = "base\functions\custom";
+      class setupResupplyBox;
+      class paradrop;
+      class initSpawn;
+      class initLHD;
+    };
+  };
+  #include "scripts\taw_vd\CfgFunctions.hpp"
+};
+
+class Params {
+  class LHDEnable {
+    title = "[LHD] Enable Landing Helicopter Deck";
+    values[] = {0,1};
+    texts[] = {"No","Yes"};
+    default = 0;
+  };
+  class ParadropEnable {
+    title = "[Supply Box] Enable Paradrop";
+    values[] = {0,1};
+    texts[] = {"No","Yes"};
+    default = 1;
+  };
+  class FixYourselfUpEnable {
+    title = "[Supply Box] Enable Fix Health";
+    values[] = {0,1};
+    texts[] = {"No","Yes"};
+    default = 1;
+  };
+  class ArsenalEnable {
+    title = "[Supply Box] Enable Arsenal";
+    values[] = {0,1};
+    texts[] = {"No","Yes"};
+    default = 1;
+  };
+};
