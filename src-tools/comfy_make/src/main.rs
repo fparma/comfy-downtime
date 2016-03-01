@@ -13,32 +13,29 @@ fn main() {
 
   let worlds = vec![
     "VR",
-    "utes",
     "Sara",
     "SaraLite",
     "Sara_dbe1",
+    "Stratis",
     "Chernarus",
     "Chernarus_Summer",
-    "Porto",
-    "IsolaDiCapraia",
-    "Mountains_ACR",
     "Takistan",
+    "utes",
     "Zargabad",
-    "Woodland_ACR",
-    "Bootcamp_ACR",
-    "Desert_E",
-    "ProvingGrounds_PMC",
-    "Shapur_BAF",
+    "reshmaan",
+    "MCN_Aliabad",
+    "IsolaDiCapraia",
     "fata",
-    "Stratis",
-    "anim_helvantis_v2",
+    "Caribou",
     "Altis",
-    "pja310"
+    "anim_helvantis_v2",
+    "Woodland_ACR",
+    "ProvingGrounds_PMC"
   ];
 
   let cwd: String = get_cwd();
   prepare_adv_medcial(cwd.as_ref());
-  
+
   for map in worlds {
     compile(cwd.as_ref(), version, map);
     compile_adv_medical(cwd.as_ref(), version, map);
@@ -60,7 +57,7 @@ fn compile(path: &str,version: u8, map: &str) {
 fn prepare_adv_medcial(path: &str) {
   let dirpath: String = format!("{}FP_ComfyDowntime.VR", path);
   let newpath: String = format!("{}FP_ComfyDowntime_ADV.VR", path);
-  
+
   for entry in WalkDir::new("FP_ComfyDowntime.VR") {
     let entry = entry.unwrap();
     let entry_path: &Path = entry.path();
@@ -71,7 +68,7 @@ fn prepare_adv_medcial(path: &str) {
     let newpath = Path::new(newpath_string_replaced_slice);
     if entry_path.is_dir() {fs::create_dir(&newpath);} else {fs::copy(&entry_path, &newpath);}
   }
-  
+
   // Copy over the Advanced medical mission file
   fs::copy("mission_adv_medical.sqm", "FP_ComfyDowntime_ADV.VR/mission.sqm");
 }
