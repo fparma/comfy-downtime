@@ -1,3 +1,8 @@
+/*
+  Information:
+  This File Contains the Settings that need to be integrated into the mission.sqm File.
+*/
+
 OnLoadName = "ComfyDowntime 7.0";
 onLoadMission="Skipped to lucky seven, because that shit better work";
 overviewText="Skipped to lucky seven, because that shit better work";
