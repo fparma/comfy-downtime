@@ -1,0 +1,7 @@
+*.sqf text eol=lf
+*.cpp text eol=lf
+*.hpp text eol=lf
+*.sqm text eol=lf
+*.ext text eol=lf
+*.md text eol=crlf
+*.rs text eol=crlf
