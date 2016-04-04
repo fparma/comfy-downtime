@@ -1,9 +1,0 @@
-[package]
-name = "comfy_builder"
-version = "0.1.0"
-authors = ["anon <anon@anonmail.com>"]
-
-[dependencies]
-regex = "*"
-rustc-serialize = "*"
-time = "*"
