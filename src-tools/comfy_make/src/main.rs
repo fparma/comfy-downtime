@@ -1,3 +1,5 @@
+#![allow(unused_must_use)]
+
 extern crate util_kauk_rs;
 extern crate walkdir;
 
@@ -6,7 +8,6 @@ use std::fs;
 use util_kauk_rs::cmd::native;
 use std::env;
 use std::path::Path;
-use std::io;
 
 fn main() {
   let version: u8 = 7;  // Version that gets printed into the PBO filename
@@ -34,7 +35,7 @@ fn main() {
   ];
 
   let cwd: String = get_cwd();
-  prepare_adv_medcial(cwd.as_ref());
+  prepare_adv_medcial();
 
   for map in worlds {
     compile(cwd.as_ref(), version, map);
@@ -75,10 +76,8 @@ fn compile_adv_medical(path: &str, version: u8, map: &str) {
   Function that Prepares the ADV medical Folder to be built.
   This may be obsolete once ADV Medical gets incorporated into the main mission File.
 */
-fn prepare_adv_medcial(path: &str) {
-  let dirpath: String = format!("{}FP_ComfyDowntime.VR", path);
-  let newpath: String = format!("{}FP_ComfyDowntime_ADV.VR", path);
-
+fn prepare_adv_medcial() {
+  
   for entry in WalkDir::new("FP_ComfyDowntime.VR") {
     let entry = entry.unwrap();
     let entry_path: &Path = entry.path();
