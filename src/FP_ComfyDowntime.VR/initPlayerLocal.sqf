@@ -13,3 +13,12 @@ player addEventHandler ["Respawn", {
   // Set Custom Fatigue Settings
   player setCustomAimCoef 0.6;
 }];
+
+[{
+    if (hasInterface &&
+        {!isServer} &&
+        {isNull (getAssignedCuratorLogic player)}
+    ) then {
+        disableRemoteSensors true;
+    };
+}, [], 1] call ACE_common_fnc_waitAndExecute;
