@@ -42,18 +42,39 @@ fn main() {
   }
 }
 
+/*
+  Get Current working directory, where the binary was executed.
+*/
 fn get_cwd() -> String {
   let pathbuf = env::current_dir().unwrap();
   let path: &str = pathbuf.to_str().unwrap();
   format!("{}\\", path.to_string())
 }
 
+/*
+  Function that Generates the new Filename with version info and map postfix
+  and call to PBOConsole for the Basic Medical Mission.
+*/
 fn compile(path: &str,version: u8, map: &str) {
   let dirpath: String = format!("{}FP_ComfyDowntime.VR", path);
   let newpath: String = format!("{}FP_ComfyDowntime_{}.{}.pbo", path, version, map);
   native::run("PBOConsole", &["-pack", dirpath.as_ref(), newpath.as_ref()]);
 }
 
+/*
+  Function that Generates the new Filename with version info and map postfix
+  and call to PBOConsole for the Advanced Medical Mission.
+*/
+fn compile_adv_medical(path: &str, version: u8, map: &str) {
+  let dirpath: String = format!("{}FP_ComfyDowntime_ADV.VR", path);
+  let newpath: String = format!("{}FP_ComfyDowntime_ADV_{}.{}.pbo", path, version, map);
+  native::run("PBOConsole", &["-pack", dirpath.as_ref(), newpath.as_ref()]);
+}
+
+/*
+  Function that Prepares the ADV medical Folder to be built.
+  This may be obsolete once ADV Medical gets incorporated into the main mission File.
+*/
 fn prepare_adv_medcial(path: &str) {
   let dirpath: String = format!("{}FP_ComfyDowntime.VR", path);
   let newpath: String = format!("{}FP_ComfyDowntime_ADV.VR", path);
@@ -71,10 +92,4 @@ fn prepare_adv_medcial(path: &str) {
 
   // Copy over the Advanced medical mission file
   fs::copy("mission_adv_medical.sqm", "FP_ComfyDowntime_ADV.VR/mission.sqm");
-}
-
-fn compile_adv_medical(path: &str, version: u8, map: &str) {
-  let dirpath: String = format!("{}FP_ComfyDowntime_ADV.VR", path);
-  let newpath: String = format!("{}FP_ComfyDowntime_ADV_{}.{}.pbo", path, version, map);
-  native::run("PBOConsole", &["-pack", dirpath.as_ref(), newpath.as_ref()]);
 }
