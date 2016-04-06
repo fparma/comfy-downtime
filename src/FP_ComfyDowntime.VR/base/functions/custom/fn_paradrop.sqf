@@ -1,4 +1,17 @@
 params ["_pos"];
+_param_distance = ["ParadropMaxDistEnemy"] call BIS_fnc_getParamValue;
+
+_exit = false;
+if (_param_distance > 0) then {
+  _units = allUnits select {!(side _x in [side group player, civilian])};
+  _close = _units select {(_x distance _pos) < _param_distance};
+  _exit = count _close > 0;
+};
+
+if (_exit) exitWith {
+  hintC format ["Cannot paradrop with enemies within %1m", _param_distance];
+};
+
 player setPos [_pos select 0, _pos select 1, (_pos select 2) + 600];
 
 // Get Loadout the player currently has
