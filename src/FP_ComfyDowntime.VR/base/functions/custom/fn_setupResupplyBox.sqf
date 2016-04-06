@@ -16,7 +16,6 @@ if (_param_paradrop isEqualTo 1) then {
       if (FPC_paradropping) then {
         openMap [false, false];
         [_pos] spawn FPC_fnc_paradrop;
-        FPC_paradropping = false;
       };
     }] call BIS_fnc_addStackedEventHandler;
     
@@ -25,6 +24,10 @@ if (_param_paradrop isEqualTo 1) then {
     // Open the map and let the Person click where he wants to land
     FPC_paradropping = true;
     openMap true;
+    [] spawn {
+      waitUntil {!visibleMap};
+      FPC_paradropping = false;
+    };
   };
 
   _action_paradrop = ["fpc_paradrop", "Start Paradrop", "", _drop_code, {true}] call ace_interact_menu_fnc_createAction;
