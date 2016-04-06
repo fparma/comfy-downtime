@@ -14,6 +14,7 @@ if (_param_paradrop isEqualTo 1) then {
   
   ["FPC_paradrop_map", "onMapSingleClick", {
       if (FPC_paradropping) then {
+        openMap [false, false];
         [_pos] spawn FPC_fnc_paradrop;
         FPC_paradropping = false;
       };
