@@ -12,7 +12,7 @@ _object allowDamage false;
 if (_param_paradrop isEqualTo 1) then {
   FPC_paradropping = false;
   
-  ["FPC_MAP", "onMapSingleClick", {
+  ["FPC_paradrop_map", "onMapSingleClick", {
       if (FPC_paradropping) then {
         [_pos] spawn FPC_fnc_paradrop;
         FPC_paradropping = false;
