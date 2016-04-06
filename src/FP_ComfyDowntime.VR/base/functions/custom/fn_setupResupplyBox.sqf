@@ -20,7 +20,7 @@ if (_param_paradrop isEqualTo 1) then {
     }] call BIS_fnc_addStackedEventHandler;
     
   _drop_code = {
-    hintC "Select Altitude and Designate LZ for HALO Jump on the map";
+    hintC "Select LZ for HALO Jump on the map";
     // Open the map and let the Person click where he wants to land
     FPC_paradropping = true;
     openMap true;
