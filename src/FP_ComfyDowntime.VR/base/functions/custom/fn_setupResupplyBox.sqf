@@ -30,7 +30,7 @@ if (_param_paradrop isEqualTo 1) then {
   [_object, 0, ["ACE_MainActions"], _action_paradrop] spawn ace_interact_menu_fnc_addActionToObject;
 };
 
-if (_param_bandage isEqualType 1) then {
+if (_param_bandage isEqualTo 1) then {
   _action_bandage = ["fpc_bandage", "Fix yourself up", "", {
     player setDamage 0;
     player allowDamage true;
@@ -44,7 +44,7 @@ if (_param_bandage isEqualType 1) then {
   [_object, 0, ["ACE_MainActions"], _action_bandage] spawn ace_interact_menu_fnc_addActionToObject;
 };
 
-if (_param_arsenal isEqualType 1) then {
+if (_param_arsenal isEqualTo 1) then {
   ["AmmoboxInit",[_object,true]] spawn BIS_fnc_arsenal;
 };
 
