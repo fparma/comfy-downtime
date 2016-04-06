@@ -1,4 +1,5 @@
-hintC "Select Altitude and Designate LZ for HALO Jump on the map";
+params ["_pos"];
+player setPos [_pos select 0, _pos select 1, (_pos select 2) + 600];
 
 // Get Loadout the player currently has
 _backpack_type = backpack player;
@@ -13,17 +14,9 @@ removeHeadgear player;
 player addBackpack "B_Parachute";
 player addHeadgear "H_CrewHelmetHeli_B";
 
-// Open the map and let the Person click where he wants to land
-openMap true;
-onMapSingleClick {
-  player setPos [_pos select 0, _pos select 1, (_pos select 2) + 600];
-  openMap [false, false];
-  onMapSingleClick {};
-};
-
-waitUntil { not visibleMap };
 sleep 5;
-waitUntil { isTouchingGround player };
+waitUntil { isTouchingGround player || !alive player};
+if (!alive player) exitWith {};
 
 // Reapply gear we had before the jump
 removeBackpack player;
@@ -31,12 +24,13 @@ removeHeadgear player;
 player addBackpack _backpack_type;
 player addHeadgear _headgear;
 
+_bp = unitBackpack player;
 if (count (_backpack_weaps select 0) > 0) then {for "_i" from 0 to (count (_backpack_weaps select 0) - 1) do {
-  (unitBackpack player) addweaponCargoGlobal [(_backpack_weaps select 0) select _i,(_backpack_weaps select 1) select _i];};
+  _bp addweaponCargoGlobal [(_backpack_weaps select 0) select _i,(_backpack_weaps select 1) select _i];};
 };
 if (count (_backpack_magas select 0) > 0) then {for "_i" from 0 to (count (_backpack_magas select 0) - 1) do {
-  (unitBackpack player) addMagazineCargoGlobal [(_backpack_magas select 0) select _i,(_backpack_magas select 1) select _i];};
+  _bp addMagazineCargoGlobal [(_backpack_magas select 0) select _i,(_backpack_magas select 1) select _i];};
 };
 if (count (_backpack_items select 0) > 0) then {for "_i" from 0 to (count (_backpack_items select 0) - 1) do {
-  (unitBackpack player) addItemCargoGlobal [(_backpack_items select 0) select _i,(_backpack_items select 1) select _i];};
+  _bp addItemCargoGlobal [(_backpack_items select 0) select _i,(_backpack_items select 1) select _i];};
 };
