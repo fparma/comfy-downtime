@@ -10,7 +10,23 @@ _object allowDamage false;
 
 // Add ACE Actions to the Box.
 if (_param_paradrop isEqualType 1) then {
-  _action_paradrop = ["fpc_paradrop", "Start Paradrop", "", {[] spawn FPC_fnc_paradrop;}, {true}] call ace_interact_menu_fnc_createAction;
+  FPC_paradropping = false;
+  
+  ["FPC_MAP", "onMapSingleClick", {
+      if (FPC_paradropping) then {
+        [_pos] spawn FPC_fnc_paradrop;
+        FPC_paradropping = false;
+      };
+    }] call BIS_fnc_addStackedEventHandler;
+    
+  _drop_code = {
+    hintC "Select Altitude and Designate LZ for HALO Jump on the map";
+    // Open the map and let the Person click where he wants to land
+    FPC_paradropping = true;
+    openMap true;
+  };
+
+  _action_paradrop = ["fpc_paradrop", "Start Paradrop", "", _drop_code, {true}] call ace_interact_menu_fnc_createAction;
   [_object, 0, ["ACE_MainActions"], _action_paradrop] spawn ace_interact_menu_fnc_addActionToObject;
 };
 
