@@ -9,7 +9,7 @@ _param_arsenal = ["ArsenalEnable"] call BIS_fnc_getParamValue;
 _object allowDamage false;
 
 // Add ACE Actions to the Box.
-if (_param_paradrop isEqualType 1) then {
+if (_param_paradrop isEqualTo 1) then {
   FPC_paradropping = false;
   
   ["FPC_MAP", "onMapSingleClick", {
