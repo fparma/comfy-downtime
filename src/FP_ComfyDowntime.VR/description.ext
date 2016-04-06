@@ -43,6 +43,12 @@ class Params {
     texts[] = {"No","Yes"};
     default = 1;
   };
+  class ParadropMaxDistEnemy {
+    title = "[Paradrop] Cannot paradrop close to enemy";
+    values[] = {0, 200, 300, 400, 600};
+    texts[] = {"Disabled","200m", "300m", "400m", "600m"};
+    default = 2;
+  };
   class FixYourselfUpEnable {
     title = "[Supply Box] Enable Fix Health";
     values[] = {0,1};
