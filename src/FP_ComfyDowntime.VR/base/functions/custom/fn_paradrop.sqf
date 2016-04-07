@@ -3,8 +3,8 @@ _param_distance = ["ParadropMaxDistEnemy"] call BIS_fnc_getParamValue;
 
 _exit = false;
 if (_param_distance > 0) then {
-  _units = allUnits select {!(side _x in [side group player, civilian])};
-  _close = _units select {(_x distance _pos) < _param_distance};
+  _units = allUnits select {alive _x && {!((side _x) in [side group player, civilian])}};
+  _close = _units select {((getPosATL _x) select 2) < 10 && {(_x distance _pos) < _param_distance}};
   _exit = count _close > 0;
 };
 
