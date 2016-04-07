@@ -11,7 +11,7 @@ It's concept is heavily inspired from the vanilla ZGM Missions, howvever a few b
 * Works on every map
 * Custom Slingloading and Viewdistance scripts
 
-## How top compile/build
+## How to compile/build
 ### Dependencies
 As of right now, the build process currently requires the following Dependencies:
 * [PBO Manager v1.4](http://www.armaholic.com/page.php?id=16369)
