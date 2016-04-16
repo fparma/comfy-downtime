@@ -9,12 +9,32 @@ _param_arsenal = ["ArsenalEnable"] call BIS_fnc_getParamValue;
 _object allowDamage false;
 
 // Add ACE Actions to the Box.
-if (_param_paradrop isEqualType 1) then {
-  _action_paradrop = ["fpc_paradrop", "Start Paradrop", "", {[] spawn FPC_fnc_paradrop;}, {true}] call ace_interact_menu_fnc_createAction;
+if (_param_paradrop isEqualTo 1) then {
+  FPC_paradropping = false;
+  
+  ["FPC_paradrop_map", "onMapSingleClick", {
+      if (FPC_paradropping) then {
+        openMap [false, false];
+        [_pos] spawn FPC_fnc_paradrop;
+      };
+    }] call BIS_fnc_addStackedEventHandler;
+    
+  _drop_code = {
+    hintC "Select LZ for HALO Jump on the map";
+    // Open the map and let the Person click where he wants to land
+    FPC_paradropping = true;
+    openMap true;
+    [] spawn {
+      waitUntil {!visibleMap};
+      FPC_paradropping = false;
+    };
+  };
+
+  _action_paradrop = ["fpc_paradrop", "Start Paradrop", "", _drop_code, {true}] call ace_interact_menu_fnc_createAction;
   [_object, 0, ["ACE_MainActions"], _action_paradrop] spawn ace_interact_menu_fnc_addActionToObject;
 };
 
-if (_param_bandage isEqualType 1) then {
+if (_param_bandage isEqualTo 1) then {
   _action_bandage = ["fpc_bandage", "Fix yourself up", "", {
     player setDamage 0;
     player allowDamage true;
@@ -28,7 +48,7 @@ if (_param_bandage isEqualType 1) then {
   [_object, 0, ["ACE_MainActions"], _action_bandage] spawn ace_interact_menu_fnc_addActionToObject;
 };
 
-if (_param_arsenal isEqualType 1) then {
+if (_param_arsenal isEqualTo 1) then {
   ["AmmoboxInit",[_object,true]] spawn BIS_fnc_arsenal;
 };
 
