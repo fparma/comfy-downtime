@@ -1,4 +1,4 @@
-version=51;
+version=52;
 class EditorData
 {
 	moveGridStep=1;
@@ -12,10 +12,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={-3.2371094,37.685139,-25.518911};
-		dir[]={0.14314291,-0.83582783,0.53023821};
-		up[]={0.21787769,0.54879475,0.80706424};
-		aside[]={0.96552581,-6.0582533e-007,-0.26065254};
+		pos[]={-12.674403,76.971458,-22.710138};
+		dir[]={0.0076704645,-0.9882043,0.15295713};
+		up[]={0.049494885,0.15304184,0.98697972};
+		aside[]={0.99874574,-3.8271537e-009,-0.050085019};
 	};
 };
 binarizationWanted=0;
@@ -2274,7 +2274,7 @@ class Mission
 						position[]={-16,5.0014391,8.0500002};
 					};
 					side="West";
-					flags=2;
+					flags=6;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2291,6 +2291,7 @@ class Mission
 						position[]={-2,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2307,6 +2308,7 @@ class Mission
 						position[]={-14,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2323,6 +2325,7 @@ class Mission
 						position[]={-2,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2339,6 +2342,7 @@ class Mission
 						position[]={0,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2355,6 +2359,7 @@ class Mission
 						position[]={-6,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2371,6 +2376,7 @@ class Mission
 						position[]={-6,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2387,6 +2393,7 @@ class Mission
 						position[]={-4,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2403,6 +2410,7 @@ class Mission
 						position[]={0,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2419,6 +2427,7 @@ class Mission
 						position[]={-16,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2435,6 +2444,7 @@ class Mission
 						position[]={-8,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2451,6 +2461,7 @@ class Mission
 						position[]={-10,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2467,6 +2478,7 @@ class Mission
 						position[]={2,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2483,6 +2495,7 @@ class Mission
 						position[]={-8,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2499,6 +2512,7 @@ class Mission
 						position[]={-10,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2515,6 +2529,7 @@ class Mission
 						position[]={-4,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2531,6 +2546,7 @@ class Mission
 						position[]={-14,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2547,6 +2563,7 @@ class Mission
 						position[]={2,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2563,6 +2580,7 @@ class Mission
 						position[]={-12,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2579,6 +2597,7 @@ class Mission
 						position[]={-12,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2595,6 +2614,7 @@ class Mission
 						position[]={4,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2611,6 +2631,7 @@ class Mission
 						position[]={4,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2627,6 +2648,7 @@ class Mission
 						position[]={6,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2643,6 +2665,7 @@ class Mission
 						position[]={6,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2659,6 +2682,7 @@ class Mission
 						position[]={8,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2675,6 +2699,7 @@ class Mission
 						position[]={8,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2691,6 +2716,7 @@ class Mission
 						position[]={10,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2707,6 +2733,7 @@ class Mission
 						position[]={10,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2723,6 +2750,7 @@ class Mission
 						position[]={12,5.0014391,8.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2739,6 +2767,7 @@ class Mission
 						position[]={12,5.0014391,6.0500002};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -2824,6 +2853,25 @@ class Mission
 				};
 				class Attribute3
 				{
+					property="ModuleRespawnPosition_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute4
+				{
 					property="ModuleRespawnPosition_F_Type";
 					expression="_this setVariable ['Type',_value,true];";
 					class Value
@@ -2841,7 +2889,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=4;
+				nAttributes=5;
 			};
 		};
 		class Item28
@@ -2987,7 +3035,7 @@ class Mission
 						position[]={-16,5.0014391,4.0500002};
 					};
 					side="East";
-					flags=2;
+					flags=6;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3004,6 +3052,7 @@ class Mission
 						position[]={-6,5.0014391,2.05};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3020,6 +3069,7 @@ class Mission
 						position[]={-8,5.0014391,4.0500002};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3036,6 +3086,7 @@ class Mission
 						position[]={-14,5.0014391,2.05};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3052,6 +3103,7 @@ class Mission
 						position[]={-16,5.0014391,2.05};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3068,6 +3120,7 @@ class Mission
 						position[]={-8,5.0014391,2.05};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3084,6 +3137,7 @@ class Mission
 						position[]={-10,5.0014391,4.0500002};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3100,6 +3154,7 @@ class Mission
 						position[]={-2,5.0014391,2.05};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3116,6 +3171,7 @@ class Mission
 						position[]={2,5.0014391,4.0500002};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3132,6 +3188,7 @@ class Mission
 						position[]={0,5.0014391,4.0500002};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3148,6 +3205,7 @@ class Mission
 						position[]={-2,5.0014391,4.0500002};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3164,6 +3222,7 @@ class Mission
 						position[]={-10,5.0014391,2.05};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3180,6 +3239,7 @@ class Mission
 						position[]={-12,5.0014391,4.0500002};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3196,6 +3256,7 @@ class Mission
 						position[]={-4,5.0014391,2.05};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3212,6 +3273,7 @@ class Mission
 						position[]={-4,5.0014391,4.0500002};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3228,6 +3290,7 @@ class Mission
 						position[]={2,5.0014391,2.05};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3244,6 +3307,7 @@ class Mission
 						position[]={-14,5.0014391,4.0500002};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3260,6 +3324,7 @@ class Mission
 						position[]={-6,5.0014391,4.0500002};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3276,6 +3341,7 @@ class Mission
 						position[]={0,5.0014391,2.05};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3292,6 +3358,7 @@ class Mission
 						position[]={-12,5.0014391,2.05};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3308,6 +3375,7 @@ class Mission
 						position[]={4,5.0014391,4.0500002};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3324,6 +3392,7 @@ class Mission
 						position[]={4,5.0014391,2.05};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3340,6 +3409,7 @@ class Mission
 						position[]={8,5.0014391,4.0499992};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3356,6 +3426,7 @@ class Mission
 						position[]={6,5.0014391,4.0499992};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3372,6 +3443,7 @@ class Mission
 						position[]={8,5.0014391,2.0499992};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3388,6 +3460,7 @@ class Mission
 						position[]={6,5.0014391,2.0499992};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3404,6 +3477,7 @@ class Mission
 						position[]={10,5.0014391,4.0499992};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3420,6 +3494,7 @@ class Mission
 						position[]={10,5.0014391,2.0499992};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3436,6 +3511,7 @@ class Mission
 						position[]={12,5.0014391,4.0500002};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3452,6 +3528,7 @@ class Mission
 						position[]={12,5.0014391,2.05};
 					};
 					side="East";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3481,7 +3558,7 @@ class Mission
 						position[]={-16,5.0014391,0.049999952};
 					};
 					side="Independent";
-					flags=2;
+					flags=6;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3498,6 +3575,7 @@ class Mission
 						position[]={-2,5.0014391,-1.95};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3514,6 +3592,7 @@ class Mission
 						position[]={-4,5.0014391,-1.95};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3530,6 +3609,7 @@ class Mission
 						position[]={-6,5.0014391,-1.95};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3546,6 +3626,7 @@ class Mission
 						position[]={-6,5.0014391,0.049999952};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3562,6 +3643,7 @@ class Mission
 						position[]={-2,5.0014391,0.049999952};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3578,6 +3660,7 @@ class Mission
 						position[]={-8,5.0014391,-1.95};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3594,6 +3677,7 @@ class Mission
 						position[]={0,5.0014391,-1.95};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3610,6 +3694,7 @@ class Mission
 						position[]={-10,5.0014391,0.049999952};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3626,6 +3711,7 @@ class Mission
 						position[]={-10,5.0014391,-1.95};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3642,6 +3728,7 @@ class Mission
 						position[]={-12,5.0014391,-1.95};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3658,6 +3745,7 @@ class Mission
 						position[]={-4,5.0014391,0.049999952};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3674,6 +3762,7 @@ class Mission
 						position[]={-12,5.0014391,0.049999952};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3690,6 +3779,7 @@ class Mission
 						position[]={0,5.0014391,0.049999952};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3706,6 +3796,7 @@ class Mission
 						position[]={-14,5.0014391,-1.95};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3722,6 +3813,7 @@ class Mission
 						position[]={2,5.0014391,-1.95};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3738,6 +3830,7 @@ class Mission
 						position[]={-14,5.0014391,0.049999952};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3754,6 +3847,7 @@ class Mission
 						position[]={-16,5.0014391,-1.95};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3770,6 +3864,7 @@ class Mission
 						position[]={2,5.0014391,0.049999952};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3786,6 +3881,7 @@ class Mission
 						position[]={-8,5.0014391,0.049999952};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3802,6 +3898,7 @@ class Mission
 						position[]={4,5.0014391,0.050000191};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3818,6 +3915,7 @@ class Mission
 						position[]={4,5.0014391,-1.9499998};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3834,6 +3932,7 @@ class Mission
 						position[]={6,5.0014391,-1.950001};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3850,6 +3949,7 @@ class Mission
 						position[]={6,5.0014391,0.049999237};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3866,6 +3966,7 @@ class Mission
 						position[]={8,5.0014391,-1.950001};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3882,6 +3983,7 @@ class Mission
 						position[]={8,5.0014391,0.049999237};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3898,6 +4000,7 @@ class Mission
 						position[]={10,5.0014391,0.050000191};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3914,6 +4017,7 @@ class Mission
 						position[]={10,5.0014391,-1.95};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3930,6 +4034,7 @@ class Mission
 						position[]={12,5.0014391,-1.9499998};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3946,6 +4051,7 @@ class Mission
 						position[]={12,5.0014391,0.049999952};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3962,6 +4068,7 @@ class Mission
 						position[]={12,5.0014391,-3.9499998};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -3978,6 +4085,7 @@ class Mission
 						position[]={12,5.0014391,-5.9499998};
 					};
 					side="Independent";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4063,6 +4171,25 @@ class Mission
 				};
 				class Attribute3
 				{
+					property="ModuleRespawnPosition_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute4
+				{
 					property="ModuleRespawnPosition_F_Type";
 					expression="_this setVariable ['Type',_value,true];";
 					class Value
@@ -4080,7 +4207,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=4;
+				nAttributes=5;
 			};
 		};
 		class Item32
@@ -4154,6 +4281,25 @@ class Mission
 				};
 				class Attribute3
 				{
+					property="ModuleRespawnPosition_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute4
+				{
 					property="ModuleRespawnPosition_F_Type";
 					expression="_this setVariable ['Type',_value,true];";
 					class Value
@@ -4171,7 +4317,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=4;
+				nAttributes=5;
 			};
 		};
 		class Item33
@@ -4245,6 +4391,25 @@ class Mission
 				};
 				class Attribute3
 				{
+					property="ModuleRespawnPosition_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="1";
+						};
+					};
+				};
+				class Attribute4
+				{
 					property="ModuleRespawnPosition_F_Type";
 					expression="_this setVariable ['Type',_value,true];";
 					class Value
@@ -4262,7 +4427,7 @@ class Mission
 						};
 					};
 				};
-				nAttributes=4;
+				nAttributes=5;
 			};
 		};
 		class Item34
@@ -4280,7 +4445,7 @@ class Mission
 						position[]={-16,5.0014391,-3.95};
 					};
 					side="Civilian";
-					flags=2;
+					flags=6;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4297,6 +4462,7 @@ class Mission
 						position[]={-2,5.0014391,-3.95};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4313,6 +4479,7 @@ class Mission
 						position[]={-8,5.0014391,-3.95};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4329,6 +4496,7 @@ class Mission
 						position[]={2,5.0014391,-3.95};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4345,6 +4513,7 @@ class Mission
 						position[]={-12,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4361,6 +4530,7 @@ class Mission
 						position[]={0,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4377,6 +4547,7 @@ class Mission
 						position[]={-4,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4393,6 +4564,7 @@ class Mission
 						position[]={-10,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4409,6 +4581,7 @@ class Mission
 						position[]={-10,5.0014391,-3.95};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4425,6 +4598,7 @@ class Mission
 						position[]={-4,5.0014391,-3.95};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4441,6 +4615,7 @@ class Mission
 						position[]={-14,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4457,6 +4632,7 @@ class Mission
 						position[]={-6,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4473,6 +4649,7 @@ class Mission
 						position[]={-14,5.0014391,-3.95};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4489,6 +4666,7 @@ class Mission
 						position[]={-6,5.0014391,-3.95};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4505,6 +4683,7 @@ class Mission
 						position[]={-12,5.0014391,-3.95};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4521,6 +4700,7 @@ class Mission
 						position[]={0,5.0014391,-3.95};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4537,6 +4717,7 @@ class Mission
 						position[]={-16,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4553,6 +4734,7 @@ class Mission
 						position[]={-2,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4569,6 +4751,7 @@ class Mission
 						position[]={-8,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4585,6 +4768,7 @@ class Mission
 						position[]={2,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4601,6 +4785,7 @@ class Mission
 						position[]={4,5.0014391,-3.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4617,6 +4802,7 @@ class Mission
 						position[]={4,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4633,6 +4819,7 @@ class Mission
 						position[]={8,5.0014391,-3.950001};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4649,6 +4836,7 @@ class Mission
 						position[]={6,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4665,6 +4853,7 @@ class Mission
 						position[]={6,5.0014391,-3.950001};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4681,6 +4870,7 @@ class Mission
 						position[]={8,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4697,6 +4887,7 @@ class Mission
 						position[]={10,5.0014391,-3.95};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -4713,6 +4904,7 @@ class Mission
 						position[]={10,5.0014391,-5.9499998};
 					};
 					side="Civilian";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -5093,7 +5285,7 @@ class Mission
 						position[]={-16,5.0014391,10.05};
 					};
 					side="West";
-					flags=2;
+					flags=6;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -5113,6 +5305,7 @@ class Mission
 						position[]={-14,5.0014391,10.05};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
@@ -5173,6 +5366,7 @@ class Mission
 						position[]={-12,5.0014391,10.05};
 					};
 					side="West";
+					flags=4;
 					class Attributes
 					{
 						skill=0.60000002;
