@@ -12,10 +12,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={-12.674403,76.971458,-22.710138};
-		dir[]={0.0076704645,-0.9882043,0.15295713};
-		up[]={0.049494885,0.15304184,0.98697972};
-		aside[]={0.99874574,-3.8271537e-009,-0.050085019};
+		pos[]={-0.28661996,43.373779,-3.168961};
+		dir[]={0.0013848243,-0.98102111,0.19456144};
+		up[]={0.006981438,0.19434187,0.98092943};
+		aside[]={1.0000529,9.7442535e-007,-0.007119406};
 	};
 };
 binarizationWanted=0;
@@ -67,12 +67,161 @@ class ScenarioData
 		minPlayers=1;
 		maxPlayers=128;
 	};
-	wreckLimit=10;
+	wreckManagerMode="AddAll";
 	wreckRemovalMinTime=300;
 	wreckRemovalMaxTime=800;
-	corpseLimit=20;
+	corpseManagerMode="AddAll";
+	corpseLimit=35;
 	corpseRemovalMinTime=120;
 	corpseRemovalMaxTime=300;
+};
+class CustomAttributes
+{
+	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=4;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Confirm";
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="MenuInventory";
+							};
+						};
+						class Item2
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="MenuPosition";
+							};
+						};
+						class Item3
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="Counter";
+							};
+						};
+					};
+				};
+			};
+		};
+		class Attribute2
+		{
+			property="SharedObjectives";
+			expression="if (isMultiplayer) then {[_value] spawn bis_fnc_sharedObjectives;};";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		nAttributes=3;
+	};
+	class Category1
+	{
+		name="Scenario";
+		class Attribute0
+		{
+			property="EnableDebugConsole";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=1;
+				};
+			};
+		};
+		nAttributes=1;
+	};
 };
 class Mission
 {
