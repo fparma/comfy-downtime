@@ -584,7 +584,7 @@ ASL_Find_Nearby_Vehicles = {
 };
 
 if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
-  _FP_Slingloading_ROOT = ['FP_Slingloading_Root','Slingloading','',{},{true}] call ace_interact_menu_fnc_createAction;
+  _FP_Slingloading_ROOT = ['FP_Slingloading_Root','Slingloading','\z\ace\addons\fastroping\UI\Icon_Waypoint.paa',{},{true}] call ace_interact_menu_fnc_createAction;
   [ACE_player, 1, ["ACE_SelfActions"], _FP_Slingloading_ROOT] call ace_interact_menu_fnc_addActionToObject;
 
   _FP_Slingloading_DeployRope = ['FP_Slingloading_Deploy','Deploy Cargo Ropes','',{[] call ASL_Deploy_Ropes_Action;},{call ASL_Deploy_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
