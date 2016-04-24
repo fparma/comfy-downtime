@@ -106,10 +106,6 @@ ASL_Extend_Ropes_Action = {
 	};
 };
 
-ASL_Extend_Ropes_Action_Check = {
-	[vehicle ACE_player] call ASL_Can_Extend_Ropes;
-};
-
 ASL_Can_Extend_Ropes = {
 	params ["_vehicle"];
 	private ["_existingRopes"];
@@ -153,10 +149,6 @@ ASL_Shorten_Ropes_Action = {
 	};
 };
 
-ASL_Shorten_Ropes_Action_Check = {
-	[vehicle ACE_player] call ASL_Can_Shorten_Ropes;
-};
-
 ASL_Can_Shorten_Ropes = {
 	params ["_vehicle"];
 	private ["_existingRopes"];
@@ -194,10 +186,6 @@ ASL_Release_Cargo_Action = {
 	if([_vehicle] call ASL_Can_Release_Cargo) then {
 		[_vehicle,ACE_player] call ASL_Release_Cargo;
 	};
-};
-
-ASL_Release_Cargo_Action_Check = {
-	[vehicle ACE_player] call ASL_Can_Release_Cargo;
 };
 
 ASL_Can_Release_Cargo = {
@@ -249,10 +237,6 @@ ASL_Retract_Ropes_Action = {
 	if([_vehicle] call ASL_Can_Retract_Ropes) then {
 		[_vehicle,ACE_player] call ASL_Retract_Ropes;
 	};
-};
-
-ASL_Retract_Ropes_Action_Check = {
-	[vehicle ACE_player] call ASL_Can_Retract_Ropes;
 };
 
 ASL_Can_Retract_Ropes = {
@@ -351,10 +335,6 @@ ASL_Put_Away_Ropes_Action = {
 	if([_vehicle] call ASL_Can_Put_Away_Ropes) then {
 		[_vehicle,ACE_player] call ASL_Put_Away_Ropes;
 	};
-};
-
-ASL_Put_Away_Ropes_Action_Check = {
-	[cursorTarget] call ASL_Can_Put_Away_Ropes;
 };
 
 ASL_Can_Put_Away_Ropes = {
@@ -485,10 +465,6 @@ ASL_Drop_Ropes_Action = {
 	};
 };
 
-ASL_Drop_Ropes_Action_Check = {
-	[] call ASL_Can_Drop_Ropes;
-};
-
 ASL_Can_Drop_Ropes = {
 	!isNull (ACE_player getVariable ["ASL_Ropes_Vehicle", objNull]) && vehicle ACE_player == ACE_player;
 };
@@ -617,25 +593,25 @@ if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
   _FP_Slingloading_AttachRope = ['FP_Slingloading_Attach','Attach Cargo Ropes','',{[] call ASL_Attach_Ropes_Action;},{call ASL_Attach_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
   [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_AttachRope] call ace_interact_menu_fnc_addActionToObject;
 
-  _FP_Slingloading_DropRope = ['FP_Slingloading_Drop','Drop Cargo Ropes','',{[] call ASL_Drop_Ropes_Action;},{call ASL_Drop_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
+  _FP_Slingloading_DropRope = ['FP_Slingloading_Drop','Drop Cargo Ropes','',{[] call ASL_Drop_Ropes_Action;},{[] call ASL_Can_Drop_Ropes;}] call ace_interact_menu_fnc_createAction;
   [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_DropRope] call ace_interact_menu_fnc_addActionToObject;
 
-  _FP_Slingloading_PutAwayRope = ['FP_Slingloading_PutAway','Put Away Cargo Ropes','',{[] call ASL_Put_Away_Ropes_Action;},{call ASL_Put_Away_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
+  _FP_Slingloading_PutAwayRope = ['FP_Slingloading_PutAway','Put Away Cargo Ropes','',{[] call ASL_Put_Away_Ropes_Action;},{[cursorTarget] call ASL_Can_Put_Away_Ropes;}] call ace_interact_menu_fnc_createAction;
   [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_PutAwayRope] call ace_interact_menu_fnc_addActionToObject;
 
   _FP_Slingloading_PickUpRope = ['FP_Slingloading_Pickup','Pickup Cargo Ropes','',{[] call ASL_Pickup_Ropes_Action;},{call ASL_Can_Pickup_Ropes;}] call ace_interact_menu_fnc_createAction;
   [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_PickUpRope] call ace_interact_menu_fnc_addActionToObject;
 
-  _FP_Slingloading_ExtendRope = ['FP_Slingloading_Extend','Extend Cargo Ropes','',{[] call ASL_Extend_Ropes_Action;},{call ASL_Extend_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
+  _FP_Slingloading_ExtendRope = ['FP_Slingloading_Extend','Extend Cargo Ropes','',{[] call ASL_Extend_Ropes_Action;},{[vehicle ACE_player] call ASL_Can_Extend_Ropes;}] call ace_interact_menu_fnc_createAction;
   [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_ExtendRope] call ace_interact_menu_fnc_addActionToObject;
 
-  _FP_Slingloading_ShortenRope = ['FP_Slingloading_Shorten','Shorten Cargo Ropes','',{[] call ASL_Shorten_Ropes_Action;},{call ASL_Shorten_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
+  _FP_Slingloading_ShortenRope = ['FP_Slingloading_Shorten','Shorten Cargo Ropes','',{[] call ASL_Shorten_Ropes_Action;},{[vehicle ACE_player] call ASL_Can_Shorten_Ropes;}] call ace_interact_menu_fnc_createAction;
   [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_ShortenRope] call ace_interact_menu_fnc_addActionToObject;
 
-  _FP_Slingloading_ReleaseCargo = ['FP_Slingloading_Release','Release Cargo','',{[] call ASL_Release_Cargo_Action;},{call ASL_Release_Cargo_Action_Check;}] call ace_interact_menu_fnc_createAction;
+  _FP_Slingloading_ReleaseCargo = ['FP_Slingloading_Release','Release Cargo','',{[] call ASL_Release_Cargo_Action;},{[vehicle ACE_player] call ASL_Can_Release_Cargo;}] call ace_interact_menu_fnc_createAction;
   [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_ReleaseCargo] call ace_interact_menu_fnc_addActionToObject;
 
-  _FP_Slingloading_RetractRopes = ['FP_Slingloading_Retract','Retract Cargo Ropes','',{[] call ASL_Retract_Ropes_Action;},{call ASL_Retract_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
+  _FP_Slingloading_RetractRopes = ['FP_Slingloading_Retract','Retract Cargo Ropes','',{[] call ASL_Retract_Ropes_Action;},{[vehicle ACE_player] call ASL_Can_Retract_Ropes;}] call ace_interact_menu_fnc_createAction;
   [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_RetractRopes] call ace_interact_menu_fnc_addActionToObject;
 };
 
