@@ -242,27 +242,14 @@ ASL_Retract_Ropes = {
 };
 
 ASL_Retract_Ropes_Action = {
-	private ["_vehicle","_canRetractRopes"];
+	private ["_vehicle"];
 	if(vehicle ACE_player == ACE_player) then {
 		_vehicle = cursorTarget;
 	} else {
 		_vehicle = vehicle ACE_player;
 	};
 	if([_vehicle] call ASL_Can_Retract_Ropes) then {
-
-		_canRetractRopes = true;
-
-		if!(missionNamespace getVariable ["ASL_LOCKED_VEHICLES_ENABLED",false]) then {
-			if( locked _vehicle > 1 ) then {
-				["Cannot retract cargo ropes to locked vehicle",false] call ASL_Hint;
-				_canRetractRopes = false;
-			};
-		};
-
-		if(_canRetractRopes) then {
-			[_vehicle,ACE_player] call ASL_Retract_Ropes;
-		};
-
+		[_vehicle,ACE_player] call ASL_Retract_Ropes;
 	};
 };
 
@@ -311,27 +298,14 @@ ASL_Deploy_Ropes = {
 };
 
 ASL_Deploy_Ropes_Action = {
-	private ["_vehicle","_canDeployRopes"];
+	private ["_vehicle"];
 	if(vehicle ACE_player == ACE_player) then {
 		_vehicle = cursorTarget;
 	} else {
 		_vehicle = vehicle ACE_player;
 	};
 	if([_vehicle] call ASL_Can_Deploy_Ropes) then {
-
-		_canDeployRopes = true;
-
-		if!(missionNamespace getVariable ["ASL_LOCKED_VEHICLES_ENABLED",false]) then {
-			if( locked _vehicle > 1 ) then {
-				["Cannot deploy cargo ropes from locked vehicle",false] call ASL_Hint;
-				_canDeployRopes = false;
-			};
-		};
-
-		if(_canDeployRopes) then {
-			[_vehicle,ACE_player] call ASL_Deploy_Ropes;
-		};
-
+		[_vehicle,ACE_player] call ASL_Deploy_Ropes;
 	};
 };
 
@@ -374,23 +348,10 @@ ASL_Put_Away_Ropes = {
 };
 
 ASL_Put_Away_Ropes_Action = {
-	private ["_vehicle","_canPutAwayRopes"];
+	private ["_vehicle"];
 	_vehicle = cursorTarget;
 	if([_vehicle] call ASL_Can_Put_Away_Ropes) then {
-
-		_canPutAwayRopes = true;
-
-		if!(missionNamespace getVariable ["ASL_LOCKED_VEHICLES_ENABLED",false]) then {
-			if( locked _vehicle > 1 ) then {
-				["Cannot put away cargo ropes in locked vehicle",false] call ASL_Hint;
-				_canPutAwayRopes = false;
-			};
-		};
-
-		if(_canPutAwayRopes) then {
-			[_vehicle,ACE_player] call ASL_Put_Away_Ropes;
-		};
-
+		[_vehicle,ACE_player] call ASL_Put_Away_Ropes;
 	};
 };
 
@@ -457,7 +418,7 @@ ASL_Attach_Ropes = {
 				_ropeLength = (ropeLength (_ropes select 0));
 				_objDistance = (_cargo distance _vehicle) + 2;
 				if( _objDistance > _ropeLength ) then {
-					[["The cargo ropes are too short. Move vehicle closer.", false],"ASL_Hint",_player] call ASL_RemoteExec;
+          hint "The cargo ropes are too short. Move vehicle closer.";
 				} else {
 					[_vehicle,_player] call ASL_Drop_Ropes;
 					[_cargo, _attachmentPoints select 0, [0,0,-1]] ropeAttachTo (_ropes select 0);
@@ -476,24 +437,11 @@ ASL_Attach_Ropes = {
 };
 
 ASL_Attach_Ropes_Action = {
-	private ["_vehicle","_cargo","_canBeAttached"];
+	private ["_vehicle","_cargo"];
 	_cargo = cursorTarget;
 	_vehicle = ACE_player getVariable ["ASL_Ropes_Vehicle", objNull];
 	if([_vehicle,_cargo] call ASL_Can_Attach_Ropes) then {
-
-		_canBeAttached = true;
-
-		if!(missionNamespace getVariable ["ASL_LOCKED_VEHICLES_ENABLED",false]) then {
-			if( locked _cargo > 1 ) then {
-				["Cannot attach cargo ropes to locked vehicle",false] call ASL_Hint;
-				_canBeAttached = false;
-			};
-		};
-
-		if(_canBeAttached) then {
-			[_cargo,ACE_player] call ASL_Attach_Ropes;
-		};
-
+		[_cargo,ACE_player] call ASL_Attach_Ropes;
 	};
 };
 
@@ -581,13 +529,6 @@ ASL_Pickup_Ropes_Action = {
 		_vehicle = _nearbyVehicles select 0;
 		_canPickupRopes = true;
 
-		if!(missionNamespace getVariable ["ASL_LOCKED_VEHICLES_ENABLED",false]) then {
-			if( locked _vehicle > 1 ) then {
-				["Cannot pick up cargo ropes from locked vehicle",false] call ASL_Hint;
-				_canPickupRopes = false;
-			};
-		};
-
 		if(_canPickupRopes) then {
 			[_nearbyVehicles select 0, ACE_player] call ASL_Pickup_Ropes;
 		};
@@ -642,11 +583,6 @@ ASL_Is_Supported_Cargo = {
 		} forEach (missionNamespace getVariable ["ASL_SLING_RULES_OVERRIDE",ASL_SLING_RULES]);
 	};
 	_canSling;
-};
-
-ASL_Hint = {
-    params ["_msg",["_isSuccess",true]];
-    hint _msg;
 };
 
 ASL_Hide_Object_Global = {
