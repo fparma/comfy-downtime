@@ -259,15 +259,6 @@ ASL_Retract_Ropes_Action = {
 			};
 		};
 
-		if!(missionNamespace getVariable ["ASL_EXILE_SAFEZONE_ENABLED",false]) then {
-			if(!isNil "ExilePlayerInSafezone") then {
-				if( ExilePlayerInSafezone ) then {
-					["Cannot retract cargo ropes in safe zone",false] call ASL_Hint;
-					_canRetractRopes = false;
-				};
-			};
-		};
-
 		if(_canRetractRopes) then {
 			[_vehicle,ACE_player] call ASL_Retract_Ropes;
 		};
@@ -337,15 +328,6 @@ ASL_Deploy_Ropes_Action = {
 			};
 		};
 
-		if!(missionNamespace getVariable ["ASL_EXILE_SAFEZONE_ENABLED",false]) then {
-			if(!isNil "ExilePlayerInSafezone") then {
-				if( ExilePlayerInSafezone ) then {
-					["Cannot deploy cargo ropes in safe zone",false] call ASL_Hint;
-					_canDeployRopes = false;
-				};
-			};
-		};
-
 		if(_canDeployRopes) then {
 			[_vehicle,ACE_player] call ASL_Deploy_Ropes;
 		};
@@ -402,15 +384,6 @@ ASL_Put_Away_Ropes_Action = {
 			if( locked _vehicle > 1 ) then {
 				["Cannot put away cargo ropes in locked vehicle",false] call ASL_Hint;
 				_canPutAwayRopes = false;
-			};
-		};
-
-		if!(missionNamespace getVariable ["ASL_EXILE_SAFEZONE_ENABLED",false]) then {
-			if(!isNil "ExilePlayerInSafezone") then {
-				if( ExilePlayerInSafezone ) then {
-					["Cannot put away cargo ropes in safe zone",false] call ASL_Hint;
-					_canPutAwayRopes = false;
-				};
 			};
 		};
 
@@ -517,15 +490,6 @@ ASL_Attach_Ropes_Action = {
 			};
 		};
 
-		if!(missionNamespace getVariable ["ASL_EXILE_SAFEZONE_ENABLED",false]) then {
-			if(!isNil "ExilePlayerInSafezone") then {
-				if( ExilePlayerInSafezone ) then {
-					["Cannot attach cargo ropes in safe zone",false] call ASL_Hint;
-					_canBeAttached = false;
-				};
-			};
-		};
-
 		if(_canBeAttached) then {
 			[_cargo,ACE_player] call ASL_Attach_Ropes;
 		};
@@ -624,15 +588,6 @@ ASL_Pickup_Ropes_Action = {
 			};
 		};
 
-		if!(missionNamespace getVariable ["ASL_EXILE_SAFEZONE_ENABLED",false]) then {
-			if(!isNil "ExilePlayerInSafezone") then {
-				if( ExilePlayerInSafezone ) then {
-					["Cannot pick up cargo ropes in safe zone",false] call ASL_Hint;
-					_canPickupRopes = false;
-				};
-			};
-		};
-
 		if(_canPickupRopes) then {
 			[_nearbyVehicles select 0, ACE_player] call ASL_Pickup_Ropes;
 		};
@@ -691,15 +646,7 @@ ASL_Is_Supported_Cargo = {
 
 ASL_Hint = {
     params ["_msg",["_isSuccess",true]];
-    if(!isNil "ExileClient_gui_notification_event_addNotification") then {
-		if(_isSuccess) then {
-			["Success", [_msg]] call ExileClient_gui_notification_event_addNotification;
-		} else {
-			["Whoops", [_msg]] call ExileClient_gui_notification_event_addNotification;
-		};
-    } else {
-        hint _msg;
-    };
+    hint _msg;
 };
 
 ASL_Hide_Object_Global = {
@@ -766,67 +713,26 @@ if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
 
 ASL_RemoteExec = {
 	params ["_params","_functionName","_target",["_isCall",false]];
-	if(!isNil "ExileClient_system_network_send") then {
-		["AdvancedSlingLoadingRemoteExecClient",[_params,_functionName,_target,_isCall]] call ExileClient_system_network_send;
-	} else {
-		if(_isCall) then {
-			_params remoteExecCall [_functionName, _target];
-		} else {
-			_params remoteExec [_functionName, _target];
-		};
-	};
+  if(_isCall) then {
+    _params remoteExecCall [_functionName, _target];
+  } else {
+    _params remoteExec [_functionName, _target];
+  };
 };
 
 ASL_RemoteExecServer = {
 	params ["_params","_functionName",["_isCall",false]];
-	if(!isNil "ExileClient_system_network_send") then {
-		["AdvancedSlingLoadingRemoteExecServer",[_params,_functionName,_isCall]] call ExileClient_system_network_send;
-	} else {
-		if(_isCall) then {
-			_params remoteExecCall [_functionName, 2];
-		} else {
-			_params remoteExec [_functionName, 2];
-		};
-	};
+  if(_isCall) then {
+    _params remoteExecCall [_functionName, 2];
+  } else {
+    _params remoteExec [_functionName, 2];
+  };
 };
 
 if(isServer) then {
-
-	// Adds support for exile network calls (Only used when running exile) //
-
-	ASL_SUPPORTED_REMOTEEXECSERVER_FUNCTIONS = ["ASL_Hide_Object_Global"];
-
-	ExileServer_AdvancedSlingLoading_network_AdvancedSlingLoadingRemoteExecServer = {
-		params ["_sessionId", "_messageParameters",["_isCall",false]];
-		_messageParameters params ["_params","_functionName"];
-		if(_functionName in ASL_SUPPORTED_REMOTEEXECSERVER_FUNCTIONS) then {
-			if(_isCall) then {
-				_params call (missionNamespace getVariable [_functionName,{}]);
-			} else {
-				_params spawn (missionNamespace getVariable [_functionName,{}]);
-			};
-		};
-	};
-
-	ASL_SUPPORTED_REMOTEEXECCLIENT_FUNCTIONS = ["ASL_Extend_Ropes","ASL_Shorten_Ropes","ASL_Release_Cargo","ASL_Retract_Ropes","ASL_Deploy_Ropes","ASL_Put_Away_Ropes","ASL_Hint","ASL_Attach_Ropes","ASL_Drop_Ropes"];
-
-	ExileServer_AdvancedSlingLoading_network_AdvancedSlingLoadingRemoteExecClient = {
-		params ["_sessionId", "_messageParameters"];
-		_messageParameters params ["_params","_functionName","_target",["_isCall",false]];
-		if(_functionName in ASL_SUPPORTED_REMOTEEXECCLIENT_FUNCTIONS) then {
-			if(_isCall) then {
-				_params remoteExecCall [_functionName, _target];
-			} else {
-				_params remoteExec [_functionName, _target];
-			};
-		};
-	};
-
-	// Install Advanced Sling Loading on all clients (plus JIP) //
-
+	// Install Advanced Sling Loading on all clients (plus JIP)
 	publicVariable "ASL_Advanced_Sling_Loading_Install";
 	remoteExecCall ["ASL_Advanced_Sling_Loading_Install", -2,true];
-
 };
 
 diag_log "Advanced Sling Loading Loaded";
