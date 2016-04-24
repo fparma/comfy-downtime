@@ -102,14 +102,14 @@ ASL_Extend_Ropes = {
 
 ASL_Extend_Ropes_Action = {
 	private ["_vehicle"];
-	_vehicle = vehicle player;
+	_vehicle = vehicle ACE_player;
 	if([_vehicle] call ASL_Can_Extend_Ropes) then {
-		[_vehicle,player] call ASL_Extend_Ropes;
+		[_vehicle,ACE_player] call ASL_Extend_Ropes;
 	};
 };
 
 ASL_Extend_Ropes_Action_Check = {
-	[vehicle player] call ASL_Can_Extend_Ropes;
+	[vehicle ACE_player] call ASL_Can_Extend_Ropes;
 };
 
 ASL_Can_Extend_Ropes = {
@@ -117,7 +117,7 @@ ASL_Can_Extend_Ropes = {
 	private ["_existingRopes"];
 	if([_vehicle] call ASL_Is_Supported_Vehicle) then {
 		_existingRopes = _vehicle getVariable ["ASL_Ropes",[]];
-		player distance _vehicle < 10 && (count _existingRopes) > 0;
+		ACE_player distance _vehicle < 10 && (count _existingRopes) > 0;
 	} else {
 		false;
 	};
@@ -149,14 +149,14 @@ ASL_Shorten_Ropes = {
 
 ASL_Shorten_Ropes_Action = {
 	private ["_vehicle"];
-	_vehicle = vehicle player;
+	_vehicle = vehicle ACE_player;
 	if([_vehicle] call ASL_Can_Shorten_Ropes) then {
-		[_vehicle,player] call ASL_Shorten_Ropes;
+		[_vehicle,ACE_player] call ASL_Shorten_Ropes;
 	};
 };
 
 ASL_Shorten_Ropes_Action_Check = {
-	[vehicle player] call ASL_Can_Shorten_Ropes;
+	[vehicle ACE_player] call ASL_Can_Shorten_Ropes;
 };
 
 ASL_Can_Shorten_Ropes = {
@@ -164,7 +164,7 @@ ASL_Can_Shorten_Ropes = {
 	private ["_existingRopes"];
 	if([_vehicle] call ASL_Is_Supported_Vehicle) then {
 		_existingRopes = _vehicle getVariable ["ASL_Ropes",[]];
-		player distance _vehicle < 10 && (count _existingRopes) > 0;
+		ACE_player distance _vehicle < 10 && (count _existingRopes) > 0;
 	} else {
 		false;
 	};
@@ -192,14 +192,14 @@ ASL_Release_Cargo = {
 
 ASL_Release_Cargo_Action = {
 	private ["_vehicle"];
-	_vehicle = vehicle player;
+	_vehicle = vehicle ACE_player;
 	if([_vehicle] call ASL_Can_Release_Cargo) then {
-		[_vehicle,player] call ASL_Release_Cargo;
+		[_vehicle,ACE_player] call ASL_Release_Cargo;
 	};
 };
 
 ASL_Release_Cargo_Action_Check = {
-	[vehicle player] call ASL_Can_Release_Cargo;
+	[vehicle ACE_player] call ASL_Can_Release_Cargo;
 };
 
 ASL_Can_Release_Cargo = {
@@ -207,7 +207,7 @@ ASL_Can_Release_Cargo = {
 	private ["_existingRopes"];
 	if([_vehicle] call ASL_Is_Supported_Vehicle) then {
 		_existingRopes = _vehicle getVariable ["ASL_Ropes",[]];
-		player distance _vehicle < 10 && (count _existingRopes) > 0 && count (ropeAttachedObjects _vehicle) > 0;
+		ACE_player distance _vehicle < 10 && (count _existingRopes) > 0 && count (ropeAttachedObjects _vehicle) > 0;
 	} else {
 		false;
 	};
@@ -243,10 +243,10 @@ ASL_Retract_Ropes = {
 
 ASL_Retract_Ropes_Action = {
 	private ["_vehicle","_canRetractRopes"];
-	if(vehicle player == player) then {
+	if(vehicle ACE_player == ACE_player) then {
 		_vehicle = cursorTarget;
 	} else {
-		_vehicle = vehicle player;
+		_vehicle = vehicle ACE_player;
 	};
 	if([_vehicle] call ASL_Can_Retract_Ropes) then {
 
@@ -269,14 +269,14 @@ ASL_Retract_Ropes_Action = {
 		};
 
 		if(_canRetractRopes) then {
-			[_vehicle,player] call ASL_Retract_Ropes;
+			[_vehicle,ACE_player] call ASL_Retract_Ropes;
 		};
 
 	};
 };
 
 ASL_Retract_Ropes_Action_Check = {
-	[vehicle player] call ASL_Can_Retract_Ropes;
+	[vehicle ACE_player] call ASL_Can_Retract_Ropes;
 };
 
 ASL_Can_Retract_Ropes = {
@@ -284,7 +284,7 @@ ASL_Can_Retract_Ropes = {
 	private ["_existingRopes"];
 	if([_vehicle] call ASL_Is_Supported_Vehicle) then {
 		_existingRopes = _vehicle getVariable ["ASL_Ropes",[]];
-		player distance _vehicle < 10 && (count _existingRopes) > 0 && count (ropeAttachedObjects _vehicle) == 0;
+		ACE_player distance _vehicle < 10 && (count _existingRopes) > 0 && count (ropeAttachedObjects _vehicle) == 0;
 	} else {
 		false;
 	};
@@ -310,7 +310,7 @@ ASL_Deploy_Ropes = {
 				ropeUnwind [_x, 5, _ropeLength];
 			} forEach _cargoRopes;
 			if(vehicle _player == _player) then {
-				// Pick up the ropes if player outside of vehicle
+				// Pick up the ropes if ACE_player outside of vehicle
 				_this call ASL_Pickup_Ropes;
 			};
 		};
@@ -321,10 +321,10 @@ ASL_Deploy_Ropes = {
 
 ASL_Deploy_Ropes_Action = {
 	private ["_vehicle","_canDeployRopes"];
-	if(vehicle player == player) then {
+	if(vehicle ACE_player == ACE_player) then {
 		_vehicle = cursorTarget;
 	} else {
-		_vehicle = vehicle player;
+		_vehicle = vehicle ACE_player;
 	};
 	if([_vehicle] call ASL_Can_Deploy_Ropes) then {
 
@@ -347,17 +347,17 @@ ASL_Deploy_Ropes_Action = {
 		};
 
 		if(_canDeployRopes) then {
-			[_vehicle,player] call ASL_Deploy_Ropes;
+			[_vehicle,ACE_player] call ASL_Deploy_Ropes;
 		};
 
 	};
 };
 
 ASL_Deploy_Ropes_Action_Check = {
-	if(vehicle player == player) then {
+	if(vehicle ACE_player == ACE_player) then {
 		[cursorTarget] call ASL_Can_Deploy_Ropes;
 	} else {
-		[vehicle player] call ASL_Can_Deploy_Ropes;
+		[vehicle ACE_player] call ASL_Can_Deploy_Ropes;
 	};
 };
 
@@ -366,8 +366,8 @@ ASL_Can_Deploy_Ropes = {
 	if([_vehicle] call ASL_Is_Supported_Vehicle) then {
 		private ["_existingVehicle","_existingRopes"];
 		_existingRopes = _vehicle getVariable ["ASL_Ropes",[]];
-		_existingVehicle = player getVariable ["ASL_Ropes_Vehicle", objNull];
-		player distance _vehicle < 10 && (count _existingRopes) == 0 && isNull _existingVehicle;
+		_existingVehicle = ACE_player getVariable ["ASL_Ropes_Vehicle", objNull];
+		ACE_player distance _vehicle < 10 && (count _existingRopes) == 0 && isNull _existingVehicle;
 	} else {
 		false;
 	};
@@ -415,7 +415,7 @@ ASL_Put_Away_Ropes_Action = {
 		};
 
 		if(_canPutAwayRopes) then {
-			[_vehicle,player] call ASL_Put_Away_Ropes;
+			[_vehicle,ACE_player] call ASL_Put_Away_Ropes;
 		};
 
 	};
@@ -430,7 +430,7 @@ ASL_Can_Put_Away_Ropes = {
 	private ["_existingRopes"];
 	if([_vehicle] call ASL_Is_Supported_Vehicle) then {
 		_existingRopes = _vehicle getVariable ["ASL_Ropes",[]];
-		vehicle player == player && player distance _vehicle < 10 && (count _existingRopes) > 0;
+		vehicle ACE_player == ACE_player && ACE_player distance _vehicle < 10 && (count _existingRopes) > 0;
 	} else {
 		false;
 	};
@@ -505,7 +505,7 @@ ASL_Attach_Ropes = {
 ASL_Attach_Ropes_Action = {
 	private ["_vehicle","_cargo","_canBeAttached"];
 	_cargo = cursorTarget;
-	_vehicle = player getVariable ["ASL_Ropes_Vehicle", objNull];
+	_vehicle = ACE_player getVariable ["ASL_Ropes_Vehicle", objNull];
 	if([_vehicle,_cargo] call ASL_Can_Attach_Ropes) then {
 
 		_canBeAttached = true;
@@ -527,7 +527,7 @@ ASL_Attach_Ropes_Action = {
 		};
 
 		if(_canBeAttached) then {
-			[_cargo,player] call ASL_Attach_Ropes;
+			[_cargo,ACE_player] call ASL_Attach_Ropes;
 		};
 
 	};
@@ -535,7 +535,7 @@ ASL_Attach_Ropes_Action = {
 
 ASL_Attach_Ropes_Action_Check = {
 	private ["_vehicle","_cargo"];
-	_vehicle = player getVariable ["ASL_Ropes_Vehicle", objNull];
+	_vehicle = ACE_player getVariable ["ASL_Ropes_Vehicle", objNull];
 	_cargo = cursorTarget;
 	[_vehicle,_cargo] call ASL_Can_Attach_Ropes;
 };
@@ -543,7 +543,7 @@ ASL_Attach_Ropes_Action_Check = {
 ASL_Can_Attach_Ropes = {
 	params ["_vehicle","_cargo"];
 	if(!isNull _vehicle && !isNull _cargo) then {
-		[_vehicle,_cargo] call ASL_Is_Supported_Cargo && vehicle player == player && player distance _cargo < 10 && _vehicle != _cargo;
+		[_vehicle,_cargo] call ASL_Is_Supported_Cargo && vehicle ACE_player == ACE_player && ACE_player distance _cargo < 10 && _vehicle != _cargo;
 	} else {
 		false;
 	};
@@ -571,9 +571,9 @@ ASL_Drop_Ropes = {
 
 ASL_Drop_Ropes_Action = {
 	private ["_vehicle"];
-	_vehicle = player getVariable ["ASL_Ropes_Vehicle", objNull];
+	_vehicle = ACE_player getVariable ["ASL_Ropes_Vehicle", objNull];
 	if([] call ASL_Can_Drop_Ropes) then {
-		[_vehicle, player] call ASL_Drop_Ropes;
+		[_vehicle, ACE_player] call ASL_Drop_Ropes;
 	};
 };
 
@@ -582,7 +582,7 @@ ASL_Drop_Ropes_Action_Check = {
 };
 
 ASL_Can_Drop_Ropes = {
-	!isNull (player getVariable ["ASL_Ropes_Vehicle", objNull]) && vehicle player == player;
+	!isNull (ACE_player getVariable ["ASL_Ropes_Vehicle", objNull]) && vehicle ACE_player == ACE_player;
 };
 
 ASL_Pickup_Ropes = {
@@ -634,7 +634,7 @@ ASL_Pickup_Ropes_Action = {
 		};
 
 		if(_canPickupRopes) then {
-			[_nearbyVehicles select 0, player] call ASL_Pickup_Ropes;
+			[_nearbyVehicles select 0, ACE_player] call ASL_Pickup_Ropes;
 		};
 
 	};
@@ -645,7 +645,7 @@ ASL_Pickup_Ropes_Action_Check = {
 };
 
 ASL_Can_Pickup_Ropes = {
-	isNull (player getVariable ["ASL_Ropes_Vehicle", objNull]) && count (missionNamespace getVariable ["ASL_Nearby_Vehicles",[]]) > 0 && vehicle player == player;
+	isNull (ACE_player getVariable ["ASL_Ropes_Vehicle", objNull]) && count (missionNamespace getVariable ["ASL_Nearby_Vehicles",[]]) > 0 && vehicle ACE_player == ACE_player;
 };
 
 ASL_SUPPORTED_VEHICLES = [
@@ -713,7 +713,7 @@ ASL_Find_Nearby_Vehicles = {
 	private ["_nearVehicles","_nearVehiclesWithRopes","_vehicle","_ends","_end1","_end2"];
 	_nearVehicles = [];
 	{
-		_nearVehicles append  (position player nearObjects [_x, 30]);
+		_nearVehicles append  (position ACE_player nearObjects [_x, 30]);
 	} forEach (missionNamespace getVariable ["ASL_SUPPORTED_VEHICLES_OVERRIDE",ASL_SUPPORTED_VEHICLES]);
 	_nearVehiclesWithRopes = [];
 	{
@@ -723,7 +723,7 @@ ASL_Find_Nearby_Vehicles = {
 			if(count _ends == 2) then {
 				_end1 = _ends select 0;
 				_end2 = _ends select 1;
-				if(((position player) distance _end1) < 5 || ((position player) distance _end2) < 5 ) then {
+				if(((position ACE_player) distance _end1) < 5 || ((position ACE_player) distance _end2) < 5 ) then {
 					_nearVehiclesWithRopes pushBack _vehicle;
 				}
 			};
@@ -734,34 +734,34 @@ ASL_Find_Nearby_Vehicles = {
 
 if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
   _FP_Slingloading_ROOT = ['FP_Slingloading_Root','Slingloading','',{},{true}] call ace_interact_menu_fnc_createAction;
-  [player, 1, ["ACE_SelfActions"], _FP_Slingloading_ROOT] call ace_interact_menu_fnc_addActionToObject;
+  [ACE_player, 1, ["ACE_SelfActions"], _FP_Slingloading_ROOT] call ace_interact_menu_fnc_addActionToObject;
 
   _FP_Slingloading_DeployRope = ['FP_Slingloading_Deploy','Deploy Cargo Ropes','',{[] call ASL_Deploy_Ropes_Action;},{call ASL_Deploy_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
-  [player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_DeployRope] call ace_interact_menu_fnc_addActionToObject;
+  [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_DeployRope] call ace_interact_menu_fnc_addActionToObject;
 
   _FP_Slingloading_AttachRope = ['FP_Slingloading_Attach','Attach Cargo Ropes','',{[] call ASL_Attach_Ropes_Action;},{call ASL_Attach_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
-  [player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_AttachRope] call ace_interact_menu_fnc_addActionToObject;
+  [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_AttachRope] call ace_interact_menu_fnc_addActionToObject;
 
   _FP_Slingloading_DropRope = ['FP_Slingloading_Drop','Drop Cargo Ropes','',{[] call ASL_Drop_Ropes_Action;},{call ASL_Drop_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
-  [player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_DropRope] call ace_interact_menu_fnc_addActionToObject;
+  [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_DropRope] call ace_interact_menu_fnc_addActionToObject;
 
   _FP_Slingloading_PutAwayRope = ['FP_Slingloading_PutAway','Put Away Cargo Ropes','',{[] call ASL_Put_Away_Ropes_Action;},{call ASL_Put_Away_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
-  [player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_PutAwayRope] call ace_interact_menu_fnc_addActionToObject;
+  [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_PutAwayRope] call ace_interact_menu_fnc_addActionToObject;
 
   _FP_Slingloading_PickUpRope = ['FP_Slingloading_Pickup','Pickup Cargo Ropes','',{[] call ASL_Pickup_Ropes_Action;},{call ASL_Pickup_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
-  [player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_PickUpRope] call ace_interact_menu_fnc_addActionToObject;
+  [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_PickUpRope] call ace_interact_menu_fnc_addActionToObject;
 
   _FP_Slingloading_ExtendRope = ['FP_Slingloading_Extend','Extend Cargo Ropes','',{[] call ASL_Extend_Ropes_Action;},{call ASL_Extend_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
-  [player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_ExtendRope] call ace_interact_menu_fnc_addActionToObject;
+  [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_ExtendRope] call ace_interact_menu_fnc_addActionToObject;
 
   _FP_Slingloading_ShortenRope = ['FP_Slingloading_Shorten','Shorten Cargo Ropes','',{[] call ASL_Shorten_Ropes_Action;},{call ASL_Shorten_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
-  [player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_ShortenRope] call ace_interact_menu_fnc_addActionToObject;
+  [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_ShortenRope] call ace_interact_menu_fnc_addActionToObject;
 
   _FP_Slingloading_ReleaseCargo = ['FP_Slingloading_Release','Release Cargo','',{[] call ASL_Release_Cargo_Action;},{call ASL_Release_Cargo_Action_Check;}] call ace_interact_menu_fnc_createAction;
-  [player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_ReleaseCargo] call ace_interact_menu_fnc_addActionToObject;
+  [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_ReleaseCargo] call ace_interact_menu_fnc_addActionToObject;
 
   _FP_Slingloading_RetractRopes = ['FP_Slingloading_Retract','Retract Cargo Ropes','',{[] call ASL_Retract_Ropes_Action;},{call ASL_Retract_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
-  [player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_RetractRopes] call ace_interact_menu_fnc_addActionToObject;
+  [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_RetractRopes] call ace_interact_menu_fnc_addActionToObject;
 };
 
 if(!isDedicated) then {
