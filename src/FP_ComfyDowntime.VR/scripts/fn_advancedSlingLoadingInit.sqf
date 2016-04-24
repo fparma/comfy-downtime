@@ -425,9 +425,7 @@ ASL_Attach_Ropes = {
 					[_cargo, _attachmentPoints select 1, [0,0,-1]] ropeAttachTo (_ropes select 1);
 					[_cargo, _attachmentPoints select 2, [0,0,-1]] ropeAttachTo (_ropes select 2);
 					[_cargo, _attachmentPoints select 3, [0,0,-1]] ropeAttachTo (_ropes select 3);
-					if(missionNamespace getVariable ["ASL_HEAVY_LIFTING_ENABLED",true]) then {
-						[_cargo, _vehicle, _ropes] spawn ASL_Rope_Adjust_Mass;
-					};
+					[_cargo, _vehicle, _ropes] spawn ASL_Rope_Adjust_Mass;
 				};
 			};
 		} else {
