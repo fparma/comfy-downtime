@@ -16,8 +16,6 @@ ASL_Advanced_Sling_Loading_Install = {
 if(!isNil "ASL_ROPE_INIT") exitWith {};
 ASL_ROPE_INIT = true;
 
-diag_log "Advanced Sling Loading Loading...";
-
 ASL_Rope_Get_Lift_Capability = {
 	private ["_heli","_heliType"];
 	_heli = [_this,0] call BIS_fnc_param;
@@ -534,10 +532,6 @@ ASL_Pickup_Ropes_Action = {
 	};
 };
 
-ASL_Pickup_Ropes_Action_Check = {
-	[] call ASL_Can_Pickup_Ropes;
-};
-
 ASL_Can_Pickup_Ropes = {
 	isNull (ACE_player getVariable ["ASL_Ropes_Vehicle", objNull]) && count (call ASL_Find_Nearby_Vehicles) > 0 && vehicle ACE_player == ACE_player;
 };
@@ -554,7 +548,7 @@ ASL_Is_Supported_Vehicle = {
 			if(_vehicle isKindOf _x) then {
 				_isSupported = true;
 			};
-		} forEach (missionNamespace getVariable ["ASL_SUPPORTED_VEHICLES_OVERRIDE",ASL_SUPPORTED_VEHICLES]);
+		} forEach ASL_SUPPORTED_VEHICLES;
 	};
 	_isSupported;
 };
@@ -578,7 +572,7 @@ ASL_Is_Supported_Cargo = {
 					};
 				};
 			};
-		} forEach (missionNamespace getVariable ["ASL_SLING_RULES_OVERRIDE",ASL_SLING_RULES]);
+		} forEach ASL_SLING_RULES;
 	};
 	_canSling;
 };
@@ -595,7 +589,7 @@ ASL_Find_Nearby_Vehicles = {
 	_nearVehicles = [];
 	{
 		_nearVehicles append  (position ACE_player nearObjects [_x, 30]);
-	} forEach (missionNamespace getVariable ["ASL_SUPPORTED_VEHICLES_OVERRIDE",ASL_SUPPORTED_VEHICLES]);
+	} forEach ASL_SUPPORTED_VEHICLES;
 	_nearVehiclesWithRopes = [];
 	{
 		_vehicle = _x;
@@ -629,7 +623,7 @@ if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
   _FP_Slingloading_PutAwayRope = ['FP_Slingloading_PutAway','Put Away Cargo Ropes','',{[] call ASL_Put_Away_Ropes_Action;},{call ASL_Put_Away_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
   [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_PutAwayRope] call ace_interact_menu_fnc_addActionToObject;
 
-  _FP_Slingloading_PickUpRope = ['FP_Slingloading_Pickup','Pickup Cargo Ropes','',{[] call ASL_Pickup_Ropes_Action;},{call ASL_Pickup_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
+  _FP_Slingloading_PickUpRope = ['FP_Slingloading_Pickup','Pickup Cargo Ropes','',{[] call ASL_Pickup_Ropes_Action;},{call ASL_Can_Pickup_Ropes;}] call ace_interact_menu_fnc_createAction;
   [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_PickUpRope] call ace_interact_menu_fnc_addActionToObject;
 
   _FP_Slingloading_ExtendRope = ['FP_Slingloading_Extend','Extend Cargo Ropes','',{[] call ASL_Extend_Ropes_Action;},{call ASL_Extend_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
@@ -663,13 +657,11 @@ ASL_RemoteExecServer = {
   };
 };
 
+// Install Advanced Sling Loading on all clients (plus JIP)
 if(isServer) then {
-	// Install Advanced Sling Loading on all clients (plus JIP)
 	publicVariable "ASL_Advanced_Sling_Loading_Install";
 	remoteExecCall ["ASL_Advanced_Sling_Loading_Install", -2,true];
 };
-
-diag_log "Advanced Sling Loading Loaded";
 
 };
 
