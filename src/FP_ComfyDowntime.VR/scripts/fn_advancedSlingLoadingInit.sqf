@@ -611,7 +611,7 @@ ASL_Pickup_Ropes = {
 
 ASL_Pickup_Ropes_Action = {
 	private ["_nearbyVehicles","_canPickupRopes","_vehicle"];
-	_nearbyVehicles = missionNamespace getVariable ["ASL_Nearby_Vehicles",[]];
+	_nearbyVehicles = call ASL_Find_Nearby_Vehicles;
 	if([] call ASL_Can_Pickup_Ropes) then {
 
 		_vehicle = _nearbyVehicles select 0;
@@ -645,7 +645,7 @@ ASL_Pickup_Ropes_Action_Check = {
 };
 
 ASL_Can_Pickup_Ropes = {
-	isNull (ACE_player getVariable ["ASL_Ropes_Vehicle", objNull]) && count (missionNamespace getVariable ["ASL_Nearby_Vehicles",[]]) > 0 && vehicle ACE_player == ACE_player;
+	isNull (ACE_player getVariable ["ASL_Ropes_Vehicle", objNull]) && count (call ASL_Find_Nearby_Vehicles) > 0 && vehicle ACE_player == ACE_player;
 };
 
 ASL_SUPPORTED_VEHICLES = [
@@ -762,15 +762,6 @@ if (isClass(configFile >> "CfgPatches" >> "ace_main")) then {
 
   _FP_Slingloading_RetractRopes = ['FP_Slingloading_Retract','Retract Cargo Ropes','',{[] call ASL_Retract_Ropes_Action;},{call ASL_Retract_Ropes_Action_Check;}] call ace_interact_menu_fnc_createAction;
   [ACE_player, 1, ["ACE_SelfActions", "FP_Slingloading_Root"], _FP_Slingloading_RetractRopes] call ace_interact_menu_fnc_addActionToObject;
-};
-
-if(!isDedicated) then {
-	[] spawn {
-		while {true} do {
-			missionNamespace setVariable ["ASL_Nearby_Vehicles", (call ASL_Find_Nearby_Vehicles)];
-			sleep 3;
-		};
-	};
 };
 
 ASL_RemoteExec = {
