@@ -768,7 +768,7 @@ if(!isDedicated) then {
 	[] spawn {
 		while {true} do {
 			missionNamespace setVariable ["ASL_Nearby_Vehicles", (call ASL_Find_Nearby_Vehicles)];
-			sleep 2;
+			sleep 3;
 		};
 	};
 };
