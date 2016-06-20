@@ -3,7 +3,7 @@ respawndelay = 5;
 respawnDialog = 0;
 respawn = 3;
 respawnOnStart = 1;
-respawnTemplates[] = {"MenuPosition", "MenuInventory"};
+respawnTemplates[] = {"MenuPosition"};
 
 #include "scripts\taw_vd\GUI.h"
 
