@@ -56,7 +56,6 @@ class ScenarioData
 	overviewText="Skipped to lucky seven, because that shit better work";
 	overViewPicture="fp_misc\img\fp_logo.paa";
 	onLoadMission="Skipped to lucky seven, because that shit better work";
-	loadScreen="fp_misc\img\fp_logo.paa";
 	respawnDialog=0;
 	disabledAI=1;
 	respawn=3;
