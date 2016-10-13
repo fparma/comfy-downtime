@@ -6,3 +6,12 @@ authors = ["Comfy Baguette <MoistBaguette@users.noreply.github.com>"]
 [dependencies]
 util_kauk_rs = { git = "https://git.comfy.li/rust/util-kauk-rs.git" }
 walkdir = "0.1"
+
+[profile.release]
+opt-level = 3
+debug = false
+rpath = false
+lto = true
+debug-assertions = false
+codegen-units = 1
+panic = 'unwind'

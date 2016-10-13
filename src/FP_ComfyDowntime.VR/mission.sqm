@@ -54,7 +54,7 @@ class ScenarioData
 {
 	author="Kaukassus | 2016";
 	overviewText="Skipped to lucky seven, because that shit better work";
-	overViewPicture="fp_misc\img\fp_logo.paa";
+	overViewPicture="";
 	onLoadMission="Skipped to lucky seven, because that shit better work";
 	respawnDialog=0;
 	disabledAI=1;
