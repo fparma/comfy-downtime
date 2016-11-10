@@ -9,7 +9,7 @@ player addEventHandler ["HandleRating", {abs (_this select 1);}];
 // Init the Spawn Protection
 player addEventHandler ["Respawn", {
   [_this select 0] remoteExecCall ["FP_fnc_addToCurators", 2];
-  
+
   // Set Custom Fatigue Settings
   player setCustomAimCoef 0.6;
 }];
@@ -21,4 +21,4 @@ player addEventHandler ["Respawn", {
     ) then {
         disableRemoteSensors true;
     };
-}, [], 1] call ACE_common_fnc_waitAndExecute;
+}, [], 1] call CBA_fnc_waitAndExecute;
