@@ -1,7 +1,7 @@
 params ["_player", "_isJip"];
 
 // Add JIP players to zeus
-if (_isJip) then {[_player] remoteExecCall ["FP_fnc_addToCurators", 2]};
+if (_isJip) then {[_player] remoteExecCall ["FPA_common_fnc_addToCurators", 2]};
 
 // Fix so player cant join ENEMY side, where all sides fires on him
 player addEventHandler ["HandleRating", {abs (_this select 1);}];
