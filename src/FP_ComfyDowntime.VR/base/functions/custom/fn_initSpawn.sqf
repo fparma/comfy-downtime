@@ -36,7 +36,7 @@ if (_param_lhd == 0) then {
   SPAWN_MARKER_ZONE_B setMarkerSize [100,100];
   SPAWN_MARKER_ZONE_B setMarkerColor "ColorBLUFOR";
   SPAWN_MARKER_ZONE_B setMarkerBrush "SolidBorder";
-  [SPAWNBOARD_B] remoteExecCall ["FP_fnc_addToCurators", 2];
+  [SPAWNBOARD_B] remoteExecCall ["FPA_common_fnc_addToCurators", 2];
 
   // Opfor Spawn Setup
   SPAWNBOARD_O = "MapBoard_altis_F" createVehicle [_o_coords select 0, (_o_coords select 1) + 3, 0];
@@ -48,7 +48,7 @@ if (_param_lhd == 0) then {
   SPAWN_MARKER_ZONE_O setMarkerSize [100,100];
   SPAWN_MARKER_ZONE_O setMarkerColor "ColorOPFOR";
   SPAWN_MARKER_ZONE_O setMarkerBrush "SolidBorder";
-  [SPAWNBOARD_O] remoteExecCall ["FP_fnc_addToCurators", 2];
+  [SPAWNBOARD_O] remoteExecCall ["FPA_common_fnc_addToCurators", 2];
 
   // Independent spawn setup
   SPAWNBOARD_I = "MapBoard_altis_F" createVehicle [_i_coords select 0, (_i_coords select 1) + 3, 0];
@@ -60,7 +60,7 @@ if (_param_lhd == 0) then {
   SPAWN_MARKER_ZONE_I setMarkerSize [100,100];
   SPAWN_MARKER_ZONE_I setMarkerColor "ColorIndependent";
   SPAWN_MARKER_ZONE_I setMarkerBrush "SolidBorder";
-  [SPAWNBOARD_I] remoteExecCall ["FP_fnc_addToCurators", 2];
+  [SPAWNBOARD_I] remoteExecCall ["FPA_common_fnc_addToCurators", 2];
 
   // Ensure that the Marker is always over the Spawn
   [] spawn {
