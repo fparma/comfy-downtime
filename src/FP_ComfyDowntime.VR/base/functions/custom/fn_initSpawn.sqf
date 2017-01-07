@@ -22,7 +22,7 @@ if (_param_lhd == 0) then {
     case "anim_helvantis_v2": {_b_coords = [8622.77,1593.01];_o_coords = [2190.7,2676.65];_i_coords = [1188.86,6654.29];};
     case "altis": {_b_coords = [11291.8,10923.4];_o_coords = [5230.92,12029.6];_i_coords = [6967.11,14883.2];};
     case "pja310": {_b_coords = [18294.9,1837.85];_o_coords = [9524.04,3097.78];_i_coords = [13943.9,9675.46];};
-    case "tanoa": {_b_coords = [11014.5,11495.1];_o_coords [12501.5,2450.64];_i_coords = [10544,7934.78];};
+    case "tanoa": {_b_coords = [11014.5,11495.1];_o_coords = [12501.5,2450.64];_i_coords = [10544,7934.78];};
     default {_b_coords = [0,0];_o_coords = [0,0];_i_coords = [0,0];};
   };
 
