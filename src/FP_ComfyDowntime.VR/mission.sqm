@@ -66,10 +66,10 @@ class ScenarioData
 		minPlayers=1;
 		maxPlayers=128;
 	};
-	wreckManagerMode="AddAll";
+	wreckManagerMode=1;
 	wreckRemovalMinTime=300;
 	wreckRemovalMaxTime=800;
-	corpseManagerMode="AddAll";
+	corpseManagerMode=1;
 	corpseLimit=35;
 	corpseRemovalMinTime=120;
 	corpseRemovalMaxTime=300;
