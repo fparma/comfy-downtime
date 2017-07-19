@@ -1,11 +1,11 @@
 [package]
 name = "comfy_make"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Comfy Baguette <MoistBaguette@users.noreply.github.com>"]
 
 [dependencies]
-util_kauk_rs = { git = "https://git.comfy.li/rust/util-kauk-rs.git" }
-walkdir = "0.1"
+regex = "0.2.2"
+time = "0.1.38"
 
 [profile.release]
 opt-level = 3

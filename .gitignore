@@ -4,6 +4,7 @@ src/FP_ComfyDowntime_ADV.VR
 
 ##
 # Rust
+src-tools/comfy_make/.vscode
 src-tools/comfy_make/target
 src-tools/comfy_make/Cargo.lock
 src-tools/comfy_builder/target
@@ -12,3 +13,4 @@ Cargo.lock
 
 *.exe
 *.pbo
+

@@ -1,13 +1,13 @@
 #![allow(unused_must_use)]
 
-extern crate util_kauk_rs;
-extern crate walkdir;
+extern crate regex;
+extern crate time;
 
-use walkdir::WalkDir;
-use std::fs;
-use util_kauk_rs::cmd::native;
+pub mod fs;
+pub mod cmd;
+pub mod log;
+
 use std::env;
-use std::path::Path;
 
 fn main() {
   let version: u8 = 10;  // Version that gets printed into the PBO filename
@@ -66,5 +66,5 @@ fn compile(path: &str,version: u8, map: &str) {
   let dirpath: String = format!("{}FP_ComfyDowntime.VR", path);
   let newpath: String = format!("{}FP_ComfyDowntime_{}.{}.pbo", path, version, map);
   //native::run("PBOConsole", &["-pack", dirpath.as_ref(), newpath.as_ref()]);
-  native::run("makepbo", &["-N", "-P", dirpath.as_ref(), newpath.as_ref()]);
+  cmd::native::run("makepbo", &["-N", "-P", dirpath.as_ref(), newpath.as_ref()]);
 }
