@@ -65,7 +65,7 @@ class AddonsMetaData
 randomSeed=12468758;
 class ScenarioData
 {
-	author="Kaukassus | 2016";
+	author="Kaukassus | 2017";
 	overviewText="Skipped to lucky seven, because that shit better work";
 	onLoadMission="Skipped to lucky seven, because that shit better work";
 	respawnDialog=0;
@@ -238,7 +238,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="ComfyDowntime 8";
+		briefingName="ComfyDowntime 13";
 		overviewText="Skipped to lucky seven, because that shit better work";
 		resistanceWest=0;
 		startWeather=0;
