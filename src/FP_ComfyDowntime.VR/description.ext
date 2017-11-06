@@ -62,3 +62,55 @@ class Params {
     default = 1;
   };
 };
+
+class ACE_Settings {
+  // ACE Rearm Level
+  // 0 = Entire Vehicle
+  // 1 = Entire Magazine
+  // 2 = Caliber Based
+  class ace_rearm_level {
+    value = 1;
+    typeName = "SCALAR";
+    force = 1;
+  };
+
+  // ACE Full Repair Locations
+  // 3 = Repair Vehicle and Repair Facility
+  class ace_repair_fullRepairLocation {
+    value = 3;
+    typeName = "SCALAR";
+    force = 1;
+  };
+
+  // ACE Full Repair Settig.
+  // 0 = Anyone can full repair
+  class ace_repair_engineerSetting_fullRepair {
+    value = 0;
+    typeName = "SCALAR";
+    force = 1;
+  };
+
+  // ACE Medical Player damage threshold
+  // 3 = 3 Times the total health
+  class ace_medical_playerDamageThreshold {
+    value = 3;
+    typeName = "SCALAR";
+    force = 1;
+  };
+
+  // ACE Prevent instadeath
+  // 1 = Stop from dying instantly
+  class ace_medical_preventInstaDeath {
+    value = 1;
+    typeName = "BOOL";
+    force = 1;
+  };
+
+  // ACE Medic Setting
+  // 0 = Disable Medics
+  class ace_medical_medicSetting {
+    value = 0;
+    typeName = "SCALAR";
+    force = 1;
+  };
+};
