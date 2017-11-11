@@ -20,18 +20,21 @@ fn main() {
 
   // Determine what preset
   let mut buffer = String::new();
-  println!("Please Enter your Preset: \n1 = Normal FP Modpack Maps\n2 = WW2 Maps\n3 = FP Modpack + WW2 Maps");
-  io::stdin().read_line(&mut buffer).unwrap();
-  println!("A: {}", &buffer);
+  {
+    println!("Please Enter your Preset: \n1 = Normal FP Modpack Maps\n2 = WW2 Maps\n3 = FP Modpack + WW2 Maps");
+    io::stdin().read_line(&mut buffer).unwrap();
+    buffer = buffer.replace("\r", "");
+    buffer = buffer.replace("\n", "");
 
-  match buffer.as_ref() {
-    "1" =>  worlds.append(&mut fp_main),
-    "2" =>  worlds.append(&mut fp_ww2),
-    "3" =>  {
-              worlds.append(&mut fp_main);
-              worlds.append(&mut fp_ww2);
-            },
-    _   =>  {},
+    match buffer.as_ref() {
+      "1" =>  {worlds.append(&mut fp_main)},
+      "2" =>  {worlds.append(&mut fp_ww2)},
+      "3" =>  {
+                worlds.append(&mut fp_main);
+                worlds.append(&mut fp_ww2);
+              },
+      _   =>  {},
+    }
   }
 
   let cwd: String = get_cwd();
