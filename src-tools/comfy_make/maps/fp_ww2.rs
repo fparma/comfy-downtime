@@ -1,0 +1,2 @@
+vec!["PLR_Bulge", "MCN_Neaville", "SWU_Dunkirk_Bray_Dunes_1940", "Colleville", "I44_Merderet_V3", "MCN_Neaville_Winter", "Baranow",
+"SWU_Ardennes_1944_Winter", "I44_Merderet", "SWU_Ardennes_1940", "Panovo", "Hyde_Sark", "I44_Merderet_V2", "fow_map_tarawa", "I44_Merderet_Winter", "I44_Omaha_V2", "Staszow", "Ivachev"]
