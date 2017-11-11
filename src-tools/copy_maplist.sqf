@@ -1,6 +1,7 @@
 // Author: comfy
 // Description:
 // Small script to copy the list of maps from all the addons that are currently mounted.
+// Jump into the editor and execute this block of code in the debug console and it will copy the list of map endings into your clipboard.
 
 ///////// COPY FROM BELOW HERE
 
