@@ -14,12 +14,12 @@ It's concept is heavily inspired from the vanilla ZGM Missions, howvever a few b
 ## How to compile/build
 ### Dependencies
 As of right now, the build process currently requires the following Dependencies:
-* [PBO Manager v1.4](http://www.armaholic.com/page.php?id=16369)
-* [Rust 1.8 (or Newer)](https://www.rust-lang.org/downloads.html)
+* [Mikeros PBO Tools](https://armaservices.maverick-applications.com/Products/MikerosDosTools/FileBrowserFree)
+* [Latest Rust (Stable or Nightly)](https://www.rust-lang.org/downloads.html)
 
 Make sure the following path is in your %PATH% Environment Variable:
 ```
-C:\Program Files\PBO Manager v.1.4 beta\
+C:\Program Files (x86)\Mikero\DePboTools\bin\
 ```
 
 What the build script essentially does is create a folder for each map Type that currently resides within the Facepunch Modpack, and creates a mission PBO File.
