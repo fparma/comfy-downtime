@@ -110,4 +110,12 @@ class ACE_Settings {
     typeName = "SCALAR";
     force = 1;
   };
+
+  // ACE Gforces Setting
+  // 0 = Disable Completely
+  class ace_gforces_enabledFor {
+    value = 0;
+    typeName = "SCALAR";
+    force = 1;
+  };
 };
