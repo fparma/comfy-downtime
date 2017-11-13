@@ -66,8 +66,8 @@ randomSeed=12468758;
 class ScenarioData
 {
 	author="Kaukassus | 2017";
-	overviewText="Skipped to lucky seven, because that shit better work";
-	onLoadMission="Skipped to lucky seven, because that shit better work";
+	overviewText="Might be actually maintained now.";
+	onLoadMission="Might be actually maintained now.";
 	respawnDialog=0;
 	disabledAI=1;
 	respawn=3;
@@ -238,8 +238,8 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="ComfyDowntime 13";
-		overviewText="Skipped to lucky seven, because that shit better work";
+		briefingName="ComfyDowntime 14";
+		overviewText="Might be actually maintained now.";
 		resistanceWest=0;
 		startWeather=0;
 		startWind=0;

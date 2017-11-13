@@ -11,7 +11,7 @@ use std::env;
 use std::io;
 
 fn main() {
-  let version: u8 = 13;  // Version that gets printed into the PBO filename
+  let version: u8 = 14;  // Version that gets printed into the PBO filename
 
   // List of map presets
   let mut fp_main = include!("../maps/fp_main.rs");
