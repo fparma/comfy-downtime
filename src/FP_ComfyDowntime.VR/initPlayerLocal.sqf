@@ -1,6 +1,5 @@
 params ["_player", "_isJip"];
 
-// Init the Spawn Protection
 player addEventHandler ["Respawn", {
 
   // Set Custom Fatigue Settings
