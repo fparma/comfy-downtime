@@ -1,15 +1,31 @@
 params ["_player", "_isJip"];
 
-// Add JIP players to zeus
-if (_isJip) then {[_player] remoteExecCall ["FPA_common_fnc_addToCurators", 2]};
+[missionNamespace, "arsenalClosed", {
+  private _loadout = getUnitLoadout player;
+  private _replaceRadioAcre = {
+    params ["_item"];
+    if (!(_item isEqualType []) && {[_item] call acre_api_fnc_isRadio}) then {
+      _this set [0, [_item] call acre_api_fnc_getBaseRadio];
+    };
+  };
+  if !((_loadout select 3) isEqualTo []) then {
+    {_x call _replaceRadioAcre} forEach ((_loadout select 3) select 1); // Uniform items
+  };
+  if !((_loadout select 4) isEqualTo []) then {
+    {_x call _replaceRadioAcre} forEach ((_loadout select 4) select 1); // Vest items
+  };
+  if !((_loadout select 5) isEqualTo []) then {
+    {_x call _replaceRadioAcre} forEach ((_loadout select 5) select 1); // Backpack items
+  };
 
-// Fix so player cant join ENEMY side, where all sides fires on him
-player addEventHandler ["HandleRating", {abs (_this select 1);}];
+  missionNamespace setVariable ["fpc_loadout", _loadout];
+}] call BIS_fnc_addScriptedEventHandler;
 
-// Init the Spawn Protection
 player addEventHandler ["Respawn", {
-  [_this select 0] remoteExecCall ["FP_fnc_addToCurators", 2];
-
+  private _saved = missionNamespace getVariable ["fpc_loadout", []];
+  if !(_saved isEqualTo []) then {
+    player setUnitLoadout _saved;
+  };
   // Set Custom Fatigue Settings
   player setCustomAimCoef 0.6;
 }];
