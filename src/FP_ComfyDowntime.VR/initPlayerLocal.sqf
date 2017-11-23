@@ -18,11 +18,11 @@ params ["_player", "_isJip"];
     {_x call _replaceRadioAcre} forEach ((_loadout select 5) select 1); // Backpack items
   };
 
-  missionNamespace setVariable ["ch_loadout", _loadout];
+  missionNamespace setVariable ["fpc_loadout", _loadout];
 }] call BIS_fnc_addScriptedEventHandler;
 
 player addEventHandler ["Respawn", {
-  private _saved = missionNamespace getVariable ["ch_loadout", []];
+  private _saved = missionNamespace getVariable ["fpc_loadout", []];
   if !(_saved isEqualTo []) then {
     player setUnitLoadout _saved;
   };
